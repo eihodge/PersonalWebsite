@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #131313;
+        color: white;
+        text-align: center;
+        font-family: Roboto;
+      }
+      .game {
+        background-color: #2d2d2d;
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 500px;
+        margin:0 auto;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,1);
+      }
+      .gameplay-state {
+        font-weight: 200;
+      }
+      .grid-button {
+        padding-top: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 50px;
+        margin-top: 8px;
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        border-radius: 12px;
+        border: none;
+        background-color:lightgray;
+        font-size: 20px;
+        font-weight: bold;
+        color: lightgray; 
+      }
+      .grid-button:hover {
+        box-shadow: 0px 0px 12px rgba(0,0,0,1);
+      }
+
+      .restart-button {
+        border: none;
+        padding-top: 15px;
+        padding-left: 23px;
+        padding-right: 23px;
+        padding-bottom: 15px;
+        border-radius: 5px;
+        background-color: chocolate;
+        
+        font-size: 15px;
+        color: rgb(255, 255, 255);
+      }
+      .restart-button:hover {
+        background-color: rgb(212, 122, 57);
+      }
+      .restart-button:active {
+        background-color: rgb(211, 140, 90);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game">
+      <div>
+        <p style="font-size: 30px; margin-bottom: 0;">Tic Tac Toe</p>
+      </div>
+
+      <div>
+        <p class="gameplay-state" id="gameplay-status"></p>
+      </div>
+
+      <div>
+        <div>
+          <button class="grid-button" id="TL" onclick="executeMove(0, 0, 'TL')" >_</button>
+          <button class="grid-button" id="TM" onclick="executeMove(0, 1, 'TM')" >_</button>
+          <button class="grid-button" id="TR" onclick="executeMove(0, 2, 'TR')" >_</button>
+        </div>
+        <div>
+          <button class="grid-button" id="ML" onclick="executeMove(1, 0, 'ML')" >_</button>
+          <button class="grid-button" id="MM" onclick="executeMove(1, 1, 'MM')" >_</button>
+          <button class="grid-button" id="MR" onclick="executeMove(1, 2, 'MR')" >_</button>
+        </div>
+        <div>
+          <button class="grid-button" id="BL" onclick="executeMove(2, 0, 'BL')" >_</button>
+          <button class="grid-button" id="BM" onclick="executeMove(2, 1, 'BM')" >_</button>
+          <button class="grid-button" id="BR" onclick="executeMove(2, 2, 'BR')" >_</button>
+        </div>
+      </div>
+
+      <div>
+        <button class="restart-button" style='margin-top: 20px;' onclick="location.href='tictactoe.html'">Restart</button>
+      </div>
+    </div>
+    <script>
+      let grid = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+      ];
+
+      let turn = 0;
+      let turnsTaken = 0;
+      let winConditionMet = false;
+      document.getElementById('gameplay-status').innerText = 'Turn: X';
+
+      function checkWinConditionMet() {
+        if (grid[0][0] == 'O' && grid[0][1] == 'O' && grid[0][2] == 'O') { winConditionMet = true; }
+        else if (grid[1][0] == 'O' && grid[1][1] == 'O' && grid[1][2] == 'O') { winConditionMet = true; }
+        else if (grid[2][0] == 'O' && grid[2][1] == 'O' && grid[2][2] == 'O') { winConditionMet = true; }
+        else if (grid[0][0] == 'O' && grid[1][0] == 'O' && grid[2][0] == 'O') { winConditionMet = true; }
+        else if (grid[0][1] == 'O' && grid[1][1] == 'O' && grid[2][1] == 'O') { winConditionMet = true; }
+        else if (grid[0][2] == 'O' && grid[1][2] == 'O' && grid[2][2] == 'O') { winConditionMet = true; }
+        else if (grid[0][0] == 'O' && grid[1][1] == 'O' && grid[2][2] == 'O') { winConditionMet = true; }
+        else if (grid[2][0] == 'O' && grid[1][1] == 'O' && grid[0][2] == 'O') { winConditionMet = true; }
+        else if (grid[0][0] == 'X' && grid[0][1] == 'X' && grid[0][2] == 'X') { winConditionMet = true; }
+        else if (grid[1][0] == 'X' && grid[1][1] == 'X' && grid[1][2] == 'X') { winConditionMet = true; }
+        else if (grid[2][0] == 'X' && grid[2][1] == 'X' && grid[2][2] == 'X') { winConditionMet = true; }
+        else if (grid[0][0] == 'X' && grid[1][0] == 'X' && grid[2][0] == 'X') { winConditionMet = true; }
+        else if (grid[0][1] == 'X' && grid[1][1] == 'X' && grid[2][1] == 'X') { winConditionMet = true; }
+        else if (grid[0][2] == 'X' && grid[1][2] == 'X' && grid[2][2] == 'X') { winConditionMet = true; }
+        else if (grid[0][0] == 'X' && grid[1][1] == 'X' && grid[2][2] == 'X') { winConditionMet = true; }
+        else if (grid[2][0] == 'X' && grid[1][1] == 'X' && grid[0][2] == 'X') { winConditionMet = true; }
+      }
+
+      function executeMove(idx1, idx2, buttonId) {
+        if (grid[idx1][idx2] !== '' && !winConditionMet) {
+          alert('This square has already been played. Try another square.');
+        } else {
+          if (turnsTaken < 9  && !winConditionMet) { // PLAYER 1 (X) TURN
+            if (turn == 0) {
+              grid[idx1][idx2] = 'X';
+              document.getElementById(buttonId).innerText = 'X';
+              checkWinConditionMet();
+              if (winConditionMet == false) {
+                turn = 1; // switch turn
+                document.getElementById('gameplay-status').innerText = 'Turn: O';
+              }
+              document.getElementById(buttonId).style = 'background-color: rgb(240, 40, 40);';
+            } else if (!winConditionMet) { // PLAYER 2 (O) TURN
+              grid[idx1][idx2] = 'O';
+              document.getElementById(buttonId).innerText = 'O';
+              checkWinConditionMet();  
+              if (winConditionMet == false) {
+                turn = 0; // switch turn
+                document.getElementById('gameplay-status').innerText = 'Turn: X';
+              }
+              document.getElementById(buttonId).style = 'background-color: rgb(27, 120, 255);';
+            }
+            turnsTaken++;
+            if (turnsTaken == 9 || winConditionMet) {
+              if (winConditionMet == true) {
+                if (turn == 0) {
+                  document.getElementById('gameplay-status').innerText = 'Winner: X';
+                } else if (turn == 1) {
+                  document.getElementById('gameplay-status').innerText = 'Winner: O';
+                }
+              } else {
+                document.getElementById('gameplay-status').innerText = "Winner: Draw";
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
