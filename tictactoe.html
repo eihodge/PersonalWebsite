@@ -130,7 +130,7 @@
       }
 
       function executeMove(idx1, idx2, buttonId) {
-        if (grid[idx1][idx2] !== '' && !winConditionMet) {
+        if (grid[idx1][idx2] !== '' && !winConditionMet && turnsTaken < 9) {
           alert('This square has already been played. Try another square.');
         } else {
           if (turnsTaken < 9  && !winConditionMet) { // PLAYER 1 (X) TURN
