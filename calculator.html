@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #131313;
+        color: black;
+        text-align: center;
+        font-family: Roboto, Arial;
+      }
+      .calculator {
+        background-color: #292929;
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 550px;
+        margin:0 auto;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,1);
+      }
+      .eq-display {
+        background-color: rgb(67, 67, 67);
+        font-size: 35px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 424px;
+        border-radius: 20px;
+        margin:0 auto;
+        margin-bottom: 30px;
+        margin-top: 20px;
+        font-weight: 300;
+        color: white;
+      }
+      .button, .buttonOp {
+        padding-top: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+        margin-top: 10px;
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 30px;
+      }
+      .button:hover {
+        background-color: rgb(223, 223, 223);
+      }
+      .buttonOp {
+        background-color: rgb(210, 110, 38);
+        color: white;
+      }
+      .buttonOp:hover {
+        background-color: rgb(179, 90, 26);
+      }
+
+      .button-2 {
+        padding-top: 40px;
+        padding-left: 88px;
+        padding-right: 88px;
+        padding-bottom: 40px;
+        margin-top: 10px;
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 30px;
+      }
+      .button-2:hover {
+        background-color: rgb(223, 223, 223);
+      }
+      .clear {
+        padding-top: 35px;
+        padding-left: 65px;
+        padding-right: 65px;
+        padding-bottom: 35px;
+        margin-top: 10px;
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 30px;
+        background-color: rgb(14, 81, 196);
+        color: white;
+      }
+
+      .button-3 {
+        padding-top: 35px;
+        padding-left: 98px;
+        padding-right: 98px;
+        padding-bottom: 35px;
+        margin-top: 10px;
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-bottom: 10px;
+        background-color: rgb(255, 44, 44);
+        color: white;
+        font-size: 30px;
+        border-radius: 5px;
+        border: none;
+      }
+      .button-3:hover {
+        background-color: rgb(180, 31, 31);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div>
+        <p class="eq-display" id="equation-display">_</p>
+      </div>
+      <div>
+        <button class="button"  onclick="append('7')" >7</button>
+        <button class="button"  onclick="append('8')" >8</button>
+        <button class="button"  onclick="append('9')" >9</button>
+        <button class="buttonOp" onclick="append('/')"  >/</button>
+      </div>
+      <div>
+        <button class="button" onclick="append('4')" >4</button>
+        <button class="button" onclick="append('5')"  >5</button>
+        <button class="button"  onclick="append('6')" >6</button>
+        <button class="buttonOp"  onclick="append('×')" >*</button>
+      </div>
+      <div>
+        <button class="button" onclick="append('1')">1</button>
+        <button class="button" onclick="append('2')">2</button>
+        <button class="button" onclick="append('3')">3</button>
+        <button class="buttonOp" onclick="append('-')">-</button>
+      </div>
+      <div>
+        <button class="button-2"  onclick="append('0')" >0</button>
+        <button class="buttonOp"  onclick="append('&')" >(-)</button>
+        <button class="buttonOp"  onclick="append('+')" >+</button>
+      </div>
+      <div>
+        <button class="clear" onclick="clear()">Clear</button>
+        <button class="button-3" onclick="compute()"  >=</button>
+      </div>
+    </div>
+
+    <script>
+      let num1 = 0;
+      let num2 = 0;
+      let num1active = false;
+      let num2active = false;
+      let operator = '';
+      let hasComputed = false;
+
+      function append(symbol) {
+        // Reset if hasComputed is true
+        if (hasComputed == true) {
+          num1=0;
+          num2=0;
+          num1active = false;
+          num2active = false;
+          operator='';
+          hasComputed=false;
+        }
+
+        // Make sure an operator is not entered into an empty 
+        if (!(num1active == false && (symbol == '+' || symbol == '-' || symbol == '×' || symbol == '/'))) {
+          if (num1 > 0 && operator == '' && symbol == '&') {
+            num1 = num1 * -1;
+          } else if (num2 > 0 && operator != '' && symbol == '&') {
+            num2 = num2 * -1;
+          } else if ( operator == '' && (symbol == '+' || symbol == '-' || symbol == '×' || symbol == '/')) {
+            operator = operator + symbol;
+          } else if (symbol >= '0' && symbol <= '9') {
+            if (num1active == false) {
+              num1 = symbol;
+              num1active = true;
+            } else if (num1active == true && operator=='') {
+              num1 = num1 + symbol;
+            } else if (operator != '' && num2active == false) {
+              num2 = symbol;
+              num2active = true;
+            } else if (operator != '' && num2active == true) {
+              num2 = num2 + symbol;
+            }
+          }
+          updateView();
+        }       
+      }
+
+      function updateView() {
+        let viewString = '';
+        if (num1active == true) {
+          viewString = viewString+num1;
+          if (operator != '') {
+            viewString = viewString+' '+operator;
+            if (num2active == true) {
+              viewString = viewString + ' ' + num2;
+            }
+          }
+        }
+        document.getElementById('equation-display').innerText = viewString;
+      }
+
+      function compute() {
+        if (checkSyntax()) {
+          let answer = 0;
+          if (operator == '+') {
+            answer = parseInt(num1) + parseInt(num2);
+            document.getElementById('equation-display').innerText = answer;
+          } else if (operator == '-') {
+            answer = parseInt(num1) - parseInt(num2);
+            document.getElementById('equation-display').innerText = answer;
+          } else if (operator == '×') {
+            answer = parseInt(num1) * parseInt(num2);
+            document.getElementById('equation-display').innerText = answer;
+          } else if (operator == '/') {
+            answer = parseInt(num1) / parseInt(num2);
+            document.getElementById('equation-display').innerText = answer;
+          }
+          hasComputed = true;
+        } else {
+          alert('Syntax error');
+        }
+      }
+
+      function checkSyntax() {
+        if (num1active == true && num2active == true && operator != '') {
+          return true;
+        } else if (num1active == true && operator == '') {
+          return true;
+        }
+        return false;
+      }
+    </script>    
+  </body>
+</html>
