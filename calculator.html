@@ -141,7 +141,7 @@
         <button class="buttonOp"  onclick="append('+')" >+</button>
       </div>
       <div>
-        <button class="clear" onclick="clear()">Clear</button>
+        <button class="clear" onclick="clearCalculator()">Clear</button>
         <button class="button-3" onclick="compute()"  >=</button>
       </div>
     </div>
@@ -153,6 +153,16 @@
       let num2active = false;
       let operator = '';
       let hasComputed = false;
+
+      function clearCalculator() {
+        num1=0;
+        num2=0;
+        num1active = false;
+        num2active = false;
+        operator='';
+        hasComputed=true;
+        document.getElementById('equation-display').innerText = '_';
+      }
 
       function append(symbol) {
         // Reset if hasComputed is true
