@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GPA Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+      body {
+        background-color: #131313;
+        color: white;
+        text-align: center;
+        font-family: Roboto, Arial;
+      }
+
+      .window {
+        background-color: #2d2d2d;
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 665px;
+        margin:0 auto;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,1);
+        margin-bottom: 15px;
+        margin-top: 15px;
+      }
+
+      .display-gpa {
+        border-radius: 4px;
+        border: none;
+        padding-top: 14px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 14px;
+        font-size: 18px;
+        font-family: Roboto, Arial;
+        color: white;
+        background-color: rgb(26, 26, 26);
+      }
+
+      .input-textbox {
+        font-size: 18px;
+        padding-bottom: 14px;
+        padding-top: 14px;
+        border-radius: 10px;
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 14px;
+        border: none;
+        background-color: rgb(26, 26, 26);
+        color: white;
+      }
+
+      .button {
+        border: none;
+        padding-top: 10px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+        background-color: rgb(99, 99, 99);
+        margin-left: 5px;
+        margin-right: 5px;
+        font-family: Roboto, Arial;
+        font-size: 20px;
+        font-weight: 300;
+        color: rgb(255, 255, 255);
+      }
+
+      .button-green {
+        border: none;
+        padding-top: 10px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+        background-color: rgb(3, 162, 3);
+        margin-left: 5px;
+        margin-right: 5px;
+        font-family: Roboto, Arial;
+        font-size: 20px;
+        font-weight: 300;
+        color: rgb(255, 255, 255);
+      }
+
+      .grade-select {
+        border: none;
+        padding-top: 10px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+        background-color: rgb(99, 99, 99);
+        margin-left: 5px;
+        margin-right: 5px;
+        font-family: Roboto, Arial;
+        font-size: 20px;
+        font-weight: 300;
+        color: rgb(255, 255, 255);
+      }
+    </style>
+  </head>
+  <body>
+    
+    <script>
+      let courses = [];
+      
+      function addCourse() {
+        let name = document.getElementById('course-title').value;
+        let credits = parseInt(document.getElementById('course-credits').value);
+
+        if (!isNaN(credits)) {
+          courses.push({
+            name: name,
+            grade: document.getElementById('grade-select').value,
+            credits: credits,
+          });
+          renderCoursesList();
+        } else {
+          alert("Invalid input. Credits must be an integer.");
+        }
+      }
+
+      function renderCoursesList() {
+        document.getElementById('courses-list').innerHTML = '';
+        courses.forEach(function(course) {
+          const element = document.createElement('div');
+          element.innerText = course.name + ' - Grade: ' + course.grade + ', Credits: ' + course.credits;
+          const courseList = document.getElementById('courses-list');
+          courseList.appendChild(element);
+        });
+      }
+
+      function calculateGPA() {
+        let totalCredits = 0.0;
+        let totalCreditHours = 0.0;
+        for (const element of courses) {
+          totalCredits += (parseFloat(element.grade) * parseFloat(element.credits));
+          totalCreditHours += parseFloat(element.credits);
+        }
+        let gpa = (totalCredits/totalCreditHours).toFixed(2);
+        document.getElementById('display-gpa').value = gpa;
+      }
+    </script>
+    
+    <p style="font-size: 30px;">Weighted GPA Calculator</p>
+    <div class="window">
+      <p style="font-size: 20px;">Add a Course:</p>
+      <input class="input-textbox" id="course-title" placeholder="Course name (optional)" type="text" />
+      <input class="input-textbox" id="course-credits" placeholder="Credits" type="text" />
+      <select class="grade-select" id="grade-select">  
+        <option value = "4.33"> A+   
+        </option>  
+        <option value = "4.0"> A   
+        </option>  
+        <option value = "3.67"> A-  
+        </option>  
+        <option value = "3.33"> B+   
+        </option>  
+        <option value = "3.0"> B   
+        </option>  
+        <option value = "2.67"> B-  
+        </option> 
+        <option value = "2.33"> C+   
+        </option>  
+        <option value = "2.0"> C   
+        </option>  
+        <option value = "1.67"> C-  
+        </option> 
+        <option value = "1.33"> D+   
+        </option>  
+        <option value = "1.0"> D   
+        </option>  
+        <option value = "0.67"> D-  
+        </option>  
+        <option value = "0.0"> F   
+        </option>
+      </select>
+
+      <button class="button-green" onclick="addCourse()">Add</button>
+      <div id="courses-list" style="margin-top: 10px; font-size: 18px;"></div>
+    </div>
+
+    <div class="window">
+      <button class="button" onclick="calculateGPA()">Calculate GPA</button>
+      <button class="button" onclick="location.href='gpa_calculator.html'">Clear</button>
+      <div>
+        <p style="display: inline-block; margin-bottom: -10px; font-size: 19px; ">GPA: </p>
+        <input readonly class='display-gpa' name="display-gpa-output" id="display-gpa" cols="6" rows="1" >
+      </div>
+    </div>
+  </body>
+</html>
