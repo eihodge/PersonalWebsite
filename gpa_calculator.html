@@ -72,6 +72,10 @@
         font-weight: 300;
         color: rgb(255, 255, 255);
       }
+      .button:hover {
+        background-color: rgb(116, 116, 116);
+        cursor: pointer;
+      }
 
       .button-green {
         border: none;
@@ -88,6 +92,10 @@
         font-weight: 300;
         color: rgb(255, 255, 255);
       }
+      .button-green:hover {
+        background-color: rgb(35, 181, 35);
+        cursor: pointer;
+      }
 
       .grade-select {
         border: none;
@@ -103,6 +111,9 @@
         font-size: 20px;
         font-weight: 300;
         color: rgb(255, 255, 255);
+      }
+      .grade-select:hover {
+        cursor: pointer;
       }
     </style>
   </head>
@@ -138,14 +149,16 @@
       }
 
       function calculateGPA() {
-        let totalCredits = 0.0;
-        let totalCreditHours = 0.0;
-        for (const element of courses) {
-          totalCredits += (parseFloat(element.grade) * parseFloat(element.credits));
-          totalCreditHours += parseFloat(element.credits);
+        if (courses.length > 0) {
+          let totalCredits = 0.0;
+          let totalCreditHours = 0.0;
+          for (const element of courses) {
+            totalCredits += (parseFloat(element.grade) * parseFloat(element.credits));
+            totalCreditHours += parseFloat(element.credits);
+          }
+          let gpa = (totalCredits/totalCreditHours).toFixed(2);
+          document.getElementById('display-gpa').value = gpa;
         }
-        let gpa = (totalCredits/totalCreditHours).toFixed(2);
-        document.getElementById('display-gpa').value = gpa;
       }
     </script>
     
