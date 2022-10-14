@@ -116,9 +116,7 @@
               time--;
             } else {
               clearInterval(timer);
-              var audio = new Audio('../resources/sounds/alarm.wav');
-              audio.play();
-              //confirm('Timer complete');
+              alert('Timer complete');
             }
           }, 1000)
         })()
