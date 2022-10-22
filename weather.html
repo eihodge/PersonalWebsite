@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Weather</title>
+    <title>US Weather</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -40,6 +40,22 @@
         background-color: rgb(26, 26, 26);
         color: white;
         width: 200px;
+      }
+
+      .state-select {
+        border: none;
+        padding-top: 9px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+        background-color: rgb(99, 99, 99);
+        margin-left: 5px;
+        margin-right: 5px;
+        font-family: Roboto, Arial;
+        font-size: 20px;
+        font-weight: 300;
+        color: rgb(255, 255, 255);
       }
 
       .search-button {
@@ -135,12 +151,25 @@
       const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-      getWeather(city);
+      getWeatherDefault(city);
       
-      function getWeather(cityName) {    
+      function getWeatherDefault(cityName) {    
         fetch(openWeatherAPI_base + cityName + "&appid=" + openWeatherAPI_key)
         .then((response) => response.json())
         .then((data) => setWeather(data) );
+        
+      }
+
+      function getWeather(cityName) {    
+        if(document.getElementById('state-select').value != "") {
+          fetch(openWeatherAPI_base + cityName +"," + document.getElementById("state-select").value + ",1&appid=" + openWeatherAPI_key)
+          .then((response) => response.json())
+          .then((data) => setWeather(data) );
+        } else {
+          fetch(openWeatherAPI_base + cityName + "&appid=" + openWeatherAPI_key)
+          .then((response) => response.json())
+          .then((data) => setWeather(data) );
+        }
       }
 
       function setWeather(data) {
@@ -181,6 +210,68 @@
       
       <div style="margin-bottom: 15px; text-align: center;">
         <input type="text" class="search-bar" placeholder="Search City" id="search-bar">
+        
+        <select class="state-select" id="state-select">  
+          <option value = "">Select</option>
+          <option value = "01">Alabama</option>
+          <option value = "02">Alaska</option>
+          <!-- <option value = "03"></option> -->
+          <option value = "04">Arizona</option>
+          <option value = "05">Arkansas</option> 
+          <option value = "06">California</option>
+          <!-- <option value = "07"></option> -->
+          <option value = "08">Colorado</option>
+          <option value = "09">Connecticut</option>
+          <option value = "10">Delaware</option> 
+          <option value = "11">Washington, D.C.</option>
+          <option value = "12">Florida</option>
+          <option value = "13">Georgia</option>
+          <!-- <option value = "14"> </option> -->
+          <option value = "15">Hawaii</option> 
+          <option value = "16">Idaho</option>
+          <option value = "17">Illinois</option>
+          <option value = "18">Indiana</option>
+          <option value = "19">Iowa</option>
+          <option value = "20">Kansas</option> 
+          <option value = "21">Kentucky</option>
+          <option value = "22">Louisiana</option>
+          <option value = "23">Maine</option>
+          <option value = "24">Maryland</option>
+          <option value = "25">Massachusetts</option> 
+          <option value = "26">Michigan</option>
+          <option value = "27">Minnesota</option>
+          <option value = "28">Mississippi</option>
+          <option value = "29">Missouri</option>
+          <option value = "30">Montana</option> 
+          <option value = "31">Nebraska</option>
+          <option value = "32">Nevada</option>
+          <option value = "33">New Hampshire</option>
+          <option value = "34">New Jersey</option>
+          <option value = "35">New Mexico</option>
+          <option value = "36">New York</option>
+          <option value = "37">North Carolina</option>
+          <option value = "38">North Dakota</option>
+          <option value = "39">Ohio</option>
+          <option value = "40">Oklahoma</option> 
+          <option value = "41">Oregon</option>
+          <option value = "42">Pennsylvania</option>
+          <!-- <option value = "43"></option> -->
+          <option value = "44">Rhode Island</option>
+          <option value = "45">South Carolina</option> 
+          <option value = "46">South Dakota</option>
+          <option value = "47">Tennessee</option>
+          <option value = "48">Texas</option>
+          <option value = "49">Utah</option>
+          <option value = "50">Vermont</option> 
+          <option value = "51">Virginia</option>
+          <!-- <option value = "52"></option> -->
+          <option value = "53">Washington</option>
+          <option value = "54">West Virginia</option>
+          <option value = "55">Wisconsin</option>
+          <option value = "56">Wyoming</option>   
+          
+        </select>
+        
         <button class="search-button" onclick="getWeather(document.getElementById('search-bar').value)">Search</button>
       </div>
 
