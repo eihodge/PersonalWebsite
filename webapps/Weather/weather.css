@@ -2,8 +2,6 @@ body {
   background-color: #131313;
   color: white;
   font-family: Roboto;
-  font-size: 20px;
-  font-weight: 300;
 }
 
 .window {
@@ -16,6 +14,8 @@ body {
   margin:0 auto;
   border-radius: 20px;
   box-shadow: 0 0 30px rgba(0,0,0,1);
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .search-bar {
