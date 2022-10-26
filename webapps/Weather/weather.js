@@ -43,13 +43,13 @@ openWeatherAPI_key = "64de9007d7ef805ae77090f4a2c0e809";
           document.getElementById("date").innerHTML = days[date.getDay()] + " " + date.getDate() + " " + months[date.getMonth()];
 
           if (data.weather[0].main == "Rain" || data.weather[0].main == "Drizzle" || data.weather[0].main == "Thunderstorm") {
-            document.getElementById("weather-icon-img").src = "/resources/images/weather/rain.png"
+            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/rain.png"
           } else if (data.weather[0].main == "Clear") {
-            document.getElementById("weather-icon-img").src = "/resources/images/weather/sunny.png"
+            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/sunny.png"
           } else if (data.weather[0].main == "Clouds") {
-            document.getElementById("weather-icon-img").src = "/resources/images/weather/cloudy.png"
+            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/cloudy.png"
           } else if (data.weather[0].main == "Snow") {
-            document.getElementById("weather-icon-img").src = "/resources/images/weather/snow.png"
+            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/snow.png"
           }
         }
       }
