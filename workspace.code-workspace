@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "path": "/Users/ethan/Desktop/html_css_course"
+    },
+    {
+      "path": "/Users/ethan/Desktop/javascript_course"
+    },
+    {
+      "path": "/Users/ethan/Desktop/resume_website"
+    },
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "personal_website"
+  }
+}

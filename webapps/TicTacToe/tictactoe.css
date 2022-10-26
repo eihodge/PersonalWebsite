@@ -1,0 +1,60 @@
+body {
+  background-color: #131313;
+  color: white;
+  text-align: center;
+  font-family: Roboto;
+}
+.game {
+  background-color: #2d2d2d;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  width: 500px;
+  margin:0 auto;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,1);
+}
+.gameplay-state {
+  font-weight: 200;
+}
+.grid-button {
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  border: none;
+  background-color:lightgray;
+  font-size: 20px;
+  font-weight: bold;
+  color: lightgray; 
+}
+.grid-button:hover {
+  box-shadow: 0px 0px 12px rgba(0,0,0,1);
+  cursor: pointer;
+}
+
+.restart-button {
+  border: none;
+  padding-top: 15px;
+  padding-left: 23px;
+  padding-right: 23px;
+  padding-bottom: 15px;
+  border-radius: 5px;
+  background-color: chocolate;
+  
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+}
+.restart-button:hover {
+  background-color: rgb(212, 122, 57);
+  cursor: pointer;
+}
+.restart-button:active {
+  background-color: rgb(211, 140, 90);
+}

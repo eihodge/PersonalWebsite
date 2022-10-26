@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GPA Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="gpa_calculator.js" defer></script>
+    <link rel="stylesheet" href="gpa_calculator.css">
+  </head>
+  <body>
+    
+    <script>
+      
+    </script>
+    
+    <p style="font-size: 30px;">Weighted GPA Calculator</p>
+    <div class="window">
+      <p style="font-size: 20px;">Add a Course:</p>
+      <input class="input-textbox" id="course-title" placeholder="Course name (optional)" type="text" />
+      <input class="input-textbox" id="course-credits" placeholder="Credits" type="text" />
+      <select class="grade-select" id="grade-select">  
+        <option value = "4.33"> A+   
+        </option>  
+        <option value = "4.0"> A   
+        </option>  
+        <option value = "3.67"> A-  
+        </option>  
+        <option value = "3.33"> B+   
+        </option>  
+        <option value = "3.0"> B   
+        </option>  
+        <option value = "2.67"> B-  
+        </option> 
+        <option value = "2.33"> C+   
+        </option>  
+        <option value = "2.0"> C   
+        </option>  
+        <option value = "1.67"> C-  
+        </option> 
+        <option value = "1.33"> D+   
+        </option>  
+        <option value = "1.0"> D   
+        </option>  
+        <option value = "0.67"> D-  
+        </option>  
+        <option value = "0.0"> F   
+        </option>
+      </select>
+
+      <button class="button-green" onclick="addCourse()">Add</button>
+      <div id="courses-list" style="margin-top: 10px; font-size: 18px;"></div>
+    </div>
+
+    <div class="window">
+      <button class="button" onclick="calculateGPA()">Calculate GPA</button>
+      <button class="button" onclick="location.href='gpa_calculator.html'">Clear</button>
+      <div>
+        <p style="display: inline-block; margin-bottom: -10px; font-size: 19px; ">GPA: </p>
+        <input readonly class='display-gpa' name="display-gpa-output" id="display-gpa" cols="6" rows="1" >
+      </div>
+    </div>
+    <a href="/index.html" style="text-align: right; color: rgb(84, 50, 255)">Home</a>
+  </body>
+</html>

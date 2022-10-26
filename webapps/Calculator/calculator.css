@@ -1,0 +1,116 @@
+body {
+  background-color: #131313;
+  color: black;
+  text-align: center;
+  font-family: Roboto, Arial;
+}
+.calculator {
+  background-color: #292929;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  width: 550px;
+  margin:0 auto;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,1);
+}
+.eq-display {
+  background-color: rgb(67, 67, 67);
+  font-size: 35px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 401px;
+  border-radius: 20px;
+  margin:0 auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  font-weight: 300;
+  color: white;
+  text-align: left;
+  padding-left: 28px;
+}
+.button, .buttonOp {
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  margin-top: 10px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 30px;
+  color: black;
+  
+}
+.button {
+  background-color: white;
+}
+.button:hover {
+  background-color: rgb(223, 223, 223);
+}
+.buttonOp {
+  background-color: rgb(237, 117, 31);
+  color: white;
+}
+.buttonOp:hover {
+  background-color: rgb(206, 102, 27);
+}
+
+.button-2 {
+  padding-top: 40px;
+  padding-left: 88px;
+  padding-right: 88px;
+  padding-bottom: 40px;
+  margin-top: 10px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 30px;
+  color: black;
+  background-color: white;
+}
+.button-2:hover {
+  background-color: rgb(223, 223, 223);
+}
+.clear {
+  padding-top: 35px;
+  padding-left: 65px;
+  padding-right: 65px;
+  padding-bottom: 35px;
+  margin-top: 10px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 30px;
+  background-color: rgb(19, 90, 213);
+  color: white;
+}
+.clear:hover {
+  background-color: rgb(13, 61, 145);
+}
+
+.button-3 {
+  padding-top: 35px;
+  padding-left: 98px;
+  padding-right: 98px;
+  padding-bottom: 35px;
+  margin-top: 10px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 10px;
+  background-color: rgb(255, 44, 44);
+  color: white;
+  font-size: 30px;
+  border-radius: 5px;
+  border: none;
+}
+.button-3:hover {
+  background-color: rgb(163, 28, 28);
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ethan Hodge</title>
+    <script src="navbar.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #131313;
+        color: white;
+        text-align: center;
+        font-family: Roboto;
+      }
+
+      .link-button {
+        border: none;
+        padding-top: 15px;
+        padding-left: 23px;
+        padding-right: 23px;
+        padding-bottom: 15px;
+        border-radius: 5px;
+        background-color: chocolate;
+        
+        font-family: Roboto, Arial;
+        font-size: 23px;
+        font-weight: 300;
+        color: rgb(255, 255, 255);
+      }
+      .link-button:hover {
+        cursor: pointer;
+        background-color: rgb(211, 123, 61);
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <div class="website-title" onclick="location.href='index.html'">Ethan Hodge</div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="website-links">
+        <ul>
+          <li><a href="#" onclick="location.href='index.html'">Home</a></li>
+          <li><a href="#" onclick="location.href='webapps_index.html'">Webapps</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#" onclick="location.href='https://github.com/ethaningramh'">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+    <div>
+      <button class='link-button' style='margin-top: 20px; margin-right: 16px;' onclick="location.href='webapps/TicTacToe/tictactoe.html'">Tic-Tac-Toe Game</button>
+      <button class='link-button' style='margin-top: 20px; padding-left: 63px; padding-right: 64px;' onclick="location.href='webapps/Calculator/calculator.html'">Calculator</button>
+    </div>
+    <div>
+      <button class='link-button' style='margin-top: 20px; padding-left: 85px; padding-right: 85px; margin-right: 16px;' onclick="location.href='webapps/Timer/timer.html'">Timer</button>
+      <button class='link-button' style='margin-top: 20px; padding-left: 40px; padding-right: 40px;' onclick="location.href='webapps/GPA_Calculator/gpa_calculator.html'">GPA Calculator</button>
+    </div>
+
+    <div>
+      <button class='link-button' style='margin-top: 20px; padding-left: 85px; padding-right: 85px; margin-right: 16px;' onclick="location.href='webapps/Weather/weather.html'">Weather</button>
+    </div>
+    
+  </body>
+</html>

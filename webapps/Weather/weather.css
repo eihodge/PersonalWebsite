@@ -1,0 +1,132 @@
+body {
+  background-color: #131313;
+  color: white;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.window {
+  background-color: #2d2d2d;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  width: 705px;
+  margin:0 auto;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,1);
+}
+
+.search-bar {
+  font-size: 18px;
+  padding-bottom: 14px;
+  padding-top: 14px;
+  border-radius: 10px;
+  padding-left: 17px;
+  padding-right: 17px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 14px;
+  border: none;
+  background-color: rgb(26, 26, 26);
+  color: white;
+  width: 200px;
+}
+
+.state-select {
+  border: none;
+  padding-top: 9px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  background-color: rgb(99, 99, 99);
+  margin-left: 5px;
+  margin-right: 5px;
+  font-family: Roboto, Arial;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+}
+
+.search-button {
+  border: none;
+  padding-top: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-bottom: 11px;
+  border-radius: 5px;
+  background-color: rgb(99, 99, 99);
+  margin-left: 5px;
+  margin-right: 5px;
+  font-family: Roboto, Arial;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  
+
+}
+.search-button:hover {
+  cursor: pointer;
+  background-color: rgb(123, 123, 123);
+}
+
+.city {
+  font-size: 92px;
+  margin-bottom: 5px;
+  font-weight: 400;
+  text-align: left;
+  margin-left: 60px;
+}
+.date {
+  font-size: 34px;
+  text-align: left;
+  margin-left: 62px;
+  margin-bottom: 5px;
+}
+
+.weather-icon {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 108px;
+  margin-top: 26px;
+  width: 30px;
+}
+.weather-icon-img {
+  width: 200px;
+  vertical-align: bottom;
+}
+
+.weather-main-stats{
+  display: inline-block;
+  vertical-align:top;
+  margin-top: 50px;
+  margin-left: 240px;
+}
+
+.weather-main-temp{
+  font-size: 90px;
+
+}
+.weather-main-weather {
+  font-size: 40px;
+}
+
+.stats {
+  background-color: rgb(26, 26, 26);
+  width: 650px;
+  margin:0 auto;
+  margin-top: 32px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+}
+
+.stat-inline {
+  display: inline-block;
+  margin-left: 86px;
+  margin-right: 0px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 110px;
+}
