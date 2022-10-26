@@ -4,6 +4,8 @@
     <title>US Weather</title>
     <script src="weather.js" defer></script>
     <link rel="stylesheet" href="weather.css">
+    <script src="/navbar.js" defer></script>
+    <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -13,6 +15,26 @@
   
   <body>
     
+    <nav class="navbar">
+      <div class="website-title" onclick="location.href='index.html'">Ethan Hodge</div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="website-links">
+        <ul>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/index.html'">Home</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/webapps_index.html'">Webapps</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#" onclick="location.href='https://github.com/ethaningramh'">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div style="padding-top: 20px;"></div>
+
+
     <div class="window">
       
       <div style="margin-bottom: 15px; text-align: center;">
