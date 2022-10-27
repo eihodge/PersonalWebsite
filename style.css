@@ -5,6 +5,10 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #131313;
+  color: white;
+  text-align: center;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
 .navbar {
