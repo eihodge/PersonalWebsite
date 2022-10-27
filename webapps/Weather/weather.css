@@ -1,3 +1,9 @@
+body {
+  background-color: #131313;
+  color: white;
+  font-family: Roboto;
+}
+
 .window {
   background-color: #2d2d2d;
   padding-top: 15px;
