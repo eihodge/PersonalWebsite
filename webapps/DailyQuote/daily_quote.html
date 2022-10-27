@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Daily Quote</title>
+    <script src="https://ethaningramh.github.io/PersonalWebsite/navbar.js" defer></script>
+    <link rel="stylesheet" href="https://ethaningramh.github.io/PersonalWebsite/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=0.55, minimum-scale=0.2, user-scalable=yes" name="viewport">
+    <style>
+      body {
+        background-color: #131313;
+        color: white;
+        font-family: Roboto;
+      }
+
+      .window {
+        background-color: #2d2d2d;
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 705px;
+        margin:0 auto;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,1);
+        font-size: 20px;
+        font-weight: 300;
+        text-align: center;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <script>
+      getQuote();
+      
+      function getQuote() {
+        
+        fetch("https://zenquotes.io/api/today")
+          .then((response) => response.json())
+          .then((data) => console.log(data) );
+      }
+    </script>
+    
+    <nav class="navbar">
+      <div class="website-title" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/index.html'">Ethan Hodge</div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="website-links">
+        <ul>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/index.html'">Home</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/webapps_index.html'">Webapps</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/about.html'">About</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/contact.html'">Contact</a></li>
+          <li><a href="#" onclick="location.href='https://github.com/ethaningramh'">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div style="padding-top: 20px;"></div>
+
+
+    <div class="window">
+      <p id="quote">Text</p>
+      <p id="quote-author">Author</p>
+    </div>
+  </body>
+</html>
