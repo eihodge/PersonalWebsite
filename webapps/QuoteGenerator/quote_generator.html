@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Daily Quote</title>
+    <title>Quote Generator</title>
     <script src="https://ethaningramh.github.io/PersonalWebsite/navbar.js" defer></script>
     <link rel="stylesheet" href="https://ethaningramh.github.io/PersonalWebsite/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,9 +14,29 @@
         color: white;
         font-family: Roboto;
       }
+      .link-button {
+        border: none;
+        padding-top: 15px;
+        padding-left: 23px;
+        padding-right: 23px;
+        padding-bottom: 15px;
+        border-radius: 5px;
+        background-color: rgba(36, 36, 36, 0.71);
+        margin-right: 16px;
+        margin-top: 16px;
+        font-family: Roboto, Arial;
+        font-size: 23px;
+        font-weight: 300;
+        color: rgb(255, 255, 255);
+        min-width: 300px;
+      }
+      .link-button:hover {
+        cursor: pointer;
+        background-color: rgba(46, 46, 46, 0.71);
+      }
 
       .window {
-        background-color: #2d2d2d;
+        /* background-color: #2d2d2d; */
         padding-top: 15px;
         padding-left: 15px;
         padding-right: 15px;
@@ -30,19 +50,48 @@
         text-align: center;
       }
 
+      .quote {
+        min-height: 300px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        
+      }
+
+      .interior-window {
+        background-color: #13131362;
+        margin-top: -27px;
+        border-radius: 20px;
+      }
+
     </style>
 
   </head>
   <body>
     <script>
       getQuote();
+      getRandomImage();
       
       function getQuote() {
-        
-        fetch("https://zenquotes.io/api/today")
+        fetch("http://api.quotable.io/random")
           .then((response) => response.json())
-          .then((data) => console.log(data) );
+          .then((data) => displayQuote(data) );
       }
+
+      function displayQuote(data) {
+        document.getElementById('quote').innerHTML = data.content;
+        document.getElementById('quote-author').innerHTML = "- " + data.author;
+        getRandomImage();
+      }
+
+      function getRandomImage() {
+        document.getElementById("window").style.backgroundImage="url(https://source.unsplash.com/random/)";
+        document.getElementById("window").style.backgroundSize = "705px";
+      }
+
+
+      // https://source.unsplash.com/random/
     </script>
     
     <nav class="navbar">
@@ -65,9 +114,20 @@
     <div style="padding-top: 20px;"></div>
 
 
-    <div class="window">
-      <p id="quote">Text</p>
-      <p id="quote-author">Author</p>
+    <div id="window" class="window">
+      <div class="interior-window">
+        <h1 style="padding-top:30px; margin-bottom: -45px;">Quote Generator</h1>
+        <div class="quote">
+          <p style="font-size:27px; margin-bottom:18px; padding-left: 20px; padding-right: 20px;" id="quote">Text</p>
+          <p style="font-size:20px; margin:0;" id="quote-author">Author</p>
+        </div>
+        
+      </div>
+      <div>
+        <button class="link-button" onclick="location.href='quote_generator.html'">Generate New Quote</button>
+        
+      </div>
     </div>
+    
   </body>
 </html>
