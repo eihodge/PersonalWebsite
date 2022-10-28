@@ -16,22 +16,6 @@
         color: white;
         font-family: Roboto;
       }
-      
-      .expression-input {
-        border: none;
-        padding-top: 15px;
-        padding-left: 23px;
-        padding-right: 23px;
-        padding-bottom: 15px;
-        border-radius: 5px;
-        font-family: Roboto, Arial;
-        font-size: 23px;
-        font-weight: 300;
-        width: 650px;
-        background-color: rgb(67, 67, 67);
-        color: white;
-        margin-bottom: 12px;
-      }
 
       .window {
         background-color: #2d2d2d;
@@ -47,6 +31,41 @@
         font-weight: 300;
         text-align: center;
       }
+      
+      .expression-input {
+        border: none;
+        padding-top: 15px;
+        padding-left: 23px;
+        padding-right: 23px;
+        padding-bottom: 15px;
+        border-radius: 5px;
+        font-family: Roboto, Arial;
+        font-size: 23px;
+        font-weight: 300;
+        width: 589px;
+        background-color: rgb(26, 26, 26);
+        color: white;
+        margin-top: 6px;
+        margin-bottom: 12px;
+      }
+
+      .calculations-output {
+        border: none;
+        padding-top: 15px;
+        padding-left: 23px;
+        padding-right: 23px;
+        padding-bottom: 15px;
+        border-radius: 0px;
+        font-family: Roboto, Arial;
+        font-size: 23px;
+        font-weight: 300;
+        width: 600px;
+        background-color: #2d2d2d;
+        color: white;
+        margin-bottom: 12px;
+        min-height: 58px;
+        max-height: 58px;
+      }
 
       .operation-select {
         border: none;
@@ -56,7 +75,7 @@
         padding-bottom: 10px;
         border-radius: 5px;
         background-color: rgb(99, 99, 99);
-        margin-left: 7px;
+        margin-left: 6px;
         margin-right: 49px;
         font-family: Roboto, Arial;
         font-size: 20px;
@@ -73,13 +92,44 @@
         padding-bottom: 11px;
         border-radius: 5px;
         background-color: rgb(99, 99, 99);
-        margin-left: 5px;
-        margin-right: 7px;
+        margin-left: 3px;
+        margin-right: 3px;
         font-family: Roboto, Arial;
         font-size: 20px;
         font-weight: 300;
         color: rgb(255, 255, 255);
-        min-width: 105px;
+        min-width: 90px;
+      }
+      .go-button:hover {
+        cursor: pointer;
+      }
+
+      .num-pad {
+        background-color: rgb(67, 67, 67);
+        
+        border: none;
+        border-radius: 20px;
+        width: 650px;
+        margin: 0 auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 2px;
+      }
+      .append-button {
+        font-size: 28px;
+        min-width: 65px;
+        min-height: 48px;
+        border-radius: 7px;
+        border:none;
+        background-color:rgb(237, 237, 237);
+        
+        margin-left: 3px;
+        margin-right: 2px;
+        margin-top: 4px;
+        margin-bottom: 3px;
+      }
+      .append-button:hover {
+        background-color: rgb(218, 218, 218);
       }
     </style>
 
@@ -89,11 +139,17 @@
       function fetchNewtonAPI(expression) {
         if (expression == "") return;
         
+
+        //alert(encodeURIComponent(expression));
+        
         base_url = "https://newton.now.sh/api/v2";
         operation = document.getElementById('operation-select').value;
-        if (operation == "") return;
+        if (operation == "") {
+          alert("No operation selected");
+          return;
+        }
 
-        fetch(base_url + operation + expression)
+        fetch(base_url + operation + encodeURIComponent(expression))
           .then((response) => response.json())
           .then((data) => updateResult(data) );
       }
@@ -116,14 +172,24 @@
         // }
         
         //console.log(data);
-        const element = document.createElement('div');
-        //element.style.marginBottom = "10px";
-        element.style.marginTop = "18px";
-        element.innerText = data.operation + "(" + data.expression + ") = " + data.result;
-        const calculationsList = document.getElementById('calculations-list');
-        calculationsList.appendChild(element);
+        
+        if (data.operation == undefined) {
+          alert("Error: Could not compute operation");
+          return;
+        }
+        // const element = document.createElement('div');
+        // element.style.marginTop = "18px";
+        // element.innerText = data.operation + "(" + data.expression + ") = " + data.result;
+        // const calculationsList = document.getElementById('calculations-list');
+        // calculationsList.appendChild(element);
+
+        document.getElementById("calculations-output").value = data.operation + "(" + data.expression + ") = " + data.result;
       }
 
+      function appendValue(val) {
+        document.getElementById("expression-input").value = document.getElementById("expression-input").value + val;
+      }
+      
       function clearInput() {
         document.getElementById("expression-input").value = "";
       }
@@ -148,38 +214,95 @@
     </nav>
     <div style="padding-top: 20px;"></div>
 
+    <h1 style="text-align: center; margin-top: 0px;">Advanced Calculator</h1>
+
     <div id="window" class="window">
       <div>
-        <input type="text" id="expression-input" class="expression-input" placeholder="Enter expression...  (Example: x^2-cos(x)+1)">
+        <input id="calculations-output" class="calculations-output" type="text" readonly="true" placeholder="Your calculation output will be displayed here">
+      </div>
+      
+      
+      
+
+      <div class="num-pad">
+
+        <div>
+          <input type="text" id="expression-input" class="expression-input" placeholder="Enter expression...  (Example: x^2-cos(x)+1)">
+        </div>
+
+        <div>
+          <button id="append-button" class="append-button" onclick="appendValue('sqrt(-1)')">i</button>
+          <button id="append-button" class="append-button" onclick="appendValue('7')">7</button>
+          <button id="append-button" class="append-button" onclick="appendValue('8')">8</button>
+          <button id="append-button" class="append-button" onclick="appendValue('9')">9</button>
+          <button id="append-button" class="append-button" onclick="appendValue('*')">*</button>
+          <button id="append-button" class="append-button" onclick="appendValue('(')">(</button>
+          <button id="append-button" class="append-button" onclick="appendValue(')')">)</button>
+          <button id="append-button" class="append-button" onclick="appendValue('<')">&#60</button>
+        </div>
+        <div>
+          <button id="append-button" class="append-button" onclick="appendValue('(2.718281828459045)')">℮</button>
+          <button id="append-button" class="append-button" onclick="appendValue('4')">4</button>
+          <button id="append-button" class="append-button" onclick="appendValue('5')">5</button>
+          <button id="append-button" class="append-button" onclick="appendValue('6')">6</button>
+          <button id="append-button" class="append-button" onclick="appendValue('/')">/</button>
+          <button id="append-button" class="append-button" onclick="appendValue('sqrt()')">√</button>
+          <button id="append-button" class="append-button" onclick="appendValue('x')">x</button>
+          <button id="append-button" class="append-button" onclick="appendValue('>')">&#62</button>
+        </div>
+        <div>
+          <button id="append-button" class="append-button" onclick="appendValue('(3.14159265359)')">π</button>
+          <button id="append-button" class="append-button" onclick="appendValue('1')">1</button>
+          <button id="append-button" class="append-button" onclick="appendValue('2')">2</button>
+          <button id="append-button" class="append-button" onclick="appendValue('3')">3</button>
+          <button id="append-button" class="append-button" onclick="appendValue('+')">+</button>
+          <button id="append-button" class="append-button" onclick="appendValue('^')">^</button>
+          <button id="append-button" class="append-button" onclick="appendValue('y')">y</button>
+          <button id="append-button" class="append-button" onclick="appendValue('<=')">&#8804</button>
+        </div>
+        <div>
+          <button id="append-button" class="append-button" onclick="appendValue('.')">.</button>
+          <button id="append-button" class="append-button" onclick="appendValue(',')">,</button>
+          <button id="append-button" class="append-button" onclick="appendValue('0')">0</button>
+          <button id="append-button" class="append-button" onclick="appendValue('==')">=</button>
+          <button id="append-button" class="append-button" onclick="appendValue('-')">-</button>
+          <button id="append-button" class="append-button" onclick="appendValue('%')">%</button>
+          <button id="append-button" class="append-button" onclick="appendValue('z')">z</button>
+          <button id="append-button" class="append-button" onclick="appendValue('>=')">&#8805</button>
+        </div>
+
+        <div style="margin-bottom: 12px;"></div>
+        <div>
+          <select class="operation-select" id="operation-select">  
+            <option value = "">Select operation</option>
+            <option value = "/simplify/">Simplify</option>
+            <option value = "/factor/">Factor</option>
+            <option value = "/derive/">Derive</option>
+            <option value = "/integrate/">Integrate</option>
+            <!-- <option value = "/zeroes/">Find Zeroes</option> -->
+            <!-- <option value = "/tangent/">Find Tangent</option> -->
+            <option value = "/cos/">Cosine</option>
+            <option value = "/sin/">Sine</option>
+            <option value = "/tan/">Tangent</option>
+            <option value = "/arccos/">Inverse Cosine</option>
+            <option value = "/arcsin/">Inverse Sine</option>
+            <option value = "/arctan/">Inverse Tangent</option>
+            <option value = "/abs/">Absolute Value</option>
+            <!-- <option value = "/log/">Logarithm</option> -->
+          </select>
+          
+          <button class="go-button" onclick="fetchNewtonAPI(document.getElementById('expression-input').value)" style="background-color: green;">Go</button>
+          <button class="go-button" onclick="clearInput()">Clear</button>
+          <button class="go-button" onclick="location.href='advanced_calculator.html'">Reset</button>
+
+          
+          
+          <div id="calculations-list" class="calculations-list"></div>
+          <div style="margin-bottom: 5px;"></div>
+        </div>
       </div>
 
-      <div style="margin-bottom: 5px;"></div>
-      <div>
-        <select class="operation-select" id="operation-select">  
-          <option value = "">Select operation</option>
-          <option value = "/simplify/">Simplify</option>
-          <option value = "/factor/">Factor</option>
-          <option value = "/derive/">Derive</option>
-          <option value = "/integrate/">Integrate</option>
-          <!-- <option value = "/zeroes/">Find Zeroes</option> -->
-          <!-- <option value = "/tangent/">Find Tangent</option> -->
-          <option value = "/cos/">Cosine</option>
-          <option value = "/sin/">Sine</option>
-          <option value = "/tan/">Tangent</option>
-          <option value = "/arccos/">Inverse Cosine</option>
-          <option value = "/arcsin/">Inverse Sine</option>
-          <option value = "/arctan/">Inverse Tangent</option>
-          <option value = "/abs/">Absolute Value</option>
-          <!-- <option value = "/log/">Logarithm</option> -->
-        </select>
-        
-        <button class="go-button" onclick="fetchNewtonAPI(document.getElementById('expression-input').value)" style="background-color: green;">Go</button>
-        <button class="go-button" onclick="clearInput()">Clear</button>
-        <button class="go-button" onclick="location.href='advanced_calculator.html'">Reset</button>
-        
-        <div id="calculations-list" class="calculations-list"></div>
-        <div style="margin-bottom: 5px;"></div>
-      </div>
+      
     </div>
     
   </body>
