@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Calculator</title>
+    <script src="https://ethaningramh.github.io/PersonalWebsite/navbar.js" defer></script>
+    <link rel="stylesheet" href="https://ethaningramh.github.io/PersonalWebsite/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=0.55, minimum-scale=0.2, user-scalable=yes" name="viewport">
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> -->
+    
+    <style>
+      body {
+        background-color: #131313;
+        color: white;
+        font-family: Roboto;
+      }
+      
+      .expression-input {
+        border: none;
+        padding-top: 15px;
+        padding-left: 23px;
+        padding-right: 23px;
+        padding-bottom: 15px;
+        border-radius: 5px;
+        font-family: Roboto, Arial;
+        font-size: 23px;
+        font-weight: 300;
+        width: 650px;
+        background-color: rgb(67, 67, 67);
+        color: white;
+        margin-bottom: 12px;
+      }
+
+      .window {
+        background-color: #2d2d2d;
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        width: 705px;
+        margin:0 auto;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,1);
+        font-size: 20px;
+        font-weight: 300;
+        text-align: center;
+      }
+
+      .operation-select {
+        border: none;
+        padding-top: 9px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+        background-color: rgb(99, 99, 99);
+        margin-left: 7px;
+        margin-right: 49px;
+        font-family: Roboto, Arial;
+        font-size: 20px;
+        font-weight: 300;
+        color: rgb(255, 255, 255);
+        min-width: 240px;
+      }
+
+      .go-button {
+        border: none;
+        padding-top: 10px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 11px;
+        border-radius: 5px;
+        background-color: rgb(99, 99, 99);
+        margin-left: 5px;
+        margin-right: 7px;
+        font-family: Roboto, Arial;
+        font-size: 20px;
+        font-weight: 300;
+        color: rgb(255, 255, 255);
+        min-width: 105px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <script>
+      function fetchNewtonAPI(expression) {
+        if (expression == "") return;
+        
+        base_url = "https://newton.now.sh/api/v2";
+        operation = document.getElementById('operation-select').value;
+        if (operation == "") return;
+
+        fetch(base_url + operation + expression)
+          .then((response) => response.json())
+          .then((data) => updateResult(data) );
+      }
+
+      function updateResult(data) {
+        // if (data.operation == "zeroes") {
+        //   const element = document.createElement('div');
+        //   element.style.marginBottom = "10px";
+        //   element.innerText = data.operation + "(" + data.expression + ") = { ";
+        //   for (i = 0; i < data.result.length; i++) {
+        //     if (i < data.result.length-1) {
+        //       element.innerText = element.innerText + data.result[i] + ", "
+        //     } else {
+        //       element.innerText = element.innerText + data.result[i] + " }"
+        //     }
+        //   }
+        //   const calculationsList = document.getElementById('calculations-list');
+        //   calculationsList.appendChild(element);
+        //   return;
+        // }
+        
+        //console.log(data);
+        const element = document.createElement('div');
+        //element.style.marginBottom = "10px";
+        element.style.marginTop = "18px";
+        element.innerText = data.operation + "(" + data.expression + ") = " + data.result;
+        const calculationsList = document.getElementById('calculations-list');
+        calculationsList.appendChild(element);
+      }
+
+      function clearInput() {
+        document.getElementById("expression-input").value = "";
+      }
+    </script>
+    
+    <nav class="navbar">
+      <div class="website-title" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/index.html'">Ethan Hodge</div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="website-links">
+        <ul>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/index.html'">Home</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/webapps_index.html'">Webapps</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/about.html'">About</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/contact.html'">Contact</a></li>
+          <li><a href="#" onclick="location.href='https://github.com/ethaningramh'">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div style="padding-top: 20px;"></div>
+
+    <div id="window" class="window">
+      <div>
+        <input type="text" id="expression-input" class="expression-input" placeholder="Enter expression...  (Example: x^2-cos(x)+1)">
+      </div>
+
+      <div style="margin-bottom: 5px;"></div>
+      <div>
+        <select class="operation-select" id="operation-select">  
+          <option value = "">Select operation</option>
+          <option value = "/simplify/">Simplify</option>
+          <option value = "/factor/">Factor</option>
+          <option value = "/derive/">Derive</option>
+          <option value = "/integrate/">Integrate</option>
+          <!-- <option value = "/zeroes/">Find Zeroes</option> -->
+          <!-- <option value = "/tangent/">Find Tangent</option> -->
+          <option value = "/cos/">Cosine</option>
+          <option value = "/sin/">Sine</option>
+          <option value = "/tan/">Tangent</option>
+          <option value = "/arccos/">Inverse Cosine</option>
+          <option value = "/arcsin/">Inverse Sine</option>
+          <option value = "/arctan/">Inverse Tangent</option>
+          <option value = "/abs/">Absolute Value</option>
+          <!-- <option value = "/log/">Logarithm</option> -->
+        </select>
+        
+        <button class="go-button" onclick="fetchNewtonAPI(document.getElementById('expression-input').value)" style="background-color: green;">Go</button>
+        <button class="go-button" onclick="clearInput()">Clear</button>
+        <button class="go-button" onclick="location.href='advanced_calculator.html'">Reset</button>
+        
+        <div id="calculations-list" class="calculations-list"></div>
+        <div style="margin-bottom: 5px;"></div>
+      </div>
+    </div>
+    
+  </body>
+</html>
