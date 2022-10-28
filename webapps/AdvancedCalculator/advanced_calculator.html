@@ -83,8 +83,35 @@
         color: rgb(255, 255, 255);
         min-width: 240px;
       }
+      .operation-select:hover {
+        cursor: pointer;
+        background-color: rgb(105,105,105);
+      }
+
 
       .go-button {
+        border: none;
+        padding-top: 10px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 11px;
+        border-radius: 5px;
+        margin-left: 3px;
+        margin-right: 3px;
+        font-family: Roboto, Arial;
+        font-size: 20px;
+        font-weight: 300;
+        background-color: green;
+        color: white;
+        min-width: 90px;
+        max-width: 90px;
+      }
+      .go-button:hover {
+        cursor: pointer;
+        background-color: rgb(0, 138, 0);
+      }
+
+      .clr-button {
         border: none;
         padding-top: 10px;
         padding-left: 18px;
@@ -97,13 +124,16 @@
         font-family: Roboto, Arial;
         font-size: 20px;
         font-weight: 300;
-        color: rgb(255, 255, 255);
+        color: white;
         min-width: 90px;
         max-width: 90px;
       }
-      .go-button:hover {
+      .clr-button:hover {
         cursor: pointer;
+        background-color: rgb(106, 105, 105);
       }
+
+
 
       .num-pad {
         background-color: rgb(67, 67, 67);
@@ -115,6 +145,7 @@
         padding-top: 10px;
         padding-bottom: 10px;
         margin-top: 2px;
+        margin-bottom: 11px;
       }
       .append-button {
         font-size: 23px;
@@ -292,19 +323,19 @@
             <option value = "/integrate/">Integrate</option>
             <!-- <option value = "/zeroes/">Find Zeroes</option> -->
             <!-- <option value = "/tangent/">Find Tangent</option> -->
-            <option value = "/cos/">Cosine</option>
             <option value = "/sin/">Sine</option>
+            <option value = "/cos/">Cosine</option>
             <option value = "/tan/">Tangent</option>
-            <option value = "/arccos/">Inverse Cosine</option>
             <option value = "/arcsin/">Inverse Sine</option>
+            <option value = "/arccos/">Inverse Cosine</option>
             <option value = "/arctan/">Inverse Tangent</option>
             <option value = "/abs/">Absolute Value</option>
             <!-- <option value = "/log/">Logarithm</option> -->
           </select>
           
-          <button class="go-button" onclick="fetchNewtonAPI(document.getElementById('expression-input').value)" style="background-color: green;">Go</button>
-          <button class="go-button" onclick="clearInput()">Clear</button>
-          <button class="go-button" onclick="location.href='advanced_calculator.html'">Reset</button>
+          <button class="go-button" onclick="fetchNewtonAPI(document.getElementById('expression-input').value)">Go</button>
+          <button class="clr-button" onclick="clearInput()">Clear</button>
+          <button class="clr-button" onclick="location.href='advanced_calculator.html'">Reset</button>
 
           
           
