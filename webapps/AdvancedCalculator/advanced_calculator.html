@@ -154,7 +154,6 @@
         border-radius: 7px;
         border:none;
         background-color:rgb(237, 237, 237);
-        
         margin-left: 3px;
         margin-right: 2px;
         margin-top: 4px;
@@ -225,7 +224,8 @@
         // const calculationsList = document.getElementById('calculations-list');
         // calculationsList.appendChild(element);
 
-        document.getElementById("calculations-output").value = data.operation + "(" + data.expression + ") = " + data.result;
+        console.log(data.operation + "(" + data.expression + ") = " + data.result);
+        document.getElementById("calculations-output").value = data.result;
       }
 
       function appendValue(val) {
@@ -303,8 +303,8 @@
           <button id="append-button" class="append-button" onclick="appendValue('<=')">&#8804</button>
         </div>
         <div>
-          <button id="append-button" class="append-button" onclick="appendValue('.')">.</button>
           <button id="append-button" class="append-button" onclick="appendValue(',')">,</button>
+          <button id="append-button" class="append-button" onclick="appendValue('.')">.</button>
           <button id="append-button" class="append-button" onclick="appendValue('0')">0</button>
           <button id="append-button" class="append-button" onclick="appendValue('==')">=</button>
           <button id="append-button" class="append-button" onclick="appendValue('-')">-</button>
