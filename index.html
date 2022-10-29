@@ -35,9 +35,58 @@
         cursor: pointer;
         background-color: rgb(211, 123, 61);
       }
+
+      .christmas-div {
+        background-color: rgb(242, 19, 41);
+        color: white;
+        font-size: 20px;
+        
+        min-width: 340px;
+        min-height: 100px;
+        margin: 0 auto;
+        border-radius: 20px;
+        margin-top: 10px
+        
+        
+      }
+
+      .tree-img {
+        width: 140px;
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: -15px;
+        
+      }
     </style>
   </head>
   <body>
+
+    <script>
+      
+      window.onload = function() {
+        loadChristmasDays();
+      };
+
+      function loadChristmasDays() {
+        var today = new Date();
+        var start = new Date(today.getFullYear(), 0, 0);
+        var diff = (today - start) + ((start.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000);
+        var oneDay = 1000 * 60 * 60 * 24;
+        var day = Math.floor(diff / oneDay);
+        var daysUntilChristmas = 359 - day;
+
+        const element = document.createElement('div');
+        element.style.marginTop = "18px";
+        element.style.fontSize = "30px";
+        element.innerText = "There are " + daysUntilChristmas + " days until Christmas.";
+        const christmasDiv = document.getElementById('christmas-div');
+        christmasDiv.style.display = 'inline-block';
+        christmasDiv.style.maxWidth = "300px";
+        document.getElementById('christmas-div').appendChild(element);
+        
+
+      }
+    </script>
 
     <nav class="navbar">
       <div class="website-title" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/index.html'">Ethan Hodge</div>
@@ -60,6 +109,10 @@
     <div style="padding-top: 20px;"></div>
     <h1>Welcome to my Website</h1>
     <p>Use the navigation bar at the top to access my webapps.</p>
+
+    <div class="christmas-div" id="christmas-div">
+      <img src="https://i.pinimg.com/originals/fb/09/c7/fb09c7b21144f3fc5de1815ba93393df.png" class="tree-img">
+    </div>
 
     
   </body>
