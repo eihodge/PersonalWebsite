@@ -45,16 +45,40 @@
         min-height: 100px;
         margin: 0 auto;
         border-radius: 20px;
-        margin-top: 10px
+        margin-top: 10px;
+        
         
         
       }
 
       .tree-img {
-        width: 140px;
+        width: 190px;
         display: inline-block;
-        margin-top: 10px;
+        margin-top: 17px;
         margin-bottom: -15px;
+        
+      }
+
+      .halloween-div {
+        background-color: rgb(255, 111, 0);
+        color: white;
+        font-size: 20px;
+        
+        min-width: 340px;
+        min-height: 100px;
+        margin: 0 auto;
+        border-radius: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        
+        
+      }
+
+      .halloween-img {
+        width: 190px;
+        display: inline-block;
+        margin-top: 35px;
+        margin-bottom: 14px;
         
       }
     </style>
@@ -65,6 +89,7 @@
       
       window.onload = function() {
         loadChristmasDays();
+        loadHalloweenDays();
       };
 
       function loadChristmasDays() {
@@ -78,11 +103,31 @@
         const element = document.createElement('div');
         element.style.marginTop = "18px";
         element.style.fontSize = "30px";
-        element.innerText = "There are " + daysUntilChristmas + " days until Christmas.";
+        element.innerText = "There are " + daysUntilChristmas + " days until Christmas";
         const christmasDiv = document.getElementById('christmas-div');
         christmasDiv.style.display = 'inline-block';
         christmasDiv.style.maxWidth = "300px";
+        christmasDiv.style.paddingBottom = "10px";
         document.getElementById('christmas-div').appendChild(element);
+      }
+
+      function loadHalloweenDays() {
+        var today = new Date();
+        var start = new Date(today.getFullYear(), 0, 0);
+        var diff = (today - start) + ((start.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000);
+        var oneDay = 1000 * 60 * 60 * 24;
+        var day = Math.floor(diff / oneDay);
+        var daysUntilChristmas = 304 - day;
+
+        const element = document.createElement('div');
+        element.style.marginTop = "18px";
+        element.style.fontSize = "30px";
+        element.innerText = "There are " + daysUntilChristmas + " days until Halloween";
+        const christmasDiv = document.getElementById('halloween-div');
+        christmasDiv.style.display = 'block';
+        christmasDiv.style.maxWidth = "300px";
+        christmasDiv.style.paddingBottom = "10px";
+        document.getElementById('halloween-div').appendChild(element);
         
 
       }
@@ -106,12 +151,21 @@
       </div>
     </nav>
 
+   
+
     <div style="padding-top: 20px;"></div>
     <h1>Welcome to my Website</h1>
     <p>Use the navigation bar at the top to access my webapps.</p>
 
+    <div style="padding-top: 10px;"></div>
+    <div class="halloween-div" id="halloween-div">
+      <img src="https://salemhalloweencity.com/wp-content/uploads/2015/08/cropped-fb_icon.png" alt="" class="halloween-img">
+      
+    </div>
+    
     <div class="christmas-div" id="christmas-div">
-      <img src="https://i.pinimg.com/originals/fb/09/c7/fb09c7b21144f3fc5de1815ba93393df.png" class="tree-img">
+      <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/10056/christmas-tree-clipart-md.png" alt="https://i.pinimg.com/originals/fb/09/c7/fb09c7b21144f3fc5de1815ba93393df.png" class="tree-img">
+      
     </div>
 
     
