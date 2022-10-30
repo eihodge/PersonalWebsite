@@ -21,6 +21,8 @@ body {
 .website-title {
   font-size: 1.5rem;
   margin: .5rem;
+  padding-left: 7px;
+
 }
 .website-title:hover {
   cursor: pointer;
