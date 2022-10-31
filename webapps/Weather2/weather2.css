@@ -26,7 +26,7 @@ body {
 }
 
 .search-bar {
-  font-size: 18px;
+  font-size: 17px;
   padding-bottom: 14px;
   padding-top: 14px;
   border-radius: 10px;
@@ -43,6 +43,9 @@ body {
   height: 48px;
   width: 0;
 }
+.search-bar::placeholder {
+  font-size: 17px;
+}
 
 .state-select {
   border: none;
@@ -55,7 +58,7 @@ body {
   margin-left: 10px;
   margin-right: 5px;
   font-family: Roboto, Arial;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 300;
   color: rgb(255, 255, 255);
   height: 47px;
