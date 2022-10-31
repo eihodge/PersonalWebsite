@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>US Weather</title>
+    <script src="weather2.js" defer></script>
+    <link rel="stylesheet" href="weather2.css">
+    <script src="https://ethaningramh.github.io/PersonalWebsite/navbar.js" defer></script>
+    <link rel="stylesheet" href="https://ethaningramh.github.io/PersonalWebsite/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=0.55, minimum-scale=0.2, user-scalable=yes" name="viewport">
+
+  </head>
+  
+  <body>
+    
+    <nav class="navbar">
+      <div class="website-title" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/index.html'">Ethan Hodge</div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="website-links">
+        <ul>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/index.html'">Home</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/webapps_index.html'">Webapps</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/about.html'">About</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/contact.html'">Contact</a></li>
+          <li><a href="#" onclick="location.href='https://github.com/ethaningramh'">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div style="padding-top: 70px;"></div>
+
+
+    <div class="window">
+      
+      <div class="top-bar" style="margin-bottom: 15px; text-align: center;">
+        <input type="text" class="search-bar" placeholder="Search City" id="search-bar">
+        
+        <select class="state-select" id="state-select">  
+          <option value = "">Select State</option>
+          <option value = "01">Alabama</option>
+          <option value = "02">Alaska</option>
+          <!-- <option value = "03"></option> -->
+          <option value = "04">Arizona</option>
+          <option value = "05">Arkansas</option> 
+          <option value = "06">California</option>
+          <!-- <option value = "07"></option> -->
+          <option value = "08">Colorado</option>
+          <option value = "09">Connecticut</option>
+          <option value = "10">Delaware</option> 
+          <option value = "11">Washington, D.C.</option>
+          <option value = "12">Florida</option>
+          <option value = "13">Georgia</option>
+          <!-- <option value = "14"> </option> -->
+          <option value = "15">Hawaii</option> 
+          <option value = "16">Idaho</option>
+          <option value = "17">Illinois</option>
+          <option value = "18">Indiana</option>
+          <option value = "19">Iowa</option>
+          <option value = "20">Kansas</option> 
+          <option value = "21">Kentucky</option>
+          <option value = "22">Louisiana</option>
+          <option value = "23">Maine</option>
+          <option value = "24">Maryland</option>
+          <option value = "25">Massachusetts</option> 
+          <option value = "26">Michigan</option>
+          <option value = "27">Minnesota</option>
+          <option value = "28">Mississippi</option>
+          <option value = "29">Missouri</option>
+          <option value = "30">Montana</option> 
+          <option value = "31">Nebraska</option>
+          <option value = "32">Nevada</option>
+          <option value = "33">New Hampshire</option>
+          <option value = "34">New Jersey</option>
+          <option value = "35">New Mexico</option>
+          <option value = "36">New York</option>
+          <option value = "37">North Carolina</option>
+          <option value = "38">North Dakota</option>
+          <option value = "39">Ohio</option>
+          <option value = "40">Oklahoma</option> 
+          <option value = "41">Oregon</option>
+          <option value = "42">Pennsylvania</option>
+          <!-- <option value = "43"></option> -->
+          <option value = "44">Rhode Island</option>
+          <option value = "45">South Carolina</option> 
+          <option value = "46">South Dakota</option>
+          <option value = "47">Tennessee</option>
+          <option value = "48">Texas</option>
+          <option value = "49">Utah</option>
+          <option value = "50">Vermont</option> 
+          <option value = "51">Virginia</option>
+          <!-- <option value = "52"></option> -->
+          <option value = "53">Washington</option>
+          <option value = "54">West Virginia</option>
+          <option value = "55">Wisconsin</option>
+          <option value = "56">Wyoming</option>   
+          
+        </select>
+        
+        <button class="search-button" onclick="getWeather(document.getElementById('search-bar').value)">Search</button>
+      </div>
+        
+
+      <div class="city-and-date">
+        <div id="city" class="city"></div>
+        <div id="date" class="date"></div>
+      </div>
+      
+      <div class="weather-main">
+        <div class="weather-icon">
+          <img class="weather-icon-img" id="weather-icon-img" src="https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/sunny.png">
+        </div>
+        <div class="weather-main-stats">
+          <div class="weather-main-temp" id="temperature" style="font-weight: 400;"></div>
+          <div class="weather-main-weather" id="weather" style="font-size: 34px;"></div>
+        </div>
+      </div>
+
+      <!-- temperature -->
+      <div class="stats">
+        <div class="stats-flexbox">
+          <div class="stat-inline">
+            <div id="temperature-max"></div>
+            <div style="margin-top: 5px; color:rgb(187, 187, 187); font-size: 15px">High</div>
+          </div>
+          <div class="stat-inline">
+            <div id="temperature-min"></div>
+            <div style="margin-top: 5px; color:rgb(187, 187, 187); font-size: 15px">Low</div>
+          </div>
+          <div class="stat-inline">
+            <div id="temperature-feels"></div>
+            <div style="margin-top: 5px; color:rgb(187, 187, 187); font-size: 15px">Feels like</div>
+          </div>
+        </div>
+        
+        
+
+        <div class="stats-flexbox">
+          <div class="stat-inline">
+            <div id="wind"></div>
+            <div style="margin-top: 5px; color:rgb(187, 187, 187); font-size: 15px">Wind speed</div>
+          </div>
+          <div class="stat-inline">
+            <div id="pressure"></div>
+            <div style="margin-top: 5px; color:rgb(187, 187, 187); font-size: 15px">Air pressure</div>
+          </div>
+          <div class="stat-inline">
+            <div id="humidity"></div>
+            <div style="margin-top: 5px; color:rgb(187, 187, 187); font-size: 15px">Humidity</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 25px;"></div>
+    <div style="max-width: 200px; margin: 0 auto;">
+      <p>This version uses Flexbox</p>
+      <p>Things to add:</p>
+      <p>1. Background images</p>
+      <p>2. More weather data</p>
+      <p>3. Scalability improvements</p>
+      <p>4. Test on mobile</p>
+    </div>
+    <div style="margin-bottom: 25px;"></div>
+  </body>
+</html>
