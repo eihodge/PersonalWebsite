@@ -112,7 +112,7 @@ body {
 .weather-icon {
   /* display: inline-block; */
   vertical-align: top;
-  margin-left: 108px;
+  margin-left: 0px;
   margin-top: 26px;
   /* max-width: 30px; */
   flex: 1;
@@ -133,8 +133,9 @@ body {
   display: flex;
   justify-content: center;
   flex-shrink: 1;
-  margin-right: 40px;
+  /* margin-right: 40px; */
   align-items: center;
+  column-gap: 5%;
 }
 
 .weather-main-stats{
