@@ -114,14 +114,18 @@ body {
   vertical-align: top;
   margin-left: 108px;
   margin-top: 26px;
-  width: 30px;
+  /* max-width: 30px; */
+  flex: 1;
+  background-color: green;
+  text-align: right;
   
   
 }
 .weather-icon-img {
-  width: 200px;
+  max-width: 200px;
   vertical-align: bottom;
-  
+  width: 100%;
+  background: blue;
   
 }
 
@@ -130,15 +134,18 @@ body {
   justify-content: center;
   flex-shrink: 1;
   margin-right: 40px;
+  align-items: center;
 }
 
 .weather-main-stats{
   /* display: inline-block; */
   vertical-align:top;
   margin-top: 50px;
-  margin-left: 240px;
-  width: 260px;
+  /* margin-left: 240px; */
   
+  flex: 1;
+  /* width: 260px; */
+  background-color: red;
 }
 
 .weather-main-temp{
