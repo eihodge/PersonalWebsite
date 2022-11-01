@@ -42,14 +42,24 @@ openWeatherAPI_key = "64de9007d7ef805ae77090f4a2c0e809";
           document.getElementById("wind").innerHTML = data.wind.speed + " MPH";
           document.getElementById("date").innerHTML = days[date.getDay()] + " " + date.getDate() + " " + months[date.getMonth()];
 
+          
+
           if (data.weather[0].main == "Rain" || data.weather[0].main == "Drizzle" || data.weather[0].main == "Thunderstorm") {
-            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/rain.png"
+            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/rain.png";
+            document.getElementById("window").style.backgroundImage = "url(rain.jpeg)";
+            document.getElementById("window").style.backgroundSize = "100%";
           } else if (data.weather[0].main == "Clear") {
-            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/sunny.png"
+            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/sunny.png";
+            document.getElementById("window").style.backgroundImage = "url(clear.jpeg)";
+            document.getElementById("window").style.backgroundSize = "100%";
           } else if (data.weather[0].main == "Clouds") {
-            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/cloudy.png"
+            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/cloudy.png";
+            document.getElementById("window").style.backgroundImage = "url(clouds.webp)";
+            document.getElementById("window").style.backgroundSize = "100%";
           } else if (data.weather[0].main == "Snow") {
-            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/snow.png"
+            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/snow.png";
+            document.getElementById("window").style.backgroundImage = "url(snow.jpeg)";
+            document.getElementById("window").style.backgroundSize = "100%";
           }
         }
       }
