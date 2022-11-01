@@ -136,9 +136,8 @@ body {
 .weather-main {
   display: flex;
   justify-content: center;
-  flex-shrink: 1;
-  /* margin-right: 40px; */
   align-items: center;
+  flex-shrink: 1;
   column-gap: 5%;
 }
 

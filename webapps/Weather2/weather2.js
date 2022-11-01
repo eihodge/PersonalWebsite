@@ -14,6 +14,12 @@ openWeatherAPI_key = "64de9007d7ef805ae77090f4a2c0e809";
       }
 
       function getWeather(cityName) {    
+        
+        if (document.getElementById('search-bar').value != "Search City") {
+          alert("Enter a city name.");
+          return;
+        }
+        
         if(document.getElementById('state-select').value != "") {
           fetch(openWeatherAPI_base + cityName +"," + document.getElementById("state-select").value + ",1&appid=" + openWeatherAPI_key)
           .then((response) => response.json())
@@ -44,11 +50,12 @@ openWeatherAPI_key = "64de9007d7ef805ae77090f4a2c0e809";
 
           
 
-          if (data.weather[0].main == "Rain" || data.weather[0].main == "Drizzle" || data.weather[0].main == "Thunderstorm") {
+          if (data.weather[0].main == "Rain" || data.weather[0].main == "Drizzle" || data.weather[0].main == "Mist" || data.weather[0].main == "Thunderstorm") {
             document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/rain.png";
             document.getElementById("window").style.backgroundImage = "url(rain.jpeg)";
             document.getElementById("window").style.backgroundSize = "100%";
           } else if (data.weather[0].main == "Clear") {
+            alert("clear");
             document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/sunny.png";
             document.getElementById("window").style.backgroundImage = "url(clear.jpeg)";
             document.getElementById("window").style.backgroundSize = "100%";
