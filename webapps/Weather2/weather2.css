@@ -75,7 +75,7 @@ body {
   padding-right: 14px;
   padding-bottom: 11px;
   border-radius: 8px;
-  background-color: rgba(26, 26, 26, 0.75);;
+  background-color: rgba(26, 26, 26, 0.75);
   margin-left: 10px;
   margin-right: 5px;
   font-family: Roboto, Arial;
@@ -87,7 +87,7 @@ body {
 }
 .search-button:hover {
   cursor: pointer;
-  background-color: rgb(123, 123, 123);
+  background-color: rgba(36, 36, 36, 0.75);
 }
 
 .city-and-date {
