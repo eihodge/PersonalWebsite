@@ -14,11 +14,13 @@ openWeatherAPI_key = "64de9007d7ef805ae77090f4a2c0e809";
       }
 
       function getWeather(cityName) {    
-        
-        if (document.getElementById('search-bar').value != "Search City") {
+        if (document.getElementById('search-bar').value == "") {
           alert("Enter a city name.");
           return;
         }
+
+        cityName = cityName.replace(/  +/g, ' ');
+        cityName = cityName.trim();
         
         if(document.getElementById('state-select').value != "") {
           fetch(openWeatherAPI_base + cityName +"," + document.getElementById("state-select").value + ",1&appid=" + openWeatherAPI_key)
