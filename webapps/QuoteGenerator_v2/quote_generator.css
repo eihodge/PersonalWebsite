@@ -40,21 +40,27 @@ body {
   font-size: 20px;
   font-weight: 300;
   text-align: center;
-
-  
-}
-
-.quote {
-  min-height: 300px;
   display: flex;
-  justify-content: center;
-  align-content: center;
   flex-direction: column;
+  
+  height: 85vh;
+  min-height: 460px;
   
 }
 
 .interior-window {
   background-color: #1313137e;
-  margin-top: -27px;
+  margin-top: 0px;
   border-radius: 20px;
+  height: 95%;
+}
+
+.quote {
+  min-height: 300px;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  
 }
