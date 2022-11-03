@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quote Generator</title>
+    <script src="https://ethaningramh.github.io/PersonalWebsite/navbar.js" defer></script>
+    <link rel="stylesheet" href="https://ethaningramh.github.io/PersonalWebsite/style.css">
+    <link rel="stylesheet" href="quote_generator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=0.55, minimum-scale=0.2, user-scalable=yes" name="viewport">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    
+    
+
+  </head>
+  <body>
+    <script>
+      getQuote();
+      getRandomImage();
+      
+      function getQuote() {
+        fetch("https://api.quotable.io/random")
+          .then((response) => response.json())
+          .then((data) => displayQuote(data) );
+      }
+
+      function displayQuote(data) {
+        document.getElementById('quote').innerHTML = data.content;
+        document.getElementById('quote-author').innerHTML = "- " + data.author;
+        getRandomImage();
+      }
+
+      function getRandomImage() {
+        document.getElementById("window").style.backgroundImage="url(https://source.unsplash.com/random/)";
+        
+      }
+
+
+      // https://source.unsplash.com/random/
+    </script>
+    
+    <nav class="navbar">
+      <div class="website-title" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/index.html'">Ethan Hodge</div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="website-links">
+        <ul>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/index.html'">Home</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/webapps_index.html'">Webapps</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/about.html'">About</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/contact.html'">Contact</a></li>
+          <li><a href="#" onclick="location.href='https://github.com/ethaningramh'">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div style="padding-top: 71px;"></div>
+
+
+    <div id="window" class="window">
+      <div class="interior-window">
+        <h1 style="padding-top:30px; margin-bottom: -45px;">Quote Generator</h1>
+        <div class="quote">
+          <p style="font-size:27px; margin-bottom:18px; padding-left: 20px; padding-right: 20px;" id="quote"></p>
+          <p style="font-size:20px; margin:0;" id="quote-author"></p>
+        </div>
+        
+      </div>
+      <div>
+        <button class="link-button" onclick="location.href='quote_generator.html'">Generate New Quote</button>
+        
+      </div>
+    </div>
+    
+  </body>
+</html>
