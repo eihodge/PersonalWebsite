@@ -43,9 +43,9 @@ body {
   display: flex;
   flex-direction: column;
   
-  height: 85vh;
-  min-height: 460px;
-  max-height: 600px;
+  height: 80vh;
+  min-height: 450px;
+  max-height: 900px;
   
 }
 
@@ -54,6 +54,10 @@ body {
   margin-top: 0px;
   border-radius: 20px;
   height: 95%;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .quote {
