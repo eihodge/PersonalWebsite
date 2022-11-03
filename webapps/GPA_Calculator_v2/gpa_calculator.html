@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GPA Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="gpa_calculator.js" defer></script>
+    <link rel="stylesheet" href="gpa_calculator.css">
+    <script src="https://ethaningramh.github.io/PersonalWebsite/navbar.js" defer></script>
+    <link rel="stylesheet" href="https://ethaningramh.github.io/PersonalWebsite/style.css">
+    <!-- <meta content="width=device-width, initial-scale=0.57, minimum-scale=0.25, user-scalable=yes" name="viewport"> -->
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no" name="viewport">
+
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="website-title" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/index.html'">Ethan Hodge</div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="website-links">
+        <ul>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/index.html'">Home</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/webapps_index.html'">Webapps</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/about.html'">About</a></li>
+          <li><a href="#" onclick="location.href='https://ethaningramh.github.io/PersonalWebsite/contact.html'">Contact</a></li>
+          <li><a href="#" onclick="location.href='https://github.com/ethaningramh'">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div style="padding-top: 51px;"></div>
+    
+    <p style="font-size: 30px;">Weighted GPA Calculator</p>
+    <div class="window">
+      
+      <p style="font-size: 20px;">Add a Course:</p>
+
+      <div class="course-add">
+        <input class="input-textbox" id="course-title" placeholder="Course name (optional)" type="text" />
+        <input class="input-textbox" id="course-credits" placeholder="Credits" type="text" />
+        <select class="grade-select" id="grade-select">  
+          <option value = "4.33"> A+   
+          </option>  
+          <option value = "4.0"> A   
+          </option>  
+          <option value = "3.67"> A-  
+          </option>  
+          <option value = "3.33"> B+   
+          </option>  
+          <option value = "3.0"> B   
+          </option>  
+          <option value = "2.67"> B-  
+          </option> 
+          <option value = "2.33"> C+   
+          </option>  
+          <option value = "2.0"> C   
+          </option>  
+          <option value = "1.67"> C-  
+          </option> 
+          <option value = "1.33"> D+   
+          </option>  
+          <option value = "1.0"> D   
+          </option>  
+          <option value = "0.67"> D-  
+          </option>  
+          <option value = "0.0"> F   
+          </option>
+        </select>
+        <button class="button-green" onclick="addCourse()">Add</button>
+      </div>
+
+      <div id="courses-list" style="margin-top: 10px; font-size: 18px;"></div>
+    </div>
+
+    <div class="window">
+      <button class="button" onclick="calculateGPA()">Calculate GPA</button>
+      <button class="button" onclick="location.href='gpa_calculator.html'">Clear</button>
+      <div>
+        <p style="display: inline-block; margin-bottom: -10px; font-size: 19px; ">GPA: </p>
+        <input readonly class='display-gpa' name="display-gpa-output" id="display-gpa" cols="6" rows="1" >
+      </div>
+    </div>
+
+    <div style="margin-bottom: 15px;"></div>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+body {
+  background-color: #131313;
+  color: white;
+  text-align: center;
+  font-family: Roboto, Arial;
+}
+
+.window {
+  background-color: #2d2d2d;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  width: 95%;
+  max-width: 900px;
+  margin:0 auto;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0,0,0,1);
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.display-gpa {
+  border-radius: 4px;
+  border: none;
+  padding-top: 14px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 14px;
+  font-size: 18px;
+  font-family: Roboto, Arial;
+  color: white;
+  background-color: rgb(26, 26, 26);
+}
+
+/* .course-add {
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
+
+.input-textbox {
+  font-size: 18px;
+  padding-bottom: 14px;
+  padding-top: 14px;
+  border-radius: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 14px;
+  border: none;
+  background-color: rgb(26, 26, 26);
+  color: white;
+  flex: 1;
+}
+
+.button {
+  border: none;
+  padding-top: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  background-color: rgb(99, 99, 99);
+  margin-left: 5px;
+  margin-right: 5px;
+  font-family: Roboto, Arial;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  
+  
+}
+.button:hover {
+  background-color: rgb(116, 116, 116);
+  cursor: pointer;
+}
+
+.button-green {
+  border: none;
+  padding-top: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  background-color: rgb(3, 162, 3);
+  margin-left: 5px;
+  margin-right: 5px;
+  font-family: Roboto, Arial;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+}
+.button-green:hover {
+  background-color: rgb(35, 181, 35);
+  cursor: pointer;
+}
+
+.grade-select {
+  border: none;
+  padding-top: 10px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  background-color: rgb(99, 99, 99);
+  margin-left: 5px;
+  margin-right: 5px;
+  font-family: Roboto, Arial;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+}
+.grade-select:hover {
+  cursor: pointer;
+}
