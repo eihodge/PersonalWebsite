@@ -43,7 +43,7 @@ body {
   display: flex;
   flex-direction: column;
   
-  height: 80vh;
+  height: 75vh;
   min-height: 450px;
   max-height: 900px;
   
