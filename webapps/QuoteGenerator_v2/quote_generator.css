@@ -45,6 +45,7 @@ body {
   
   height: 85vh;
   min-height: 460px;
+  max-height: 600px;
   
 }
 
@@ -62,5 +63,5 @@ body {
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  
+  padding-bottom: 35px;
 }
