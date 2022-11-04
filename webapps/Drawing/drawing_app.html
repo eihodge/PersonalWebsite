@@ -81,6 +81,10 @@
     clrs = Array.from(clrs);
     window.addEventListener("mousedown", (e) => isDrawing=true)
     window.addEventListener("mouseup", (e) => isDrawing=false)
+
+    window.addEventListener("touchdown", (e) => isDrawing=true)
+    window.addEventListener("touchup", (e) => isDrawing=false)
+
     let clearButton = document.querySelector(".clear");
     ctx.lineCap = 'round';
 

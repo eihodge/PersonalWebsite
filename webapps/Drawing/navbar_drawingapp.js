@@ -6,9 +6,9 @@ toggleButton.addEventListener('click', () => {
   navbarLinks.classList.toggle('active');
   toggled = !toggled;
   
-  if (toggled) {
-    document.getElementById("nav").style.top = "92%";
-  } else {
-    document.getElementById("nav").style.top = "6.5%";
-  }
+  // if (toggled) {
+  //   document.getElementById("nav").style.top = "92%";
+  // } else {
+  //   document.getElementById("nav").style.top = "6.5%";
+  // }
 })
