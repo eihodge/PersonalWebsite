@@ -34,7 +34,38 @@ openWeatherAPI_key = "64de9007d7ef805ae77090f4a2c0e809";
       }
 
       function setWeather(data) {
+        
         const date = new Date();
+        // var date = new Date((Date.now() + data.timezone) * 1000);
+        // var hours = date.getHours();
+        // var minutes = "0" + date.getMinutes();
+        // var seconds = "0" + date.getSeconds();
+        
+        // var dateSunrise = new Date((data.sys.sunrise + data.timezone) * 1000);
+        // var hoursSunrise = dateSunrise.getHours();
+        // var minutesSunrise = "0" + dateSunrise.getMinutes();
+        // var secondsSunrise = "0" + dateSunrise.getSeconds();
+
+        // var dateSunset = new Date((data.sys.sunset) * 1000  + data.timezone);
+        // var hoursSunset = dateSunset.getHours();
+        // var minutesSunset = "0" + dateSunset.getMinutes();
+        // var secondsSunset = "0" + dateSunset.getSeconds();
+
+        // console.log("Sunrise:" + hoursSunrise + ":" + minutesSunrise + ":" + secondsSunrise);
+        // console.log("Sunset:" + hoursSunset + ":" + minutesSunset + ":" + secondsSunset);
+        // console.log("Current time: " + hours + ":" + minutes + ":" + seconds);
+
+
+        // let isDay = false;
+        
+
+
+
+
+
+
+
+
         if (!data.name) {
           alert('Invalid city name');
           getWeather(city);
@@ -52,9 +83,9 @@ openWeatherAPI_key = "64de9007d7ef805ae77090f4a2c0e809";
 
           
 
-          if (data.weather[0].main == "Rain" || data.weather[0].main == "Drizzle" || data.weather[0].main == "Mist" || data.weather[0].main == "Thunderstorm") {
+          if (data.weather[0].main == "Rain" || data.weather[0].main == "Drizzle" || data.weather[0].main == "Mist") {
             document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/rain.png";
-            document.getElementById("window").style.backgroundImage = "url(rain.jpeg)";
+            document.getElementById("window").style.backgroundImage = "url(rain2.jpg)";
             document.getElementById("window").style.backgroundSize = "100%";
           } else if (data.weather[0].main == "Clear") {
             document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/sunny.png";
@@ -68,7 +99,20 @@ openWeatherAPI_key = "64de9007d7ef805ae77090f4a2c0e809";
             document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/snow.png";
             document.getElementById("window").style.backgroundImage = "url(snow.jpeg)";
             document.getElementById("window").style.backgroundSize = "100%";
+          } else if (data.weather[0].main == "Fog") {
+            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/fog.png";
+            document.getElementById("window").style.backgroundImage = "url(fog.jpg)";
+            document.getElementById("window").style.backgroundSize = "100%";
+          } else if (data.weather[0].main == "Thunderstorm") {
+            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/thunderstorm.png";
+            document.getElementById("window").style.backgroundImage = "url(thunderstorm.jpg)";
+            document.getElementById("window").style.backgroundSize = "100%";
           }
+
+          document.getElementById("window").style.backgroundSize = "cover";
+          document.getElementById("window").style.backgroundPosition = "center";
+          document.getElementById("window").style.backgroundRepeat = "no-repeat";
+
         }
       }
 
