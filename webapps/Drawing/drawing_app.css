@@ -1,0 +1,95 @@
+*{
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+button {
+  border: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: transform .5s;
+}
+button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.nav{
+  height: 60px;
+  position: fixed;
+  border-radius: 30px;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: opacity .5s;
+  background-color: rgb(68, 68, 68);
+  color: white;
+  padding: 10px;
+  margin-top: 0px;
+  width: 95%;
+  max-width: 500px;
+}
+
+.nav div, button, input {
+  margin: 5px;
+}
+
+.color-picker {
+  appearance: none;
+  width:37px;
+  height: 40px;
+  background-color: transparent;
+  border: 10px;
+  cursor: pointer;
+  margin-left: 0px;
+}
+
+.color-picker::-webkit-color-swatch {
+  border-radius: 20px;
+  border-color: gray;
+  -webkit-transition: border-color 300ms linear;
+  -ms-transition: border-color 300ms linear;
+  transition: border-color 300ms linear;
+}
+
+.color-picker::-moz-color-swatch {
+  border-radius: 9px;
+  border-color: gray;
+}
+
+.color-picker::-webkit-color-swatch:hover {
+  border-color: rgb(194, 194, 194);
+  -webkit-transition: border-color 300ms linear;
+  -ms-transition: border-color 300ms linear;
+  transition: border-color 300ms linear;
+}
+
+.clr {
+  transition: transform .5s;  
+}
+.clr:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.eraser-img {
+  filter:opacity(50%);
+}
+
+.pen-img {
+  filter:opacity(100%);
+}
+
+.navbar {
+  position: absolute;
+}
+
+.canvas {
+  cursor: crosshair;
+}
