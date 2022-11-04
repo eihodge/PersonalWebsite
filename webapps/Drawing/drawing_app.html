@@ -91,6 +91,8 @@
 
     // Mouse draw
     window.addEventListener("mousemove", (e) => {
+      
+      
       if(prevX == null || prevY == null || !isDrawing) {
         prevX = e.clientX;
         prevY = e.clientY;
@@ -113,24 +115,39 @@
 
     // Touch draw
     window.addEventListener("touchmove", (e) => {
+      
       if(prevX == null || prevY == null || !isDrawing) {
         prevX = e.touches[0].clientX;
         prevY = e.touches[0].clientY;
-        return
+        // return
       }
       
       let currentX = e.touches[0].clientX;
       let currentY = e.touches[0].clientY;
       
-      ctx.beginPath();
-      ctx.moveTo(prevX, prevY);
       ctx.lineTo(currentX, currentY);
       ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(prevX, prevY);
+      
 
       prevX = currentX;
       prevY = currentY;
 
+
+      
+      // ctx.lineTo(e.touches[0].clientX, e.touches[0].clientY);
+      // ctx.stroke();
+      // ctx.strokeStyle = color;
+      // ctx.beginPath();
+      // ctx.moveTo(e.touches[0].clientX, e.touches[0].clientY);
+
     })
+    function endPosition() {
+      isDrawing = false;
+      ctx.beginPath();
+    }
+    canvas.addEventListener("touchend", endPosition);
     
     // Get color
     function getColor() {
