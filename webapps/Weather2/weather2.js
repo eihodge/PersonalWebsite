@@ -84,27 +84,27 @@ openWeatherAPI_key = "64de9007d7ef805ae77090f4a2c0e809";
           
 
           if (data.weather[0].main == "Rain" || data.weather[0].main == "Drizzle" || data.weather[0].main == "Mist") {
-            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/rain.png";
+            document.getElementById("weather-icon-img").src = "https://eihodge.github.io/PersonalWebsite/resources/images/weather/rain.png";
             document.getElementById("window").style.backgroundImage = "url(rain2.jpg)";
             document.getElementById("window").style.backgroundSize = "100%";
           } else if (data.weather[0].main == "Clear") {
-            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/sunny.png";
+            document.getElementById("weather-icon-img").src = "https://eihodge.github.io/PersonalWebsite/resources/images/weather/sunny.png";
             document.getElementById("window").style.backgroundImage = "url(clear.jpeg)";
             document.getElementById("window").style.backgroundSize = "100%";
           } else if (data.weather[0].main == "Clouds") {
-            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/cloudy.png";
+            document.getElementById("weather-icon-img").src = "https://eihodge.github.io/PersonalWebsite/resources/images/weather/cloudy.png";
             document.getElementById("window").style.backgroundImage = "url(clouds.webp)";
             document.getElementById("window").style.backgroundSize = "100%";
           } else if (data.weather[0].main == "Snow") {
-            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/snow.png";
+            document.getElementById("weather-icon-img").src = "https://eihodge.github.io/PersonalWebsite/resources/images/weather/snow.png";
             document.getElementById("window").style.backgroundImage = "url(snow.jpeg)";
             document.getElementById("window").style.backgroundSize = "100%";
           } else if (data.weather[0].main == "Fog") {
-            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/fog.png";
+            document.getElementById("weather-icon-img").src = "https://eihodge.github.io/PersonalWebsite/resources/images/weather/fog.png";
             document.getElementById("window").style.backgroundImage = "url(fog.jpg)";
             document.getElementById("window").style.backgroundSize = "100%";
           } else if (data.weather[0].main == "Thunderstorm") {
-            document.getElementById("weather-icon-img").src = "https://ethaningramh.github.io/PersonalWebsite/resources/images/weather/thunderstorm.png";
+            document.getElementById("weather-icon-img").src = "https://eihodge.github.io/PersonalWebsite/resources/images/weather/thunderstorm.png";
             document.getElementById("window").style.backgroundImage = "url(thunderstorm.jpg)";
             document.getElementById("window").style.backgroundSize = "100%";
           }
