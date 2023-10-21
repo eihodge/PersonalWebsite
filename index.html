@@ -38,9 +38,16 @@
         background-color: rgb(211, 123, 61);
       }
 
+      .garland-img {
+        width: 250px;
+        margin-top: 50px;
+        margin-bottom: -240px;
+      }
+
+
       .christmas-div {
-        background-color: rgb(242, 19, 41);
-        color: white;
+        background-color: rgb(255, 0, 0);
+        color: rgb(255, 255, 255);
         font-size: 20px;
         
         min-width: 340px;
@@ -63,8 +70,8 @@
       }
 
       .halloween-div {
-        background-color: rgb(255, 111, 0);
-        color: white;
+        background-color: rgb(255, 102, 0);
+        color: rgb(0, 0, 0);
         font-size: 20px;
         
         min-width: 340px;
@@ -73,6 +80,11 @@
         border-radius: 20px;
         margin-top: 10px;
         margin-bottom: 10px;
+        transition: transform .5s;
+      }
+      .halloween-div:hover {
+        transform: scale(1.05);
+        cursor: pointer;
       }
 
       .halloween-img {
@@ -82,11 +94,34 @@
         margin-bottom: 14px; 
       }
 
-      /* .garland-img {
-        width: 250px;
-        margin-top: 5px;
-        margin-bottom: -214px;
-      } */
+      
+
+
+      .thanksgiving-div {
+        background-color: rgb(255, 225, 0);
+        color: rgb(115, 48, 19);
+        font-size: 20px;
+        
+        min-width: 340px;
+        max-width: 340px;
+        min-height: 100px;
+        margin: 0 auto;
+        border-radius: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        transition: transform .5s;
+      }
+      .thanksgiving-div:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+
+      .thanksgiving-img {
+        width: 260px;
+        display: inline-block;
+        margin-top: 35px;
+        margin-bottom: 14px; 
+      }
 
     </style>
   </head>
@@ -95,6 +130,7 @@
     <script>
       window.onload = function() {
         loadChristmasDays();
+        loadThanksgivingDays();
         loadHalloweenDays();
       };
 
@@ -126,7 +162,8 @@
         var daysUntilThanksgiving = 327 - day;
 
         const element = document.createElement('div');
-        element.style.marginTop = "18px";
+        element.style.marginTop = "10px";
+        element.style.paddingBottom = "10px";
         element.style.fontSize = "30px";
         element.innerText = "There are " + daysUntilThanksgiving + " days until Thanksgiving";
         const thanksgivingDiv = document.getElementById('christmas-div');
@@ -174,21 +211,23 @@
       </div>
     </nav>
 
-    <!-- <img src="https://www.christmasforest.com/image/20in-Alpine-Christmas-Wreath" class="garland-img"> -->
+    <img src="https://www.christmasforest.com/image/20in-Alpine-Christmas-Wreath" class="garland-img">
 
     <div style="padding-top: 55px;"></div>
     <h1>Welcome to my Website</h1>
     <p>Use the navigation bar at the top to access my webapps.</p>
 
-    <div style="padding-top: 10px;"></div>
+    <div style="padding-top: 59px;"></div>
     <div class="halloween-div" id="halloween-div">
       <img src="https://salemhalloweencity.com/wp-content/uploads/2015/08/cropped-fb_icon.png" alt="" class="halloween-img">
     </div>
 
+    <div style="padding-top: 1px;"></div>
     <div class="thanksgiving-div" id="thanksgiving-div" onclick="location.href='https://www.youtube.com/watch?v=9_wKHixTXOg'">
-      <img src="https://spaces-cdn.clipsafari.com/3v37j69p1qfbyn99fl5er6dbqfzj" alt="" class="turkey-img">
+      <img src="https://spaces-cdn.clipsafari.com/3v37j69p1qfbyn99fl5er6dbqfzj" alt="" class="thanksgiving-img">
     </div>
     
+    <div style="padding-top: 1px;"></div>
     <div class="christmas-div" id="christmas-div" onclick="location.href='https://www.youtube.com/watch?v=mSe6iZF_UfE'">
       <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/10056/christmas-tree-clipart-md.png" alt="https://i.pinimg.com/originals/fb/09/c7/fb09c7b21144f3fc5de1815ba93393df.png" class="tree-img">
     </div>
