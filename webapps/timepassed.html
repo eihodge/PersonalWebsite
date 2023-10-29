@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ethan Hodge</title>
+    <script src="navbar.js" defer></script>
+    <!-- <link rel="icon" href="https://eihodge.github.io/PersonalWebsite/resources/images/icon-website.png"> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no" name="viewport">
+    <style>
+      body {
+        background-color: #131313;
+        color: white;
+        text-align: center;
+        font-family: Roboto;
+      }
+
+      
+
+      .link-button {
+        border: none;
+        padding-top: 15px;
+        padding-left: 23px;
+        padding-right: 23px;
+        padding-bottom: 15px;
+        border-radius: 5px;
+        background-color: chocolate;
+        
+        font-family: Roboto, Arial;
+        font-size: 23px;
+        font-weight: 300;
+        color: rgb(255, 255, 255);
+      }
+      .link-button:hover {
+        cursor: pointer;
+        background-color: rgb(211, 123, 61);
+      }
+
+      .garland-img {
+        width: 250px;
+        margin-top: 50px;
+        margin-bottom: -240px;
+      }
+
+
+      .christmas-div {
+        background-color: #131313;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        
+        min-width: 340px;
+        min-height: 100px;
+        margin: 0 auto;
+        border-radius: 20px;
+        margin-top: 10px; 
+        transition: transform .5s;
+      }
+      .christmas-div:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+
+      .tree-img {
+        width: 190px;
+        display: inline-block;
+        margin-top: 17px;
+        margin-bottom: -15px;  
+      }
+
+      .halloween-div {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        
+        min-width: 340px;
+        min-height: 100px;
+        margin: 0 auto;
+        border-radius: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        transition: transform .5s;
+      }
+      .halloween-div:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+
+      .halloween-img {
+        width: 190px;
+        display: inline-block;
+        margin-top: 35px;
+        margin-bottom: 14px; 
+      }
+
+      
+
+
+      .thanksgiving-div {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        
+        min-width: 340px;
+        max-width: 340px;
+        min-height: 100px;
+        margin: 0 auto;
+        border-radius: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        transition: transform .5s;
+      }
+      .thanksgiving-div:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+
+      .thanksgiving-img {
+        width: 260px;
+        display: inline-block;
+        margin-top: 35px;
+        margin-bottom: 14px; 
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <script>
+      window.onload = function() {
+        loadThanksgivingDays();
+        loadHalloweenDays();
+      };
+
+      function loadChristmasDays() {
+        var today = new Date();
+        var start = new Date(today.getFullYear(), 0, 0);
+        var diff = (today - start) + ((start.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000);
+        var oneDay = 1000 * 60 * 60 * 24;
+        var day = Math.floor(diff / oneDay);
+        var daysUntilChristmas = 359 - day;
+
+        const element = document.createElement('div');
+        element.style.marginTop = "18px";
+        element.style.fontSize = "30px";
+        element.innerText = "There are " + daysUntilChristmas + " days until Christmas";
+        const christmasDiv = document.getElementById('christmas-div');
+        christmasDiv.style.display = 'inline-block';
+        christmasDiv.style.maxWidth = "300px";
+        christmasDiv.style.paddingBottom = "10px";
+        document.getElementById('christmas-div').appendChild(element);
+      }
+
+      function loadThanksgivingDays() {
+        var today = new Date();
+        var start = new Date(today.getFullYear(), 0, 0);
+        var diff = (today - start) + ((start.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000);
+        var oneDay = 1000 * 60 * 60 * 24;
+        var day = Math.floor(diff / oneDay);
+        var daysUntilThanksgiving = 327 - day;
+
+        // Create a Date object for July 15th
+        const july15 = new Date('2023-07-15');
+
+        // Create a Date object for the current date
+        const currentDate = new Date();
+
+        // Calculate the time difference in milliseconds
+        const timeDiff = currentDate - july15;
+
+        // Convert the time difference to months as a fraction
+        const monthsDiff = timeDiff / (1000 * 60 * 60 * 24 * 30.44); // Average number of days in a month
+
+      
+
+        const element = document.createElement('div');
+        element.style.marginTop = "10px";
+        element.style.paddingBottom = "10px";
+        element.style.fontSize = "30px";
+        element.innerText = `It's been approximately ${monthsDiff.toFixed(1)} months`;
+        const thanksgivingDiv = document.getElementById('christmas-div');
+        thanksgivingDiv.style.display = 'inline-block';
+        thanksgivingDiv.style.maxWidth = "300px";
+        thanksgivingDiv.style.paddingBottom = "10px";
+        document.getElementById('thanksgiving-div').appendChild(element);
+      }
+
+      function loadHalloweenDays() {
+        var today = new Date();
+        var start = new Date(today.getFullYear(), 0, 0);
+        var diff = (today - start) + ((start.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000);
+        var oneDay = 1000 * 60 * 60 * 24;
+        var day = Math.floor(diff / oneDay);
+        var daysUntilChristmas = 304 - day;
+
+        // Create a Date object for July 15th
+        const july15 = new Date('2023-07-15');
+
+        // Create a Date object for the current date
+        const currentDate = new Date();
+
+        // Calculate the time difference in milliseconds
+        const timeDiff = currentDate - july15;
+
+        // Convert the time difference to days
+        const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+console.log(`Number of days since July 15th: ${daysDiff}`);
+
+        const element = document.createElement('div');
+        element.style.marginTop = "18px";
+        element.style.fontSize = "30px";
+        element.innerText = "It has been " + daysDiff + " days";
+        const christmasDiv = document.getElementById('halloween-div');
+        christmasDiv.style.display = 'block';
+        christmasDiv.style.maxWidth = "300px";
+        christmasDiv.style.paddingBottom = "10px";
+        document.getElementById('halloween-div').appendChild(element);
+      }
+    </script>
+
+    <nav class="navbar">
+      <div class="website-title" onclick="location.href='https://eihodge.github.io/PersonalWebsite/index.html'">Ethan Hodge</div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="website-links">
+        <ul>
+          <li><a href="#" onclick="location.href='https://eihodge.github.io/PersonalWebsite/index.html'">Home</a></li>
+          <li><a href="#" onclick="location.href='https://eihodge.github.io/PersonalWebsite/webapps_index.html'">Webapps</a></li>
+          <li><a href="#" onclick="location.href='https://eihodge.github.io/PersonalWebsite/about.html'">About</a></li>
+          <li><a href="#" onclick="location.href='https://eihodge.github.io/PersonalWebsite/contact.html'">Contact</a></li>
+          <li><a href="#" onclick="location.href='https://github.com/eihodge'">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    
+    <div style="padding-top: 10px;"></div>
+    <h1>Time Passed</h1>
+    
+    <div style="padding-top: 10px;"></div>
+    <div class="halloween-div" id="halloween-div">
+      
+    </div>
+
+    <div style="padding-top: 1px;"></div>
+    <div class="thanksgiving-div" id="thanksgiving-div" onclick="location.href='https://www.youtube.com/watch?v=9_wKHixTXOg'">
+    </div>
+    
+    <div style="padding-top: 1px;"></div>
+    <div class="christmas-div" id="christmas-div" onclick="location.href='https://www.youtube.com/watch?v=mSe6iZF_UfE'">
+    </div>
+
+    <div style="padding-top: 20px;"></div>
+
+  </body>
+</html>
