@@ -154,24 +154,23 @@
       }
 
       function loadThanksgivingDays() {
-        var today = new Date();
-        var start = new Date(today.getFullYear(), 0, 0);
-        var diff = (today - start) + ((start.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000);
-        var oneDay = 1000 * 60 * 60 * 24;
-        var day = Math.floor(diff / oneDay);
-        var daysUntilThanksgiving = 327 - day;
+        // Set the time zone for North Carolina (Eastern Time)
+        const timeZone = 'America/New_York';
 
-        // Create a Date object for July 15th
-        const july15 = new Date('2023-07-15');
+        // Create a Date object for July 15th in the specified time zone
+        const july15 = new Date('2023-07-15T00:00:00');
+        july15.toLocaleDateString('en-US', { timeZone });
 
-        // Create a Date object for the current date
+        // Create a Date object for the current date in the specified time zone
         const currentDate = new Date();
+        currentDate.toLocaleDateString('en-US', { timeZone });
 
         // Calculate the time difference in milliseconds
         const timeDiff = currentDate - july15;
 
         // Convert the time difference to months as a fraction
         const monthsDiff = timeDiff / (1000 * 60 * 60 * 24 * 30.44); // Average number of days in a month
+
 
       
 
@@ -188,18 +187,16 @@
       }
 
       function loadHalloweenDays() {
-        var today = new Date();
-        var start = new Date(today.getFullYear(), 0, 0);
-        var diff = (today - start) + ((start.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000);
-        var oneDay = 1000 * 60 * 60 * 24;
-        var day = Math.floor(diff / oneDay);
-        var daysUntilChristmas = 304 - day;
+        // Set the time zone for North Carolina (Eastern Time)
+        const timeZone = 'America/New_York';
 
-        // Create a Date object for July 15th
-        const july15 = new Date('2023-07-15');
+        // Create a Date object for July 15th in the specified time zone
+        const july15 = new Date('2023-07-15T00:00:00');
+        july15.toLocaleDateString('en-US', { timeZone });
 
-        // Create a Date object for the current date
+        // Create a Date object for the current date in the specified time zone
         const currentDate = new Date();
+        currentDate.toLocaleDateString('en-US', { timeZone });
 
         // Calculate the time difference in milliseconds
         const timeDiff = currentDate - july15;
@@ -207,7 +204,9 @@
         // Convert the time difference to days
         const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
 
-console.log(`Number of days since July 15th: ${daysDiff}`);
+        // console.log(daysDiff);
+
+        // console.log(`Number of days since July 15th: ${daysDiff}`);
 
         const element = document.createElement('div');
         element.style.marginTop = "18px";
