@@ -12,17 +12,18 @@
       body {
         background-color: #131313;
         color: white;
+        text-align: center;
         font-family: Roboto;
-        
       }
 
       .description {
         padding-left: 30px;
         padding-right: 30px;
         text-align: left;
+        
       }
 
-      .list-courses {
+      .description-body {
         line-height: 1.5;
       }
 
@@ -34,20 +35,25 @@
         padding-bottom: 15px;
         border-radius: 5px;
         background-color: chocolate;
-        
+        margin-right: 16px;
+        margin-top: 16px;
         font-family: Roboto, Arial;
         font-size: 23px;
         font-weight: 300;
         color: rgb(255, 255, 255);
+        min-width: 300px;
+        transition: transform .22s;
       }
+      
       .link-button:hover {
         cursor: pointer;
         background-color: rgb(211, 123, 61);
+        transform: scale(1.03);
       }
     </style>
   </head>
   <body>
-
+    
     <nav class="navbar">
       <div class="website-title" onclick="location.href='https://eihodge.github.io/PersonalWebsite/index.html'">Ethan Hodge</div>
       <a href="#" class="toggle-button">
@@ -66,32 +72,25 @@
       </div>
     </nav>
 
-    <div style="padding-top: 55px;"></div>
-    
     <div class="description">
-      <h1>About Me</h1>
-      <p>My name is Ethan Hodge</p>
-      <p>I am a student at North Carolina State University majoring in Computer Science.</p>
-      <p>I have coding experience with Python, Java, C, Javascript, HTML, CSS and Unreal Engine blueprinting.</p>
-      <p>My transcript at NCSU includes Computer Science courses such as:</p>
-
-      <div class="list-courses">
-        <ul>
-          <li>Intro to Artificial Intelligence (CSC 411)</li>
-          <li>Automated Learning and Data Analysis (CSC 422)</li>
-          <li>Data and Communications Networks (CSC 401)</li>
-          <li>Computer Security (CSC 405)</li>
-          <li>Foundations of Interactive Game Design (CSC 281)</li>
-          <li>C and Software Tools (CSC 230)</li>
-          <li>Operating Systems (CSC 246)</li>
-          <li>Data Structures and Algorithms (CSC 316)</li>
-          <li>Software Development Fundamentals (CSC 216)</li>
-          <li>Software Engineering (CSC 326)</li>
-          <li>Discrete Mathematics for Computer Scientists (CSC 226)</li>
-          <li>Automata Grammars and Computability (CSC 333)</li>
-          <li>Ethics in Computing (CSC 379)</li>
-        </ul>
+      <div style="padding-top: 55px;"></div>
+      <h1 style="margin-bottom: 3px;">Santa's Christmas Quest</h1>
+    
+      <div>
+        <button class='link-button' onclick="location.href='https://drive.google.com/file/d/1i-NpuW0xB2RCGrLxdBp1xD9gC8YCH2O2/view?usp=drive_link'">Download Santa's Christmas Quest</button>
       </div>
+
+      <div class="description-body">
+        <p>This project is currently still in development, and the downloadable version is not a good representation of what the completed project will be.</p>
+
+        <h3>About the Game:</h3>
+        <p>Embark on an epic journey to save Christmas in Santa's Christmas Quest, a 3D platformer set in the North Pole. Play as Santa Claus, armed with a giant candy cane, as you battle menacing enemies and solve physics-based puzzles. Navigate treacherous platformer maps to explore the North Pole and Santa's magical toy factory, then deliver presents on Christmas Eve. Developed in Unreal Engine 4.27 and featuring licensed 3D assets from the Unreal Marketplace, Santa's Christmas Quest is a festive adventure you won't want to miss!</p>
+      </div>
+        
+
     </div>
+
+    <div style="margin-bottom: 10px;"></div>
+    
   </body>
 </html>
