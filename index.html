@@ -123,6 +123,84 @@
         margin-bottom: 14px; 
       }
 
+      /* START OF CSS FOR CHRISTMAS GAME */
+
+      .window {
+        background-color: #2d2d2d;
+        padding-top: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        max-width: 1005px;
+        width: 96%;
+        margin:0 auto;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,1);
+        font-size: 20px;
+        font-weight: 300;
+        
+      }
+
+      .pad {
+        padding-top: 69px;
+      }
+
+      .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            
+            
+            margin: 0 auto;
+            padding: 20px;
+            /* border: 1px solid #ccc; */
+        }
+        .image {
+            flex: 1;
+            max-width: 100%;
+            padding-bottom: 20px;
+            margin-top: 11px;
+        }
+        .content {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -12px;
+            
+        }
+        .content p {
+            text-align: center;
+        }
+        .content button {
+            margin-top: 10px;
+        }
+        @media(min-width: 600px) {
+            .container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .image {
+                padding-right: 20px;
+                padding-bottom: 0;
+                max-width: 300px;
+            }
+            .content {
+                align-items: flex-start;
+            }
+            .content p {
+                text-align: left;
+            }
+        }
+
+      .game-cover {
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,1); 
+
+      }
+
     </style>
   </head>
   <body>
@@ -211,14 +289,43 @@
       </div>
     </nav>
 
-    <!-- ***** WREATH CODE - remove comment ***** <img src="https://www.christmasforest.com/image/20in-Alpine-Christmas-Wreath" class="garland-img"> -->
+    <!-- ***** WREATH CODE - remove comment ***** -->
+     <!-- <img src="https://www.christmasforest.com/image/20in-Alpine-Christmas-Wreath" class="garland-img"> -->
+     <!-- ***** WREATH CODE - remove comment ***** -->
+
     <div style="padding-top: 55px;"></div>
 
     <h1>Welcome to my Website</h1>
     <p>Use the navigation bar at the top to access my webapps.</p>
 
-    <!-- ***** WREATH CODE - remove comment ***** <div style="padding-top: 55px;"></div> -->
-    <div style="padding-top: 4px;"></div>
+    <!-- ***** WREATH CODE - remove comment ***** -->
+    <!-- <div style="padding-top: 55px;"></div> -->
+     <!-- ***** WREATH CODE - remove comment ***** -->
+
+
+    <!-- <div style="padding-top: 4px;"></div> -->
+    
+
+
+    <div style="padding-top: 20px;"></div>
+    <div id="window" class="window">
+      <div class="container">
+        <div class="image">
+            <img class="game-cover" src="resources/images/ChristmasGameImages/cover.png" alt="Sample Image" width="100%">
+        </div>
+        <div class="content">
+          <p>Embark on an epic journey to save Christmas in Santa's Christmas Quest, a 3D platformer set in the North Pole. Play as Santa Claus, armed with a giant candy cane, as you battle menacing enemies and solve physics-based puzzles. Navigate treacherous platformer maps to explore the North Pole and Santa's magical toy factory, then deliver presents on Christmas Eve. Developed in Unreal Engine 4.27 and featuring licensed 3D assets from the Unreal Marketplace, Santa's Christmas Quest is a festive adventure you won't want to miss!</p>
+
+          <button class='link-button' onclick="location.href='https://drive.google.com/file/d/13aCdtUYRc8aOwyh2vkQHBGXkDSwKpJsY/view?usp=sharing'">Download Santa's Christmas Quest</button>
+          <p>This project is currently still in development, and the downloadable version is not a good representation of what the completed project will be.</p>
+
+        </div>
+      </div>
+    </div>
+    <div style="padding-top: 12px;"></div>
+
+    
+
     <div class="halloween-div" id="halloween-div">
       <img src="https://salemhalloweencity.com/wp-content/uploads/2015/08/cropped-fb_icon.png" alt="" class="halloween-img">
     </div>
@@ -232,8 +339,14 @@
     <div class="christmas-div" id="christmas-div" onclick="location.href='https://www.youtube.com/watch?v=mSe6iZF_UfE'">
       <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/10056/christmas-tree-clipart-md.png" alt="https://i.pinimg.com/originals/fb/09/c7/fb09c7b21144f3fc5de1815ba93393df.png" class="tree-img">
     </div>
-
+      
     <div style="padding-top: 20px;"></div>
+
+    
+
+
+
+    
 
   </body>
 </html>
