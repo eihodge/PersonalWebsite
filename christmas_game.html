@@ -21,6 +21,7 @@
         padding-right: 30px;
         text-align: left;
         
+        
       }
 
       .description-body {
@@ -50,6 +51,80 @@
         background-color: rgb(211, 123, 61);
         transform: scale(1.03);
       }
+
+      .window {
+        background-color: #2d2d2d;
+        padding-top: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        max-width: 1005px;
+        width: 96%;
+        margin:0 auto;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,1);
+        font-size: 20px;
+        font-weight: 300;
+        
+      }
+
+      .pad {
+        padding-top: 69px;
+      }
+
+      .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            
+            
+            margin: 0 auto;
+            padding: 20px;
+            /* border: 1px solid #ccc; */
+        }
+        .image {
+            flex: 1;
+            max-width: 100%;
+            padding-bottom: 20px;
+            margin-top: 11px;
+        }
+        .content {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content p {
+            text-align: center;
+        }
+        .content button {
+            margin-top: 10px;
+        }
+        @media(min-width: 600px) {
+            .container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .image {
+                padding-right: 20px;
+                padding-bottom: 0;
+                max-width: 300px;
+            }
+            .content {
+                align-items: flex-start;
+            }
+            .content p {
+                text-align: left;
+            }
+        }
+
+      .game-cover {
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,1); 
+
+      }
     </style>
   </head>
   <body>
@@ -72,22 +147,35 @@
       </div>
     </nav>
 
-    <div class="description">
-      <div style="padding-top: 55px;"></div>
-      <h1 style="margin-bottom: 3px;">Santa's Christmas Quest</h1>
+    <div class="pad"></div>
     
-      <div>
-        <button class='link-button' onclick="location.href='https://drive.google.com/file/d/13aCdtUYRc8aOwyh2vkQHBGXkDSwKpJsY/view?usp=sharing'">Download Santa's Christmas Quest</button>
+    <div id="window" class="window">
+
+      <div class="container">
+        <div class="image">
+            <img class="game-cover" src="resources/images/ChristmasGameImages/cover.png" alt="Sample Image" width="100%">
+        </div>
+        <div class="content">
+          <p>Embark on an epic journey to save Christmas in Santa's Christmas Quest, a 3D platformer set in the North Pole. Play as Santa Claus, armed with a giant candy cane, as you battle menacing enemies and solve physics-based puzzles. Navigate treacherous platformer maps to explore the North Pole and Santa's magical toy factory, then deliver presents on Christmas Eve. Developed in Unreal Engine 4.27 and featuring licensed 3D assets from the Unreal Marketplace, Santa's Christmas Quest is a festive adventure you won't want to miss!</p>
+
+          <button class='link-button' onclick="location.href='https://drive.google.com/file/d/13aCdtUYRc8aOwyh2vkQHBGXkDSwKpJsY/view?usp=sharing'">Download Santa's Christmas Quest</button>
+          <p>This project is currently still in development, and the downloadable version is not a good representation of what the completed project will be.</p>
+
+        </div>
       </div>
 
-      <div class="description-body">
-        <p>This project is currently still in development, and the downloadable version is not a good representation of what the completed project will be.</p>
 
-        <h3>About the Game:</h3>
-        <p>Embark on an epic journey to save Christmas in Santa's Christmas Quest, a 3D platformer set in the North Pole. Play as Santa Claus, armed with a giant candy cane, as you battle menacing enemies and solve physics-based puzzles. Navigate treacherous platformer maps to explore the North Pole and Santa's magical toy factory, then deliver presents on Christmas Eve. Developed in Unreal Engine 4.27 and featuring licensed 3D assets from the Unreal Marketplace, Santa's Christmas Quest is a festive adventure you won't want to miss!</p>
-      </div>
+      <div class="description">
         
 
+        <div class="description-body">
+
+          <!-- <h3>About the Game:</h3> -->
+          
+        </div>
+          
+
+      </div>
     </div>
 
     <div style="margin-bottom: 10px;"></div>
