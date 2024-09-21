@@ -11,8 +11,6 @@ function addCourse() {
       credits: credits,
     });
     renderCoursesList();
-    document.getElementById('course-title').value = "";  
-    document.getElementById('course-credits').value = "";
   } else {
     alert("Invalid input. Credits must be an integer.");
   }
@@ -26,6 +24,9 @@ function renderCoursesList() {
     const courseList = document.getElementById('courses-list');
     courseList.appendChild(element);
   });
+
+  document.getElementById('course-title').value = "";  
+  document.getElementById('course-credits').value = "";
 }
 
 function calculateGPA() {
