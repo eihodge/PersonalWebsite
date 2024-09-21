@@ -11,6 +11,8 @@ function addCourse() {
       credits: credits,
     });
     renderCoursesList();
+    document.getElementById('course-title').value = "";  
+    document.getElementById('course-credits').value = "";
   } else {
     alert("Invalid input. Credits must be an integer.");
   }
