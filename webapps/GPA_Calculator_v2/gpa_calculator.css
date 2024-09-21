@@ -131,3 +131,25 @@ body {
   opacity: 0.7;
 }
 
+.delete-button {
+  background-color: transparent;
+  border: none;
+  padding-left: 11px;
+}
+
+.delete-button img {
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+  width: 15px;
+  height: 15px;
+}
+
+.delete-button:hover {
+  transform: scale(1.06);
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.delete-button:hover img {
+  opacity: 0.7;
+}

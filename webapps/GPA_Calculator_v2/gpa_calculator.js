@@ -18,9 +18,27 @@ function addCourse() {
 
 function renderCoursesList() {
   document.getElementById('courses-list').innerHTML = '';
-  courses.forEach(function(course) {
+  courses.forEach(function(course, index) {
     const element = document.createElement('div');
     element.innerText = course.name + ' - Grade: ' + course.grade + ', Credits: ' + course.credits;
+    
+    const button = document.createElement('button');
+    button.className = "delete-button";
+    
+    const img = document.createElement('img');
+    img.src = 'https://ethanhodge.com/webapps/Drawing/trash.png';
+    button.appendChild(img);
+
+
+    button.addEventListener('click', function() {
+     
+      courses.splice(index, 1);
+      renderCoursesList(); 
+    });
+
+
+    element.appendChild(button);
+
     const courseList = document.getElementById('courses-list');
     courseList.appendChild(element);
   });
