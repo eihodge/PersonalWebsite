@@ -17,27 +17,32 @@
       }
 
       .link-button {
-        border: none;
-        padding-top: 15px;
-        padding-left: 23px;
-        padding-right: 23px;
-        padding-bottom: 15px;
-        border-radius: 5px;
-        background-color: chocolate;
+        border: 1px solid #131313;
+        padding-top: 12px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 12px;
+        border-radius: 30px;
+        background-color: #4b64f3;
         margin-right: 16px;
         margin-top: 16px;
         font-family: Roboto, Arial;
         font-size: 23px;
-        font-weight: 300;
+        font-weight: 350;
         color: rgb(255, 255, 255);
-        min-width: 300px;
-        transition: transform .22s;
+        min-width: 215px;
+        transition: transform 0.22s, border 0.22s;
       }
+
       .link-button:hover {
         cursor: pointer;
-        background-color: rgb(211, 123, 61);
-        transform: scale(1.03);
+        /* transform: scale(1.03); */
+        border: 1px solid #ffffff;
       }
+
+
+      
+
     </style>
   </head>
   <body>
@@ -65,7 +70,7 @@
     <div>
       <button class='link-button' onclick="location.href='https://eihodge.github.io/react-projects/'">To-Do List</button>
     </div>
-    <div style="padding-top: 43px;"></div>
+    <div style="padding-top: 30px;"></div>
 
     <h1 style="margin-bottom: 3px;">Javascript Webapp Projects</h1>
     <h3 style="margin-bottom: 3px;">Optimized for Mobile and Desktop Browsers</h3>
@@ -91,9 +96,9 @@
       <button class='link-button' onclick="location.href='webapps/AdvancedCalculator/advanced_calculator.html'">Advanced Calculator</button>
     </div>
 
-    <div style="margin-bottom: -10px;"></div>
+    
 
-    <div style="padding-top: 55px;"></div>
+    <div style="padding-top: 30px;"></div>
     <h1 style="margin-bottom: 3px;">Unreal Engine Projects</h1>
     <div>
       <button class='link-button' onclick="location.href='christmas_game.html'">Santa's Christmas Quest</button>
