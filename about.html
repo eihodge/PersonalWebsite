@@ -37,22 +37,25 @@
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
+        align-items: center;
       }
 
       .column {
         flex: 1;
         padding: 20px;
         background-color: #f0f0f0;
-
+        
       }
 
       .left-column {
-        background-color: #00000000;
-        max-width: 400px;
+        background-color: #42000000;
+        flex: 33;
+        align-items: center;
       }
 
       .right-column {
-        background-color: #00000000;
+        background-color: #314e1a00;
+        flex: 67;
       }
       /* Ensures the divs stack on smaller screens */
       @media (max-width: 600px) {
@@ -80,14 +83,15 @@
       }
 
       .dropdown-header {
-        cursor: pointer;
-        padding: 10px;
-        background-color: #000000;
-        border: 1px solid #ccc;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 0px;
+        background-color: #2c2f33;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
       }
 
       .arrow {
@@ -98,12 +102,9 @@
         display: none;
         padding: 10px;
         background-color: #1b1b1b;
-        border: 1px solid #ccc;
+        border: 1px solid #00000000;
         border-top: none;
-      }
-
-      .other-content {
-        margin-top: 20px;
+        border-radius: 5px;
       }
 
 
@@ -136,6 +137,26 @@
       height: 2px; /* Line thickness */
       background: linear-gradient(to right, transparent, rgb(150, 150, 150), transparent);
       margin: 0 auto;
+    }
+
+
+
+
+
+
+    .courses-list {
+      list-style: none; /* Remove default bullets */
+      padding-left: 20px;  /* Optional: Remove left padding */
+    }
+
+    .courses-list li::before {
+      content: "⦿";    /* Use arrow symbol */
+      color: #afafaf;      /* Optional: Set color of arrow */
+      font-size: 1em; /* Optional: Adjust size of arrow */
+      margin-right: 10px; /* Optional: Spacing between arrow and text */
+    }
+    .list-item {
+      margin-bottom: 5px;
     }
 
     </style>
@@ -189,14 +210,14 @@
       
       
       <div class="container">
-        <div class="column left-column" style="margin-bottom: -10px">
+        <div class="column left-column" style="margin-bottom: -10px; background-color:none;">
           
 
           <img class="profile-pic" src="EthanHodgePic.png">
           
         </div>
-        <div class="column right-column">
-          <p style="font-size: 40px; text-align:left; margin-bottom: -10px; ">Ethan Hodge</p>
+        <div class="column right-column" style="background-color:none">
+          <p style="font-size: 40px; text-align:left; margin-bottom: -10px; margin-top: -10px;">Ethan Hodge</p>
           <p style="font-size: 10px;">Chapel Hill, NC</p>
           
           <div class="line-container">
@@ -220,23 +241,23 @@
             <span class="arrow">▼</span>
           </div>
           <div id="dropdown-content" class="dropdown-content">
-            <ol>
-              <li>Intro to Artificial Intelligence (CSC 411)</li>
-              <li>Automated Learning and Data Analysis (CSC 422)</li>
-              <li>Data and Communications Networks (CSC 401)</li>
-              <li>Computer Security (CSC 405)</li>
-              <li>Foundations of Interactive Game Design (CSC 281)</li>
-              <li>C and Software Tools (CSC 230)</li>
-              <li>Introduction to Computing in Java (CSC 116)</li>
-              <li>Operating Systems (CSC 246)</li>
-              <li>Data Structures and Algorithms (CSC 316)</li>
-              <li>Software Development Fundamentals (CSC 216)</li>
-              <li>Software Engineering (CSC 326)</li>
-              <li>Discrete Mathematics for Computer Scientists (CSC 226)</li>
-              <li>Automata Grammars and Computability (CSC 333)</li>
-              <li>Ethics in Computing (CSC 379)</li>
-              <li>Senior Design Project (CSC 492)</li>
-            </ol>
+            <ul class="courses-list">
+              <li class="list-item">Intro to Artificial Intelligence (CSC 411)</li>
+              <li class="list-item">Automated Learning and Data Analysis (CSC 422)</li>
+              <li class="list-item">Data and Communications Networks (CSC 401)</li>
+              <li class="list-item">Computer Security (CSC 405)</li>
+              <li class="list-item">Foundations of Interactive Game Design (CSC 281)</li>
+              <li class="list-item">C and Software Tools (CSC 230)</li>
+              <li class="list-item">Introduction to Computing in Java (CSC 116)</li>
+              <li class="list-item">Operating Systems (CSC 246)</li>
+              <li class="list-item">Data Structures and Algorithms (CSC 316)</li>
+              <li class="list-item">Software Development Fundamentals (CSC 216)</li>
+              <li class="list-item">Software Engineering (CSC 326)</li>
+              <li class="list-item">Discrete Mathematics for Computer Scientists (CSC 226)</li>
+              <li class="list-item">Automata Grammars and Computability (CSC 333)</li>
+              <li class="list-item">Ethics in Computing (CSC 379)</li>
+              <li class="list-item">Senior Design Project (CSC 492)</li>
+            </ul>
           </div>
 
 
