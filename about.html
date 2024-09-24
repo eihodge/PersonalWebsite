@@ -26,27 +26,104 @@
         line-height: 1.5;
       }
 
-      .link-button {
-        border: none;
-        padding-top: 15px;
-        padding-left: 23px;
-        padding-right: 23px;
-        padding-bottom: 15px;
-        border-radius: 5px;
-        background-color: chocolate;
-        
-        font-family: Roboto, Arial;
-        font-size: 23px;
-        font-weight: 300;
-        color: rgb(255, 255, 255);
+
+
+
+
+
+      /* TWO COLUMNS */
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
       }
-      .link-button:hover {
+
+      .column {
+        flex: 1;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+      }
+
+      .left-column {
+        background-color: #3e0000;
+      }
+
+      .right-column {
+        background-color: #040034;
+      }
+      /* Ensures the divs stack on smaller screens */
+      @media (max-width: 600px) {
+        .column {
+          flex-basis: 100%;
+        }
+      }
+
+
+
+
+      /* DROP DOWN MENUS */
+
+      .dropdown-container {
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      .dropdown-header {
         cursor: pointer;
-        background-color: rgb(211, 123, 61);
+        padding: 10px;
+        background-color: #000000;
+        border: 1px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0px;
       }
+
+      .arrow {
+        font-size: 12px;
+      }
+
+      .dropdown-content {
+        display: none;
+        padding: 10px;
+        background-color: #1b1b1b;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+
+      .other-content {
+        margin-top: 20px;
+      }
+
+
+
+
+
     </style>
   </head>
   <body>
+
+
+    <script>
+      function toggleDropdown() {
+        const content = document.getElementById('dropdown-content');
+        const arrow = document.querySelector('.arrow');
+        
+        if (content.style.display === 'none' || content.style.display === '') {
+            content.style.display = 'block';
+            arrow.textContent = '▲';
+        } else {
+            content.style.display = 'none';
+            arrow.textContent = '▼';
+        }
+      }
+
+    </script>
+
+
+
 
     <nav class="navbar">
       <div class="website-title" onclick="location.href='https://ethanhodge.com/index.html'">Ethan Hodge</div>
@@ -67,33 +144,70 @@
     </nav>
 
     <div style="padding-top: 55px;"></div>
+
+
     
+
     <div class="description">
       <h1>About Me</h1>
-      <p>My name is Ethan Hodge</p>
-      <p>I am a student at North Carolina State University majoring in Computer Science.</p>
-      <p>I have experience with Python, Java, C, PHP, Javascript, React, MySQL, Laravel, Docker, HTML, CSS and Unreal Engine blueprinting.</p>
-      <p>My transcript at NCSU includes Computer Science courses such as:</p>
-
-      <div class="list-courses">
-        <ul>
-          <li>Intro to Artificial Intelligence (CSC 411)</li>
-          <li>Automated Learning and Data Analysis (CSC 422)</li>
-          <li>Data and Communications Networks (CSC 401)</li>
-          <li>Computer Security (CSC 405)</li>
-          <li>Foundations of Interactive Game Design (CSC 281)</li>
-          <li>C and Software Tools (CSC 230)</li>
-          <li>Introduction to Computing in Java (CSC 116)</li>
-          <li>Operating Systems (CSC 246)</li>
-          <li>Data Structures and Algorithms (CSC 316)</li>
-          <li>Software Development Fundamentals (CSC 216)</li>
-          <li>Software Engineering (CSC 326)</li>
-          <li>Discrete Mathematics for Computer Scientists (CSC 226)</li>
-          <li>Automata Grammars and Computability (CSC 333)</li>
-          <li>Ethics in Computing (CSC 379)</li>
-          <li>Senior Design Project (CSC 492)</li>
-        </ul>
+      
+      <div class="container">
+        <div class="column left-column">
+          <p>My name is Ethan Hodge.</p>
+          
+        </div>
+        <div class="column right-column">
+          <p>I am a student at North Carolina State University majoring in Computer Science.</p>
+          <p>I have experience with Python, Java, C, PHP, Javascript, React, MySQL, Laravel, Docker, HTML, CSS and Unreal Engine blueprinting.</p>
+          
+        </div>
       </div>
+
+
+
+
+
+      <div class="dropdown-container">
+        <div class="list-courses">
+          <div class="dropdown-header" onclick="toggleDropdown()">
+            <span>Click to view my NCSU courses</span>
+            <span class="arrow">▼</span>
+          </div>
+          <div id="dropdown-content" class="dropdown-content">
+            <ol>
+              <li>Intro to Artificial Intelligence (CSC 411)</li>
+              <li>Automated Learning and Data Analysis (CSC 422)</li>
+              <li>Data and Communications Networks (CSC 401)</li>
+              <li>Computer Security (CSC 405)</li>
+              <li>Foundations of Interactive Game Design (CSC 281)</li>
+              <li>C and Software Tools (CSC 230)</li>
+              <li>Introduction to Computing in Java (CSC 116)</li>
+              <li>Operating Systems (CSC 246)</li>
+              <li>Data Structures and Algorithms (CSC 316)</li>
+              <li>Software Development Fundamentals (CSC 216)</li>
+              <li>Software Engineering (CSC 326)</li>
+              <li>Discrete Mathematics for Computer Scientists (CSC 226)</li>
+              <li>Automata Grammars and Computability (CSC 333)</li>
+              <li>Ethics in Computing (CSC 379)</li>
+              <li>Senior Design Project (CSC 492)</li>
+            </ol>
+          </div>
+
+
+          
+
+          
+        </div>
+      </div>
+    
+      
+
+
+
+
+
+
+      
     </div>
   </body>
 </html>
