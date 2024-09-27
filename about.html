@@ -58,6 +58,18 @@
         background-color: #314e1a00;
         flex: 67;
       }
+
+      .right-column-hackpack {
+        background-color: #420000;
+        flex: 37;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .left-column-hackpack {
+        background-color: #314e1a;
+        flex: 63;
+      }
       /* Ensures the divs stack on smaller screens */
       @media (max-width: 600px) {
         .column {
@@ -108,21 +120,27 @@
         border-radius: 5px;
       }
 
-
-
-
       /* PROFILE PIC */
-.profile-pic {
-  max-width: 550px; /* Maximum width */
-  max-height: 550px; /* Maximum height */
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 50%;
-  border: 6px solid #2c2f33;
-  width: 100%; 
-  height: 100%; 
-}
+      .profile-pic {
+        max-width: 550px; /* Maximum width */
+        max-height: 550px; /* Maximum height */
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border-radius: 50%;
+        border: 6px solid #2c2f33;
+        width: 100%; 
+        height: 100%; 
+      }
+
+      .hackpack-img {
+        max-width: 450px;
+        min-width: 200px;
+        width: 100%; 
+        height: 100%; 
+        border: 6px solid #2c2f33;
+        border-radius: 20px;
+      }
 
 
 
@@ -294,6 +312,41 @@
       One of the games is available for download <a href="https://drive.google.com/file/d/1rR1M6w--Eq_wgVWHKAQaY3tuuHjmVUin/view?usp=sharing" class="link">here</a>.</li>
       <li>More projects and code samples are available elsewhere on this site.</li>
     </ul>
+</section>
+
+
+<section>
+  <h2>Experiences</h2>
+  
+
+
+  <div class="container">
+    
+    <div class="column left-column-hackpack" style="background-color:none">
+      
+      
+      
+
+      <h3><strong>HackPack CTF 2024</strong></h3>
+      <div class="line-container">
+        <div class="fading-line"></div>
+      </div>
+
+      <p>I competed in HackPack CTF 2024, a global security competition that is part of two security courses at NCSU: CSC-405 Computer Security and CSC-591/791 LLMs in Security. The event focused on identifying and exploiting vulnerabilities in large language models (LLMs) and other AI systems. HackPack CTF is hosted on NC State's Centennial Campus, but is also open to participants worldwide, including students from other universities and security professionals. My team held 2nd place for the first 6 hours and finished in the top 20 out of the hundreds of teams who participated in the 48-hour challenge.</p>
+      
+      
+    </div>
+
+    <div class="column right-column-hackpack" style="margin-bottom: -10px; background-color:none;">
+      
+
+      <img class="hackpack-img" src="hackpack2024.jpg">
+      
+    </div>
+
+
+  </div>
+
 </section>
 
 
