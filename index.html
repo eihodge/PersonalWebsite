@@ -205,6 +205,20 @@
         border-radius: 0px;
       }
 
+      .welcome {
+        color: #3498db; /* Light blue color */
+        text-decoration: none; /* Remove underline */
+        font-weight: bold; /* Make text bold */
+        border-bottom: 2px solid transparent; /* Add bottom border */
+        transition: all 0.3s ease; /* Smooth transition */
+      }
+
+      /* Link hover effect */
+      .welcome:hover {
+        color: #1abc9c; /* Change color on hover */
+        border-bottom: 2px solid #1abc9c; /* Show bottom border on hover */
+      }
+
     </style>
   </head>
   <body>
@@ -299,8 +313,9 @@
 
     <div style="padding-top: 55px;"></div>
 
-    <h1>Welcome to my Website</h1>
-    <p>Use the navigation bar at the top to access my webapps.</p>
+    <h1>Welcome to Ethan's Website!</h1>
+    <p>Check out my <a class="welcome" href="https://ethanhodge.com/webapps_index.html">projects</a> or learn more <a class="welcome" href="https://ethanhodge.com/about.html">about me</a>.</p>
+    
 
     <!-- ***** WREATH CODE - remove comment ***** -->
     <!-- <div style="padding-top: 55px;"></div> -->
