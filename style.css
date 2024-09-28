@@ -43,6 +43,8 @@ body {
 
 .website-links li {
   list-style: none;
+  background-color: #00000000;
+  transition: background-color 0.29s ease;
 }
 
 .website-links li a {
