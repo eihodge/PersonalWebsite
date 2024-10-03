@@ -29,6 +29,22 @@ body {
 
 
 
+.link-effect {
+  color: #3498db; /* Light blue color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Make text bold */
+  border-bottom: 2px solid transparent; /* Add bottom border */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Link hover effect */
+.link-effect:hover {
+  color: #1abc9c; /* Change color on hover */
+  border-bottom: 2px solid #1abc9c; /* Show bottom border on hover */
+}
+
+
+
 
 .navbar {
   display: flex;

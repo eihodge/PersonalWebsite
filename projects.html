@@ -33,7 +33,108 @@
         border: 1px solid #ffffff;
       }
 
+      .buttons-row {
+        display: flex;                 /* Use flexbox to create a row layout */
+        justify-content: center; /* Space the buttons evenly */
+        gap: 10px;                     /* Adds space between the buttons */
+        flex-wrap: wrap;               /* Allows buttons to wrap onto new lines if needed */
+      }
+
+      .buttons-row button {
+        white-space: nowrap;           /* Prevents the text inside buttons from wrapping */
+      }
+
+      @media (max-width: 768px) {
+    .buttons-row {
+      margin-top: 12px;  
+      justify-content: center;    /* Center buttons horizontally in the container */
+    }
+
+    .buttons-row button {
+        flex: 1 1 auto;             /* Allow buttons to take full width if needed */
+        max-width: 200px;           /* Optional: Set a max-width to control button size */
+        margin: 5px;                /* Optional: Add margin for better spacing */
+    }
+}
+
+
+
+
+  .container {
+    display: flex;
+    min-height: auto; /* Sets a minimum height */
+    height: auto; /* Allows height to grow as needed */
+    
+    max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+    
+  }
+
+.left, .right {
+    flex: 1; /* Each div takes up equal space horizontally */
+    display: flex;
+    flex-direction: column;
+     /* Align items to the start so divs grow naturally */
+    align-items:center;
+    justify-content:center;
+    padding: 17px;
+    box-sizing: border-box;
+    background-clip: padding-box; /* Prevents background color bleeding on resize */
+}
+
+.left {
+    background-color: rgba(173, 216, 230, 0);
+}
+
+.right {
+    background-color: rgba(240, 128, 128, 0);
+    text-align: left;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column; /* Stack divs vertically */
+    }
+
+    .left, .right {
+        min-height: auto; /* Allow divs to grow as needed */
+    }
+}
+
+
+
+
+      /* VIDEO PLAYER */
+      .video-container {
+        width: 100%;
+        /* max-width: 600px; */
+        overflow: hidden;
+        position: relative;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        background-color: #000;
+        border-radius: 20px;
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
       
+      .fading-line {
+        width: 80%;
+        height: 2px; /* Line thickness */
+        background: linear-gradient(to right, transparent, rgba(150, 150, 150, 0.368), transparent);
+        margin: 0 auto;
+        margin-top: -5px
+    }
+
+
 
 
       
@@ -99,6 +200,151 @@
     <div>
       <button class='link-button' onclick="location.href='christmas_game'">Santa's Christmas Quest</button>
     </div>
+
+
+
+
+
+    <div style="margin-bottom: -10px; margin-top: 12px;">
+      <h2>Test Subject Michael</h2>
+      <div class="fading-line"></div>
+      <p><strong>Engine:</strong> Unreal Engine 4</p>
+    </div>
+    <div class="container">
+      <div class="left">
+        <div class="video-container">
+          <iframe 
+              src="https://www.youtube.com/embed/D2C-S2ov6xM" 
+              title="YouTube video player" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+          </iframe>
+        </div>
+        
+      </div>
+      
+      <div class="right">
+        <p>
+            Test Subject Michael is a horror adventure game set in 1950's New York City, which also draws on influences 
+            from popular survival horror games like <em>Resident Evil</em> and <em>Silent Hill</em>. This project was developed to refine my skills in
+            environmental design and storytelling through level architecture. 
+        </p> 
+        <p>The game employs 
+            classic <em>key-lock mechanics</em>, encouraging players to explore and uncover new areas by 
+            finding keys and other story items. Scattered throughout the map are pieces of paper 
+            containing messages that players can read by interacting with them, adding depth and storytelling 
+            elements to the experience. The game also includes <em>scripted timed events</em>, where specific actions trigger pre-planned 
+            sequences—such as a painting falling after exploring a certain room or the antagonist Doctor 
+            Foulman attempting to break into a locked room after a letter is read by the player—creating a 
+            more tense and immersive experience by triggering events in environments that the player may have 
+            expected to remain static and uneventful.
+        </p>
+
+      </div>
+    </div>
+    <div class="buttons-row" style="margin-top: -15px; margin-bottom: 60px;">
+      <button class="link-button">Download Game</button>
+      <button class="link-button">GitHub Repository</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div style="margin-bottom: -26px; margin-top: 12px;"></div>
+    <h2>Virtual Reality Room Recreation (1:1 Scale)</h2>
+      <div class="fading-line"></div>
+      <p><strong>Engine:</strong> Unreal Engine 4</p>
+    </div>
+    <div class="container">
+      <div class="left">
+        <div class="video-container">
+          <iframe 
+              src="https://www.youtube.com/embed/DzeSL5rnrrc" 
+              title="YouTube video player" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+          </iframe>
+        </div>
+        
+      </div>
+      
+      <div class="right">
+        <p>
+            This project involved recreating my personal room as a fully interactive VR environment using Unreal Engine. 
+            I utilized a combination of software tools, including 
+            <a class="link-effect" href="https://meshroom.en.softonic.com/" target="_blank">Meshroom</a> 
+            and 
+            <a class="link-effect" href="https://www.blender.org/" target="_blank">Blender</a>, to create high-quality photoscans 
+            of various objects for an authentic recreation. All of the furniture was modeled from scratch in Blender, and 
+            <a class="link-effect" href="https://sketchfab.com/" target="_blank">Sketchfab</a>
+            was leveraged for a few additional Creative Commons (CC0) models.
+        </p>
+        <p>
+            For precise scaling and layout, I began with a photoscan of the entire room, using it as a reference to replicate 
+            every detail accurately. This project allowed me to enhance my 3D modeling skills and experiment with creating 
+            immersive virtual spaces in Unreal Engine.
+        </p>
+        
+
+      </div>
+    </div>
+
+
+
+
+    <div style="margin-bottom: -10px; margin-top: 12px;">
+      <h2>Zombie First Person Shooter</h2>
+      <div class="fading-line"></div>
+      <p><strong>Engine:</strong> Unreal Engine 4</p>
+    </div>
+    <div class="container">
+      <div class="left">
+        <div class="video-container">
+          <iframe 
+              src="https://www.youtube.com/embed/J-PbMSaPoFM" 
+              title="YouTube video player" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+          </iframe>
+        </div>
+        
+      </div>
+      
+      <div class="right">
+        <p>
+            Test Subject Michael is a horror adventure game set in 1950's New York City, which also draws on influences 
+            from popular survival horror games like <em>Resident Evil</em> and <em>Silent Hill</em>. This project was developed to refine my skills in
+            environmental design and storytelling through level architecture. 
+        </p> 
+        <p>The game employs 
+            classic <em>key-lock mechanics</em>, encouraging players to explore and uncover new areas by 
+            finding keys and other story items. Scattered throughout the map are pieces of paper 
+            containing messages that players can read by interacting with them, adding depth and storytelling 
+            elements to the experience. The game also includes <em>scripted timed events</em>, where specific actions trigger pre-planned 
+            sequences—such as a painting falling after exploring a certain room or the antagonist Doctor 
+            Foulman attempting to break into a locked room after a letter is read by the player—creating a 
+            more tense and immersive experience by triggering events in environments that the player may have 
+            expected to remain static and uneventful.
+        </p>
+
+      </div>
+    </div>
+    <div class="buttons-row" style="margin-top: -15px; margin-bottom: 60px;">
+      <button class="link-button">Download Game</button>
+      <button class="link-button">GitHub Repository</button>
+    </div>
+    
+
+
+
+
     <div style="padding-top: 55px;"></div>
   </body>
 </html>
