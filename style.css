@@ -17,13 +17,15 @@ body {
   justify-content: space-between;
   align-items: center;
   /* background-color: rgb(33, 33, 33); */
-  background-color: rgba(33, 33, 33, 0.754);
+  background-color: rgba(31, 31, 31, 0.8);
+  /* background-color: #101114a9; */
   color: white;
   position: fixed;
   width: 100%;
   z-index: 5;
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid #1c2424;
+  border-bottom: 1px solid #2f2f2f;
+  
 }
 
 .website-title {

@@ -41,29 +41,35 @@
         margin-bottom: -240px;
       }
 
-      .christmas-div {
-        background-color: rgb(255, 0, 0);
-        color: rgb(255, 255, 255);
-        font-size: 20px;
-        
-        min-width: 340px;
-        min-height: 100px;
-        margin: 0 auto;
-        border-radius: 20px;
-        margin-top: 10px; 
-        transition: transform .5s;
-      }
-      .christmas-div:hover {
-        transform: scale(1.05);
-        cursor: pointer;
+      .holiday-countdowns {
+        display: flex;
+        justify-content: center; /* Centers the sections horizontally */
+        align-items: center;
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        max-width: 1200px; /* Set a max width for the container */
+        margin: 0 auto; /* Center the container within the page */
+        gap: 20px; /* Adds space between sections */
       }
 
-      .tree-img {
-        width: 190px;
-        display: inline-block;
-        margin-top: 17px;
-        margin-bottom: -15px;  
+      .holiday-countdowns section {
+        flex: 0 1 300px; /* Prevent sections from expanding too much */
+        text-align: center;
+        margin: 10px;
       }
+
+      @media (max-width: 768px) {
+        .holiday-countdowns {
+            flex-direction: column; /* Switches to vertical on narrow screens */
+        }
+      }
+
+
+
+
+
+
+
+
 
       .halloween-div {
         background-color: rgb(255, 102, 0);
@@ -76,6 +82,7 @@
         margin-top: 10px;
         margin-bottom: 10px;
         transition: transform .5s;
+        height: 365px;
       }
       
       .halloween-div:hover {
@@ -102,6 +109,7 @@
         margin-top: 10px;
         margin-bottom: 10px;
         transition: transform .5s;
+        height: 365px;
       }
       
       .thanksgiving-div:hover {
@@ -114,6 +122,31 @@
         display: inline-block;
         margin-top: 35px;
         margin-bottom: 14px; 
+      }
+
+      .christmas-div {
+        background-color: rgb(255, 0, 0);
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+        height: 365px;
+        min-width: 340px;
+        min-height: 100px;
+        margin: 0 auto;
+        border-radius: 20px;
+        margin-top: 10px; 
+        transition: transform .5s;
+        margin-top: -1px;
+      }
+      .christmas-div:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+
+      .tree-img {
+        width: 190px;
+        display: inline-block;
+        margin-top: 17px;
+        margin-bottom: -15px;  
       }
 
       /* START OF CSS FOR CHRISTMAS GAME */
@@ -131,6 +164,7 @@
         box-shadow: 0 0 30px rgba(0,0,0,1);
         font-size: 20px;
         font-weight: 300;
+        border: 1px solid #494949;
       }
 
       .pad {
@@ -335,40 +369,47 @@
 
     <div style="padding-top: 20px;"></div>
     
-  <section> 
-    <div id="window" class="window">
-      <div class="container">
-        <div class="image">
-            <img class="chef-img" src="resources/images/chef.gif" alt="Sample Image" width="70%">
-        </div>
-        <div class="content">
-          <p>Try out some of my recipes by downloading my cookbook.</p>
-          <button class='link-button' onclick="location.href='https://drive.google.com/file/d/1YgJEIz1p4UOQUwwZL5qRVQlI1u-ZmlBM/view?usp=sharing'">Download Cookbook (PDF)</button>   
+    <section> 
+      <div id="window" class="window">
+        <div class="container">
+          <div class="image">
+              <img class="chef-img" src="resources/images/chef.gif" alt="Sample Image" width="70%">
+          </div>
+          <div class="content">
+            <p>Try out some of my recipes by downloading my cookbook.</p>
+            <button class='link-button' onclick="location.href='https://drive.google.com/file/d/1YgJEIz1p4UOQUwwZL5qRVQlI1u-ZmlBM/view?usp=sharing'">Download Cookbook (PDF)</button>   
+          </div>
         </div>
       </div>
-    </div>
-    <div style="padding-top: 12px;"></div>
-  </section>
+      <div style="padding-top: 12px;"></div>
+    </section>
 
-  <section>
-    <div class="halloween-div" id="halloween-div">
-      <img src="https://salemhalloweencity.com/wp-content/uploads/2015/08/cropped-fb_icon.png" alt="" class="halloween-img">
-    </div>
-  </section> 
-  
-  <section>
-    <div style="padding-top: 1px;"></div>
-    <div class="thanksgiving-div" id="thanksgiving-div" onclick="location.href='https://www.youtube.com/watch?v=9_wKHixTXOg'">
-      <img src="https://spaces-cdn.clipsafari.com/3v37j69p1qfbyn99fl5er6dbqfzj" alt="" class="thanksgiving-img">
-    </div>
-  </section> 
 
-  <section>
-    <div style="padding-top: 1px;"></div>
-    <div class="christmas-div" id="christmas-div" onclick="location.href='https://www.youtube.com/watch?v=mSe6iZF_UfE'">
-      <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/10056/christmas-tree-clipart-md.png" alt="https://i.pinimg.com/originals/fb/09/c7/fb09c7b21144f3fc5de1815ba93393df.png" class="tree-img">
+    <!-- HOLIDAY COUNTDOWNS -->
+    <div class="holiday-countdowns">
+      <section>
+        <div class="halloween-div" id="halloween-div">
+          <img src="https://salemhalloweencity.com/wp-content/uploads/2015/08/cropped-fb_icon.png" alt="" class="halloween-img">
+        </div>
+      </section> 
+      
+      <section>
+        <div style="padding-top: 1px;"></div>
+        <div class="thanksgiving-div" id="thanksgiving-div" onclick="location.href='https://www.youtube.com/watch?v=9_wKHixTXOg'">
+          <img src="https://spaces-cdn.clipsafari.com/3v37j69p1qfbyn99fl5er6dbqfzj" alt="" class="thanksgiving-img">
+        </div>
+      </section> 
+
+      <section>
+        <div style="padding-top: 1px;"></div>
+        <div class="christmas-div" id="christmas-div" onclick="location.href='https://www.youtube.com/watch?v=mSe6iZF_UfE'">
+          <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/10056/christmas-tree-clipart-md.png" alt="https://i.pinimg.com/originals/fb/09/c7/fb09c7b21144f3fc5de1815ba93393df.png" class="tree-img">
+        </div>
+      </section>    
     </div>
-  </section>    
+    
+    
+    
     <div style="padding-top: 20px;"></div>
   </body>
 </html>
