@@ -5,6 +5,10 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #131313;
+  color: white;
+  text-align: center;
+  font-family: Roboto;
 }
 
 .navbar {
@@ -12,11 +16,14 @@ body {
   position: relative;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(33, 33, 33);
+  /* background-color: rgb(33, 33, 33); */
+  background-color: rgba(33, 33, 33, 0.754);
   color: white;
   position: fixed;
   width: 100%;
   z-index: 5;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #1c2424;
 }
 
 .website-title {
