@@ -17,6 +17,17 @@ body {
   background-position:top; 
   
 }
+/* Apply different styles for mobile devices */
+@media only screen and (max-width: 768px) {
+  body {
+    background-attachment: fixed; /* Change attachment to scroll */
+    background-size: cover; /* Keep cover for the mobile background */
+    background-position:top; 
+    min-height: 100vh;
+  }
+}
+
+
 
 
 .navbar {
@@ -24,14 +35,14 @@ body {
   position: relative;
   justify-content: space-between;
   align-items: center;
-  /* background-color: rgb(33, 33, 33); */
-  background-color: rgba(31, 31, 31, 0.8);
+  background-color: rgb(32, 32, 32);
+  /* background-color: rgba(31, 31, 31, 0.8); */
   /* background-color: #101114a9; */
   color: white;
   position: fixed;
   width: 100%;
   z-index: 5;
-  backdrop-filter: blur(14px);
+  /* backdrop-filter: blur(14px); */
   border-bottom: 1.25px solid rgb(62, 62, 62);
   
 }
