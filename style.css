@@ -9,7 +9,15 @@ body {
   color: white;
   text-align: center;
   font-family: Roboto;
+
+  background-image: url('5137842.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  background-position:top; 
+  
 }
+
 
 .navbar {
   display: flex;
@@ -24,7 +32,7 @@ body {
   width: 100%;
   z-index: 5;
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid #2f2f2f;
+  border-bottom: 1.25px solid rgb(62, 62, 62);
   
 }
 
