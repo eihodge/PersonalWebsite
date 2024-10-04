@@ -5,8 +5,8 @@
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
-body {
-  background-image: none;
+body:before {
+  background: none;
 }
 
 button {
