@@ -2,14 +2,11 @@
   box-sizing: border-box;
 }
 
-body.ios {
-  background-color: lightgreen; /* Example style */
-}
 
-/* body:before {
+body:before {
   content: "";
   display: block;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -20,7 +17,7 @@ body.ios {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-} */
+}
 
 body {
   margin: 0;
@@ -30,29 +27,22 @@ body {
   text-align: center;
   font-family: Roboto;
 
-  background-image: url('5137842.jpg'); 
+  /* background-image: url('5137842.jpg'); 
   background-size: cover; 
   background-repeat: no-repeat; 
   background-attachment: fixed; 
-  background-position:top; 
+  background-position:top;  */
   
 }
 /* Apply different styles for mobile devices */
 @media only screen and (max-width: 768px) {
   body {
-    background-attachment: fixed; 
-    background-size: cover; 
+    background-attachment: fixed; /* Change attachment to scroll */
+    background-size: cover; /* Keep cover for the mobile background */
     background-position:top; 
     min-height: 100vh;
   }
-} 
-
-/* @media only screen and (max-width: 768px) {
-  body {
-    background: none;
-    background-color: #131313;
-  }
-}  */
+}
 
 
 
