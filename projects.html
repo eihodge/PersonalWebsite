@@ -45,113 +45,113 @@
       }
 
       @media (max-width: 768px) {
-    .buttons-row {
-      margin-top: 12px;  
-      justify-content: center;    /* Center buttons horizontally in the container */
+      .buttons-row {
+        margin-top: 12px;  
+        justify-content: center;    /* Center buttons horizontally in the container */
+      }
+
+      .buttons-row button {
+          flex: 1 1 auto;             /* Allow buttons to take full width if needed */
+          max-width: 200px;           /* Optional: Set a max-width to control button size */
+          margin: 5px;                /* Optional: Add margin for better spacing */
+      }
     }
 
-    .buttons-row button {
-        flex: 1 1 auto;             /* Allow buttons to take full width if needed */
-        max-width: 200px;           /* Optional: Set a max-width to control button size */
-        margin: 5px;                /* Optional: Add margin for better spacing */
+    .container-single {
+      max-width: 1200px;
+      padding-left: 17px;
+      padding-right: 17px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+      font-size: 17px;
+      margin-bottom: 75px;
     }
-}
 
-
-
-
-  .container {
-    display: flex;
-    min-height: auto; /* Sets a minimum height */
-    height: auto; /* Allows height to grow as needed */
-    
-    max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-    
-  }
-
-.left, .right {
-    flex: 1; /* Each div takes up equal space horizontally */
-    display: flex;
-    flex-direction: column;
-     /* Align items to the start so divs grow naturally */
-    align-items:center;
-    justify-content:center;
-    padding: 17px;
-    box-sizing: border-box;
-    background-clip: padding-box; /* Prevents background color bleeding on resize */
-
-    line-height: 1.7;
-    font-size: 17px;
-}
-
-.left {
-    background-color: rgba(173, 216, 230, 0);
-}
-
-.right {
-    background-color: rgba(240, 128, 128, 0);
-    text-align: left;
-}
-
-/* Responsive layout for smaller screens */
-@media (max-width: 900px) {
     .container {
-        flex-direction: column; /* Stack divs vertically */
+      display: flex;
+      min-height: auto;
+      height: auto;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .left, .right {
+      flex: 1; /* Each div takes up equal space horizontally */
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content:center;
+      padding: 17px;
+      box-sizing: border-box;
+      background-clip: padding-box; /* Prevents background color bleeding on resize */
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .left {
+      background-color: rgba(173, 216, 230, 0);
+    }
+
+    .right {
+      background-color: rgba(240, 128, 128, 0);
+      text-align: left;
+    }
+
+    /* Responsive layout for smaller screens */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column; /* Stack divs vertically */
+      }
+
+      .left, .right {
         min-height: auto; /* Allow divs to grow as needed */
-    }
-}
-
-
-
-
-      /* VIDEO PLAYER */
-      .video-container {
-        width: 100%;
-        /* max-width: 600px; */
-        overflow: hidden;
-        position: relative;
-        padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        background-color: #000;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28), 0 4px 8px rgba(0, 0, 0, 0.25); /* Soft shadow */
-
-      }
-      .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
       }
 
-      
-      .fading-line {
-        width: 80%;
-        height: 2px; /* Line thickness */
-        background: linear-gradient(to right, transparent, rgba(150, 150, 150, 0.368), transparent);
-        margin: 0 auto;
-        margin-top: -5px
+      .right {
+        text-align: center;
+      }
     }
 
-
-      .slide {
-        max-width: 100%;
-        border-radius: 20px;
-        border: 3px solid rgb(67, 67, 67);
-      }
-
-      .slide:hover {
-        cursor: pointer;
-      }
-
+    /* VIDEO PLAYER */
+    .video-container {
+      width: 100%;
+      /* max-width: 600px; */
+      overflow: hidden;
+      position: relative;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      background-color: #000;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28), 0 4px 8px rgba(0, 0, 0, 0.25); /* Soft shadow */
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
       
+    .fading-line {
+      width: 80%;
+      height: 2px; /* Line thickness */
+      background: linear-gradient(to right, transparent, rgba(150, 150, 150, 0.368), transparent);
+      margin: 0 auto;
+      margin-top: -5px
+    }
 
+    .slide {
+      max-width: 100%;
+      border-radius: 20px;
+      border: 3px solid rgb(67, 67, 67);
+    }
+
+    .slide:hover {
+      cursor: pointer;
+    }
     </style>
   </head>
   <body>
@@ -205,9 +205,6 @@
       <button class='link-button' onclick="location.href='webapps/AdvancedCalculator/advanced_calculator'">Advanced Calculator</button>
     </div>
 
-
-    
-
     <div style="padding-top: 30px;"></div>
     <h1 style="margin-bottom: 3px;">Game Dev Projects</h1>
     <div>
@@ -229,12 +226,8 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowfullscreen>
           </iframe>
-        </div>
-        
+        </div>  
       </div>
-      
-      
-      
       
       <div class="right">
         <p>
@@ -246,7 +239,6 @@
           to build a portal and find their way home. FPS mechanics like sprinting, shooting, and limited 
           ammo combine with exploration and survival elements to create an exciting action adventure game.
         </p>
-
       </div>
     </div>
     <!-- <div class="buttons-row" style="margin-top: -15px;">
@@ -254,22 +246,14 @@
       <button class="link-button">GitHub Repository</button>
     </div> -->
 
-
-
-
-
-      <div class="container" style="margin-top: 15px; margin-bottom: 60px;">
-        <div class="left">
-          <img class="slide" src="infinitygate1.png" alt="" onclick="location.href='infinitygate1.png'">
-        </div>
-        <div class="right">
-          <img class="slide" src="infinitygate2.png" alt="" onclick="location.href='infinitygate2.png'">
-        </div>
+    <div class="container" style="margin-top: 15px; margin-bottom: 60px;">
+      <div class="left">
+        <img class="slide" src="infinitygate1.png" alt="" onclick="location.href='infinitygate1.png'">
       </div>
-
-
-
-
+      <div class="right">
+        <img class="slide" src="infinitygate2.png" alt="" onclick="location.href='infinitygate2.png'">
+      </div>
+    </div>
 
     <div style="margin-bottom: -10px; margin-top: 16px;">
       <h2>Test Subject Michael</h2>
@@ -285,8 +269,7 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowfullscreen>
           </iframe>
-        </div>
-        
+        </div> 
       </div>
       
       <div class="right">
@@ -312,16 +295,6 @@
       <button class="link-button" onclick="location.href='https://drive.google.com/file/d/1plcz9aZGf53ItkF-4uZ3uofePF5noWTq/view'">Download Game</button>
       <!-- <button class="link-button">GitHub Repository</button> -->
     </div>
-
-
-
-
-
-
-
-
-
-
 
     <div style="margin-bottom: -26px; margin-top: 100px;"></div>
     <h2>Virtual Reality Room Recreation (1:1 Scale)</h2>
@@ -357,13 +330,8 @@
             every detail accurately. This project allowed me to enhance my 3D modeling skills and experiment with creating 
             immersive virtual spaces in Unreal Engine.
         </p>
-        
-
       </div>
     </div>
-
-
-
 
     <div style="margin-bottom: -10px; margin-top: 46px;">
       <h2>Zombie First Person Shooter</h2>
@@ -400,11 +368,115 @@
 
       </div>
     </div>
+
+    <h1 style="margin-bottom: 3px;">Notable NC State Projects</h1>
     
+    <div style="margin-bottom: -10px; margin-top: 46px;"></div>
+      <h2>WolfConnect Mentorship Portal | NC State Team Project</h2>
+      <div class="fading-line"></div>
+      <p>Capstone Project for Computer Science Bachelor's Degree Program</p>
+    </div>
+    <div class="container">
+      <div class="left">
+        <p>put image here</p>
+      </div>
+      <div class="right">
+        <p>coming soon</p>
+      </div>
+    </div>
+
+
     
 
 
+    <div style="margin-bottom: -10px; margin-top: 46px;"></div>
+      <h2>P2P Network Using Sockets | NC State Project</h2>
+      <div class="fading-line"></div>
+      <p>Final Project for CSC 401 - Data and Communications Networks</p>
+    </div>
+    <div class="container-single">
+      <p>
+        This project was a Peer-to-Peer (P2P) network application using Python sockets. 
+        It allows peers to share, request, and download RFC (Request for Comments) 
+        documents, which are technical and organizational notes that describe standards 
+        and protocols for the internet and networking systems. The client can add RFCs, 
+        list available RFCs, and download them from other peers, while the server manages 
+        connections and the list of RFCs. I implemented this project with a partner.
+      </p>
+      <p>
+        <strong>Technologies Used:</strong> Python, Sockets, Multithreading
+      </p>
+      
+    </div>
 
+    <div style="margin-bottom: -10px; margin-top: 46px;"></div>
+      <h2>Rainfall Prediction with Linear Regression | NC State Project</h2>
+      <div class="fading-line"></div>
+      <p>Final Project for CSC 422 - Automated Learning and Data Analysis</p>
+    </div>
+    <div class="container-single">
+      <p>For my CSC 422 Automated Learning and Data Analysis class, I developed a project 
+        titled <strong>Precipitation Prediction using Multi-Dimensional Linear 
+        Regression</strong>. The goal was to predict rainfall patterns in the Pacific 
+        Northwest using four- and five-dimensional linear regression models. My project 
+        involved analyzing relationships between precipitation, time, elevation, latitude, 
+        and longitude to identify trends and potential correlations.
+      </p>
+      <p>I used the dataset "50 km resolution daily precipitation for the Pacific 
+        Northwest, 1949-94" and integrated it with an elevation dataset that I built myself
+        by writing a short python script which used the Google Maps Elevation API to 
+        get the elevation of every coordinate pair in the precipitation dataset. 
+        Combining the pricipitation dataset with my altitude dataset allowed me to enhance the predictive 
+        model, which fulfilled the project requirement to encorperate something novel into my 
+        project. I hypothesized that factors such as proximity to the coast and altitude 
+        would significantly impact rainfall predictions. Unfortunately, the results indicated 
+        only a marginal improvement after I incorporated altitude, but the project 
+        still gave me valuable hands-on experience in data analysis, linear regression modeling, and 
+        handling large datasets using Python tools such as NumPy, pandas, and scikit-learn.
+      </p>
+      <p><strong>Technologies Used:</strong> Python, Jupyter Notebooks, Google Maps API, 
+        NumPy, pandas, scikit-learn</p>
+    </div>
+
+    <div style="margin-bottom: -10px; margin-top: 46px;"></div>
+      <h2>iTrust 2 | NC State Team Project</h2>
+      <div class="fading-line"></div>
+      <p>Final Project for CSC 326 - Software Engineering</p>
+    </div>
+    <div class="container-single">
+      <p>For my CSC 326 Software Engineering course, I contributed to the development 
+        of <strong>iTrust2</strong>, a healthcare application for managing patient data 
+        and user roles. My team focused on adding a new <strong>Patient Advocate</strong> role,
+        which allows users to view and manage patient information to assist with their 
+        healthcare needs. My main contributions included designing 
+        frontend wireframes and flowmaps, as well as implementing REST API endpoints and frontend interfaces using <strong>JavaScript</strong> 
+        and <strong>AngularJS</strong>. I developed user interfaces for managing Patient 
+        Advocate permissions and associating advocates with patients.
+        Working on iTrust2 helped me gain experience with frontend development, 
+        collaborating on a large codebase, and utilizing GitHub for version control 
+        and CI/CD with GitHub Actions.</p>
+    </div>
+
+    <div style="margin-bottom: -10px; margin-top: 46px;"></div>
+      <h2>Image Compression Application | NC State Project</h2>
+      <div class="fading-line"></div>
+      <p>Project for CSC 230 - C and Software Tools</p>
+    </div>
+    <div class="container-single">
+      <p>I developed an image compression application for the "C and Software Tools" course at NC State University. 
+        It involved implementing an image compression and decompression algorithm using 
+        <a class="link-effect" href="https://en.wikipedia.org/wiki/Discrete_cosine_transform" target="_blank">
+          Discrete Cosine Transform (DCT)</a>. The algorithm compressed Portable Gray Map (PGM) 
+        images into a custom format and then decompressed them back to their original form 
+        with minimal fidelity loss. The project also implemented a Makefile for build automation, 
+        which ensured that all components are compiled and linked correctly. 
+      </p>
+      <p>The image compression was done by breaking down images into smaller blocks, applying the 
+        DCT to convert spatial pixel values into frequency components, and then encoding these 
+        components to reduce file size. During decompression, the Inverse DCT (IDCT) was used to 
+        reconstruct the image. The implementation also used efficient memory usage and bit-level 
+        file operations to optimize data storage and retrieval. </p>
+    </div>
 
     <div style="padding-top: 55px;"></div>
   </body>
