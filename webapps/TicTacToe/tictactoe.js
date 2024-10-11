@@ -32,34 +32,34 @@ function executeMove(idx1, idx2, buttonId) {
   if (grid[idx1][idx2] !== '' && !winConditionMet && turnsTaken < 9) {
     alert('This square has already been played. Try another square.');
   } else {
-    if (turnsTaken < 9  && !winConditionMet) { // PLAYER 1 (X) TURN
-      if (turn == 0) {
+    if (turnsTaken < 9 && !winConditionMet) {
+      const button = document.getElementById(buttonId);
+
+      if (turn == 0) { // PLAYER 1 (X) TURN
         grid[idx1][idx2] = 'X';
-        document.getElementById(buttonId).innerText = 'X';
+        button.innerText = 'X';
+        button.classList.add('active'); // Add active class for visibility
+        button.style.color = 'rgb(240, 40, 40)'; // Change text color to red
         checkWinConditionMet();
-        if (winConditionMet == false) {
-          turn = 1; // switch turn
+        if (!winConditionMet) {
+          turn = 1; // Switch turn to Player 2
           document.getElementById('gameplay-status').innerText = 'Turn: O';
         }
-        document.getElementById(buttonId).style = 'background-color: rgb(240, 40, 40);';
       } else if (!winConditionMet) { // PLAYER 2 (O) TURN
         grid[idx1][idx2] = 'O';
-        document.getElementById(buttonId).innerText = 'O';
-        checkWinConditionMet();  
-        if (winConditionMet == false) {
-          turn = 0; // switch turn
+        button.innerText = 'O';
+        button.classList.add('active'); // Add active class for visibility
+        button.style.color = 'rgb(27, 120, 255)'; // Change text color to blue
+        checkWinConditionMet();
+        if (!winConditionMet) {
+          turn = 0; // Switch turn to Player 1
           document.getElementById('gameplay-status').innerText = 'Turn: X';
         }
-        document.getElementById(buttonId).style = 'background-color: rgb(27, 120, 255);';
       }
       turnsTaken++;
       if (turnsTaken == 9 || winConditionMet) {
-        if (winConditionMet == true) {
-          if (turn == 0) {
-            document.getElementById('gameplay-status').innerText = 'Winner: X';
-          } else if (turn == 1) {
-            document.getElementById('gameplay-status').innerText = 'Winner: O';
-          }
+        if (winConditionMet) {
+          document.getElementById('gameplay-status').innerText = `Winner: ${turn === 0 ? 'X' : 'O'}`;
         } else {
           document.getElementById('gameplay-status').innerText = "Winner: Draw";
         }

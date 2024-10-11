@@ -12,6 +12,10 @@
     <meta content="width=device-width, initial-scale=0.77, minimum-scale=0.41, user-scalable=yes" name="viewport">
     <link rel="icon" type="image/png" href="/websiteIcon.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    
   </head>
   <body>
     <nav class="navbar">
@@ -37,33 +41,29 @@
       <div>
         <p style="font-size: 30px; margin-bottom: 0;">Tic Tac Toe</p>
       </div>
-
+    
       <div>
-        <p class="gameplay-state" id="gameplay-status"></p>
+        <p class="gameplay-state" id="gameplay-status">Turn: X</p>
       </div>
-
-      <div>
-        <div>
-          <button class="grid-button" id="TL" onclick="executeMove(0, 0, 'TL')" >_</button>
-          <button class="grid-button" id="TM" onclick="executeMove(0, 1, 'TM')" >_</button>
-          <button class="grid-button" id="TR" onclick="executeMove(0, 2, 'TR')" >_</button>
-        </div>
-        <div>
-          <button class="grid-button" id="ML" onclick="executeMove(1, 0, 'ML')" >_</button>
-          <button class="grid-button" id="MM" onclick="executeMove(1, 1, 'MM')" >_</button>
-          <button class="grid-button" id="MR" onclick="executeMove(1, 2, 'MR')" >_</button>
-        </div>
-        <div>
-          <button class="grid-button" id="BL" onclick="executeMove(2, 0, 'BL')" >_</button>
-          <button class="grid-button" id="BM" onclick="executeMove(2, 1, 'BM')" >_</button>
-          <button class="grid-button" id="BR" onclick="executeMove(2, 2, 'BR')" >_</button>
-        </div>
+    
+      <!-- Grid container for the game board -->
+      <div class="game-board">
+        <button class="grid-button" id="TL" onclick="executeMove(0, 0, 'TL')">_</button>
+        <button class="grid-button" id="TM" onclick="executeMove(0, 1, 'TM')">_</button>
+        <button class="grid-button" id="TR" onclick="executeMove(0, 2, 'TR')">_</button>
+        <button class="grid-button" id="ML" onclick="executeMove(1, 0, 'ML')">_</button>
+        <button class="grid-button" id="MM" onclick="executeMove(1, 1, 'MM')">_</button>
+        <button class="grid-button" id="MR" onclick="executeMove(1, 2, 'MR')">_</button>
+        <button class="grid-button" id="BL" onclick="executeMove(2, 0, 'BL')">_</button>
+        <button class="grid-button" id="BM" onclick="executeMove(2, 1, 'BM')">_</button>
+        <button class="grid-button" id="BR" onclick="executeMove(2, 2, 'BR')">_</button>
       </div>
-
+    
       <div>
         <button class="restart-button" style='margin-top: 20px;' onclick="location.href='tictactoe.html'">Restart</button>
       </div>
     </div>
+    
 
     <div style="margin-bottom: 15px;"></div>
   </body>
