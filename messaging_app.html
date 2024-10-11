@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ethan Hodge</title>
+    <script src="navbar.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no" name="viewport">
+    <style>
+      .link-button {
+        border: 1px solid #131313;
+        padding-top: 12px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 12px;
+        border-radius: 30px;
+        background-color: #4b64f3;
+        margin-right: 16px;
+        margin-top: 16px;
+        font-family: Roboto, Arial;
+        font-size: 23px;
+        font-weight: 350;
+        color: rgb(255, 255, 255);
+        min-width: 215px;
+        transition: transform 0.22s, border 0.22s;
+      }
+
+      .link-button:hover {
+        cursor: pointer;
+        /* transform: scale(1.03); */
+        border: 1px solid #ffffff;
+      }
+
+      .buttons-row {
+        display: flex;                 /* Use flexbox to create a row layout */
+        justify-content: center; /* Space the buttons evenly */
+        gap: 10px;                     /* Adds space between the buttons */
+        flex-wrap: wrap;               /* Allows buttons to wrap onto new lines if needed */
+      }
+
+      .buttons-row button {
+        white-space: nowrap;           /* Prevents the text inside buttons from wrapping */
+      }
+
+      @media (max-width: 768px) {
+      .buttons-row {
+        margin-top: 12px;  
+        justify-content: center;    /* Center buttons horizontally in the container */
+      }
+
+      .buttons-row button {
+          flex: 1 1 auto;             /* Allow buttons to take full width if needed */
+          max-width: 200px;           /* Optional: Set a max-width to control button size */
+          margin: 5px;                /* Optional: Add margin for better spacing */
+      }
+    }
+
+    .container-single {
+      max-width: 1200px;
+      padding-left: 17px;
+      padding-right: 17px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+      font-size: 17px;
+      margin-bottom: 75px;
+    }
+
+    .container {
+      display: flex;
+      min-height: auto;
+      height: auto;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .left, .right {
+      flex: 1; /* Each div takes up equal space horizontally */
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content:center;
+      padding: 17px;
+      box-sizing: border-box;
+      background-clip: padding-box; /* Prevents background color bleeding on resize */
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .left {
+      background-color: rgba(173, 216, 230, 0);
+    }
+
+    .right {
+      background-color: rgba(240, 128, 128, 0);
+      text-align: left;
+    }
+
+    /* Responsive layout for smaller screens */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column; /* Stack divs vertically */
+      }
+
+      .left, .right {
+        min-height: auto; /* Allow divs to grow as needed */
+      }
+
+      .right {
+        text-align: center;
+      }
+    }
+
+    /* VIDEO PLAYER */
+    .video-container {
+      width: 100%;
+      /* max-width: 600px; */
+      overflow: hidden;
+      position: relative;
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+      background-color: #000;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28), 0 4px 8px rgba(0, 0, 0, 0.25); /* Soft shadow */
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+      
+    .fading-line {
+      width: 80%;
+      height: 2px; /* Line thickness */
+      background: linear-gradient(to right, transparent, rgba(150, 150, 150, 0.368), transparent);
+      margin: 0 auto;
+      margin-top: -5px;
+      max-width: 1200px;
+    }
+
+    .slide {
+      max-width: 100%;
+      border-radius: 20px;
+      border: 3px solid rgb(67, 67, 67);
+    }
+
+    .slide:hover {
+      cursor: pointer;
+    }
+
+    h1 {
+      padding-bottom: 12px;
+      font-size: 34px;
+    }
+
+    .ERD-diagram {
+      width: 100%;
+    }
+
+    </style>
+  </head>
+  <body>
+    
+    <nav class="navbar">
+      <div class="website-title" onclick="location.href='https://ethanhodge.com'">Ethan Hodge</div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="website-links">
+        <ul>
+          <li><a href="#" onclick="location.href='https://ethanhodge.com'">Home</a></li>
+          <li><a href="#" onclick="location.href='https://ethanhodge.com/projects'">Projects</a></li>
+          <li><a href="#" onclick="location.href='https://ethanhodge.com/about'">About</a></li>
+          <li><a href="#" onclick="location.href='https://ethanhodge.com/contact'">Contact</a></li>
+          <li><a href="#" onclick="location.href='https://github.com/eihodge'">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div style="padding-top: 55px;"></div>
+
+    <h1 style="margin-bottom: 3px;">Messaging Application</h1>
+    
+    <div style="margin-bottom: -10px; margin-top: 16px;"></div>
+      
+      <div class="fading-line"></div>
+      <p><strong>Tech Stack:</strong> </p>
+      <ul style="list-style: none;">
+        <li><b>Frontend:</b> React, JavaScript, HTML, CSS</li>
+        <li><b>Backend:</b> Flask, Flask_SQLAlchemy, Flask_CORS, SQLAlchemy</li>
+        <li><b>Database:</b> SQLite</li>
+        <li><b>Deployment:</b> Flask server</li>
+      </ul>
+    </div>
+    
+    <div class="buttons-row" style="margin-top: -15px; margin-bottom: 60px;">
+      <div>
+        <button class='link-button' onclick="location.href='https://github.com/eihodge/messaging-app'">GitHub Repository</button>
+      </div>
+    </div>
+
+
+    <h2>Database Schema</h2>
+    <div class="container">
+      <div class="left">
+        <img class="ERD-diagram" src="MessagingAppERD.jpeg">
+      </div>
+      <div class="right">
+        This Entity Relationship Diagram visualizes the design of my database schema.
+        There are three tables: User, Conversation, and Message.
+        Each Conversation involves two Users, linked through the two foreign 
+        keys 'user1_id' and 'user2_id'. Each Message is linked to a single 
+        conversation with the 'conversation_id' foreign key, as well as to two 
+        users through the 'sender_id' and 'receiver_id' foreign keys. Each Message also has 
+        a 'content' string to store the text of the message, as well as a DateTime 'timestamp' 
+        of when the message was sent. 'timestamp' is used for sorting and displaying to the user.
+      </div>
+    </div>
+
+
+
+    
+
+
+    
+    <div style="padding-top: 55px;"></div>
+  </body>
+</html>
