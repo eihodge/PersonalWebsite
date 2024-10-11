@@ -2,72 +2,65 @@ body {
   background-color: #131313;
   color: white;
   text-align: center;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto;
 }
-
 .game {
   background-color: #2d2d2d;
-  padding: 15px;
-  margin: 0 auto;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  width: 500px;
+  margin:0 auto;
   border-radius: 20px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 600px;
+  box-shadow: 0 0 30px rgba(0,0,0,1);
 }
 
-/* Grid container for the tic tac toe board */
-.game-board {
-  display: grid;
-  grid-template-columns: repeat(3, 100px); 
-  grid-gap: 8px; /* Space between grid items */
-  justify-content: center;
-  align-items: center;
-  background: rgb(91, 91, 91); /* Background color for checkerboard */
-  padding: 0px;
-  margin: 20px;
+.gameplay-state {
+  font-weight: 500;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #ffa500; /* Orange color for emphasis */
 }
 
 .grid-button {
-  width: 100px;  /* Set fixed width */
-  height: 100px; /* Set fixed height */
-  border-radius: none;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  border-radius: 12px;
   border: none;
-  background-color: #2d2d2d;
-  font-family: 'Mochiy Pop One';
-  font-size: 100px; /* Large font size */
-  font-weight: 900;
-  color: #2d2d2d00; /* Match the text color to the background initially */
-  display: flex; /* Use flexbox for centering text */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  transition: color 0.2s; /* Smooth transition for color */
-  
+  background-color:lightgray;
+  font-size: 20px;
+  font-weight: bold;
+  color: lightgray; 
+  max-width: 111px;
 }
 .grid-button:hover {
+  box-shadow: 0px 0px 12px rgba(0,0,0,1);
   cursor: pointer;
-}
-
-.grid-button.active { /* Add this class when the button is clicked */
-  color: #131313; /* Change text color to make X or O visible */
 }
 
 .restart-button {
   border: none;
-  padding: 15px 23px;
+  padding-top: 15px;
+  padding-left: 23px;
+  padding-right: 23px;
+  padding-bottom: 15px;
   border-radius: 5px;
   background-color: chocolate;
+  
   font-size: 15px;
   color: rgb(255, 255, 255);
-  transition: background-color 0.2s; /* Smooth transition for background color */
 }
-
 .restart-button:hover {
   background-color: rgb(212, 122, 57);
   cursor: pointer;
 }
-
 .restart-button:active {
   background-color: rgb(211, 140, 90);
 }
