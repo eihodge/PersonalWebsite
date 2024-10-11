@@ -161,63 +161,66 @@
 
     .ERD-diagram {
       width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.725),
+                  0 4px 8px rgba(0, 0, 0, 0.725);
     }
 
 
     /* API Endpoints table */
     table {
-    width: 93%; /* Set the table width to 80% */
-    max-width: 1200px;
-    border-collapse: collapse;
-    margin: 20px auto; /* Centers the table horizontally */
-    background-color: #1e1e1e; /* Dark background color */
-    color: #ffffff; /* Text color for better contrast */
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Hide overflow from rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
-    table-layout: fixed; /* Makes table cells respect width constraints */
-}
+      width: 93%; 
+      max-width: 1200px;
+      border-collapse: collapse;
+      margin: 20px auto;
+      background-color: #1e1e1e;
+      color: #ffffff;
+      border-radius: 10px; 
+      overflow: hidden; 
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+      table-layout: fixed; 
+    }
 
-th, td {
-    padding: 16px; /* Increased padding for a spacious look */
-    text-align: left;
-    border: none; /* Remove borders */
-    word-wrap: break-word; /* Ensure words wrap in the cell */
-    overflow-wrap: break-word; /* Handle long words and URLs */
-}
+    th, td {
+      padding: 16px; 
+      text-align: left;
+      border: none; 
+      word-wrap: break-word; 
+      overflow-wrap: break-word;
+    }
 
-th {
-    background-color: #2c2c2c; /* Darker background for headers */
-    color: #b3b3b3; /* Softer text color for headers */
-    text-transform: uppercase; /* Uppercase text for headers */
-    letter-spacing: 0.05em; /* Slight letter spacing */
-    font-weight: 500; /* Increased font weight */
-}
+    th {
+      background-color: #2c2c2c; 
+      color: #b3b3b3; 
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500; 
+    }
 
-tr:nth-child(odd) {
-    background-color: #252525; /* Darker shade for odd rows */
-}
+    tr:nth-child(odd) {
+      background-color: #252525; 
+    }
 
-tr:nth-child(even) {
-    background-color: #1e1e1e; /* Lighter shade for even rows */
-}
+    tr:nth-child(even) {
+      background-color: #1e1e1e;
+    }
 
 
-/* Apply text wrapping specifically for the first column */
-td:first-child {
-    white-space: normal; /* Allow normal wrapping of text */
-    word-wrap: break-word; /* Break long words to fit within the column */
-    overflow-wrap: break-word; /* Ensure breaking of long words and URLs */
-    width: 25%; /* Set a fixed width for the first column */
-}
+    /* Apply text wrapping specifically for the first column */
+    td:first-child {
+      white-space: normal; /* Allow normal wrapping of text */
+      word-wrap: break-word; /* Break long words to fit within the column */
+      overflow-wrap: break-word; /* Ensure breaking of long words and URLs */
+      width: 25%; /* Set a fixed width for the first column */
+    }
 
-/* Code styling */
-code {
-    color: #ff7f50; /* Orange text for code elements */
-    background-color: #333333; /* Background for code elements */
-    padding: 3px 5px;
-    border-radius: 4px;
-}
+    /* Code styling */
+    code {
+      color: #ff7f50; /* Orange text for code elements */
+      background-color: #333333; /* Background for code elements */
+      padding: 3px 5px;
+      border-radius: 4px;
+    }
 
 
 
