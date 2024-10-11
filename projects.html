@@ -25,6 +25,14 @@
         color: rgb(255, 255, 255);
         min-width: 215px;
         transition: transform 0.22s, border 0.22s;
+
+        /* animation: fade linear;
+        animation-timeline: view(); */
+      }
+
+      h1 {
+        animation: fade linear;
+        animation-timeline: view();
       }
 
       .link-button:hover {
@@ -92,11 +100,15 @@
 
     .left {
       background-color: rgba(173, 216, 230, 0);
+      /* animation: fade linear;
+      animation-timeline: view(); */
     }
 
     .right {
       background-color: rgba(240, 128, 128, 0);
       text-align: left;
+      /* animation: fade linear;
+      animation-timeline: view(); */
     }
 
     /* Responsive layout for smaller screens */
@@ -142,6 +154,9 @@
       margin: 0 auto;
       margin-top: -5px;
       max-width: 1200px;
+
+      /* animation: fade linear;
+      animation-timeline: view(); */
     }
 
     .slide {
@@ -158,6 +173,42 @@
       padding-bottom: 12px;
       font-size: 34px;
     }
+
+    @keyframes fade {
+    from {
+      opacity: 0;
+      transform: translateY(20px); /* Start with a 20px shift down */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* End at the original position */
+    }
+
+    0% {
+      opacity: 0;
+      transform: translateY(200px); /* Initial position with lower opacity */
+    }
+    20% {
+      opacity: 1;
+      transform: translateY(0); /* Visible and in original position */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Keep it in place */
+    }
+  }
+
+
+  .project {
+    animation: fade linear;
+    animation-timeline: view();
+  }
+
+/* 
+    p {
+      animation: fade linear;
+      animation-timeline: view();
+    } */
     </style>
   </head>
   <body>
@@ -184,373 +235,399 @@
 
     <h1 style="margin-bottom: 3px;">Full-Stack Web Applications</h1>
     
-    <div style="margin-bottom: -10px; margin-top: 16px;"></div>
-      <h2>Messaging Application</h2>
-      <div class="fading-line"></div>
-      <p><strong>Tech Stack:</strong> </p>
-      <ul style="list-style: none;">
-        <li><b>Frontend:</b> React, JavaScript, HTML, CSS</li>
-        <li><b>Backend:</b> Flask, Flask_SQLAlchemy, Flask_CORS, SQLAlchemy</li>
-        <li><b>Database:</b> SQLite</li>
-        <li><b>Deployment:</b> Flask server</li>
-      </ul>
-    </div>
-    <div class="container">
-      <div class="left">
-        <div class="video-container">
-          <iframe 
-              src="https://www.youtube.com/embed/kJUEzy82QOM" 
-              title="YouTube video player" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-          </iframe>
+    <div class="project">
+      <div style="margin-bottom: -10px; margin-top: 16px;"></div>
+        <h2>Messaging Application</h2>
+        <div class="fading-line"></div>
+        <p><strong>Tech Stack:</strong> </p>
+        <ul style="list-style: none;">
+          <li><b>Frontend:</b> React, JavaScript, HTML, CSS</li>
+          <li><b>Backend:</b> Flask, Flask_SQLAlchemy, Flask_CORS, SQLAlchemy</li>
+          <li><b>Database:</b> SQLite</li>
+          <li><b>Deployment:</b> Flask server</li>
+        </ul>
+      </div>
+      <div class="container">
+        <div class="left">
+          <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/kJUEzy82QOM" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <div class="right">
+          I built a simple messaging application which allows users to create an account, 
+          log in to an existing account, and send messages to other users who signed up 
+          for the application. Messaging is real-time and updates automatically to 
+          display new messages as they are sent or received. The frontend is built 
+          using React, and the backend used Flask for RESTful APIs and SQLAlchemy 
+          for database management. My app also uses CORS for secure cross-origin 
+          communication between the front and backend.
         </div>
       </div>
-      <div class="right">
-        I built a simple messaging application which allows users to create an account, 
-        log in to an existing account, and send messages to other users who signed up 
-        for the application. Messaging is real-time and updates automatically to 
-        display new messages as they are sent or received. The frontend is built 
-        using React, and the backend used Flask for RESTful APIs and SQLAlchemy 
-        for database management. My app also uses CORS for secure cross-origin 
-        communication between the front and backend.
-      </div>
-    </div>
-    <div class="buttons-row" style="margin-top: -15px; margin-bottom: 60px;">
-      <div>
-        <button class='link-button' onclick="location.href='https://ethanhodge.com/messaging_app.html'">Learn More</button>
-        <button class='link-button' onclick="location.href='https://github.com/eihodge/messaging-app'">Git Repository</button>
+      <div class="buttons-row" style="margin-top: -15px; margin-bottom: 60px;">
+        <div>
+          <button class='link-button' onclick="location.href='https://ethanhodge.com/messaging_app.html'">Learn More</button>
+          <button class='link-button' onclick="location.href='https://github.com/eihodge/messaging-app'">Git Repository</button>
+        </div>
       </div>
     </div>
 
 
     
     <h1 style="margin-bottom: 3px;">Javascript Web Applications</h1>
-    <h3 style="margin-bottom: 3px;">Optimized for Mobile + Desktop Browsers</h3>
-  
-    <div>
-      <button class='link-button' onclick="location.href='webapps/Weather2/weather2'">Weather App</button>
-      <button class='link-button' onclick="location.href='webapps/GPA_Calculator_v2/gpa_calculator'">GPA Calculator</button>
-    </div>
-
-    <div>
-      <!-- <button class='link-button' onclick="location.href='webapps/QuoteGenerator_v2/quote_generator'">Quote Generator</button> -->
-      <button class='link-button' onclick="location.href='webapps/Drawing/drawing_app'">Sketchpad</button>
-      <button class='link-button' onclick="location.href='https://eihodge.github.io/react-projects/'">React Apps</button>
-    </div>
-
-    <div>
-      <button class='link-button' onclick="location.href='https://eihodge.github.io/material-ui-apps/'">React & Material UI Apps</button>
-    </div>
-
-    <h3 style="margin-top: 30px; margin-bottom: 3px;">Not Optimized for Mobile</h3>
-    <div>
-      <button class='link-button' onclick="location.href='webapps/TicTacToe/tictactoe'">Tic-Tac-Toe Game</button>
-      <button class='link-button' onclick="location.href='webapps/Timer/timer'">Timer</button>
-    </div>
     
-    <div>
-      <button class='link-button' onclick="location.href='webapps/Calculator/calculator'">Basic Calculator</button>
-      <button class='link-button' onclick="location.href='webapps/AdvancedCalculator/advanced_calculator'">Advanced Calculator</button>
+    <div class="project">
+      <h3 style="margin-bottom: 3px;">Optimized for Mobile + Desktop Browsers</h3>
+  
+      <div>
+        <button class='link-button' onclick="location.href='webapps/Weather2/weather2'">Weather App</button>
+        <button class='link-button' onclick="location.href='webapps/GPA_Calculator_v2/gpa_calculator'">GPA Calculator</button>
+      </div>
+
+      <div>
+        <!-- <button class='link-button' onclick="location.href='webapps/QuoteGenerator_v2/quote_generator'">Quote Generator</button> -->
+        <button class='link-button' onclick="location.href='webapps/Drawing/drawing_app'">Sketchpad</button>
+        <button class='link-button' onclick="location.href='https://eihodge.github.io/react-projects/'">React Apps</button>
+      </div>
+
+      <div>
+        <button class='link-button' onclick="location.href='https://eihodge.github.io/material-ui-apps/'">React & Material UI Apps</button>
+      </div>
+
+      <h3 style="margin-top: 30px; margin-bottom: 3px;">Not Optimized for Mobile</h3>
+      <div>
+        <button class='link-button' onclick="location.href='webapps/TicTacToe/tictactoe'">Tic-Tac-Toe Game</button>
+        <button class='link-button' onclick="location.href='webapps/Timer/timer'">Timer</button>
+      </div>
+      
+      <div>
+        <button class='link-button' onclick="location.href='webapps/Calculator/calculator'">Basic Calculator</button>
+        <button class='link-button' onclick="location.href='webapps/AdvancedCalculator/advanced_calculator'">Advanced Calculator</button>
+      </div>
     </div>
 
     <div style="padding-top: 30px;"></div>
     <h1 style="margin-bottom: 3px;">Game Dev Projects</h1>
     
-    <div style="margin-bottom: -10px; margin-top: 12px;">
-      <h2>Infinity Gate | NC State Project</h2>
-      <h3>Final Project for Foundations of Interactive Game Design</h3>
-      <div class="fading-line"></div>
-      <p><strong>Engine:</strong> Unreal Engine 4</p>
-    </div>
-    <div class="container">
-      <div class="left">
-        <div class="video-container">
-          <iframe 
-              src="https://www.youtube.com/embed/llwxXtLa9ZA" 
-              title="YouTube video player" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-          </iframe>
-        </div>  
+    <div class="project">
+      <div style="margin-bottom: -10px; margin-top: 12px;">
+        <h2>Infinity Gate | NC State Project</h2>
+        <h3>Final Project for Foundations of Interactive Game Design</h3>
+        <div class="fading-line"></div>
+        <p><strong>Engine:</strong> Unreal Engine 4</p>
       </div>
-      
-      <div class="right">
-        <p>
-          Infinity Gate is a first-person shooter developed for NC State's CSC 281 course. 
-          Infinity gate is set in a surreal alien world, based on the semester's final project  
-          theme of "Entering Wonderland." , the game places 
-          players in a fantasy-like world after the player character crash-landing on an unknown planet. 
-          With an open-world map divided into dynamic sublevels, the player assists a friendly alien engineer 
-          to build a portal and find their way home. FPS mechanics like sprinting, shooting, and limited 
-          ammo combine with exploration and survival elements to create an exciting action adventure game.
-        </p>
+      <div class="container">
+        <div class="left">
+          <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/llwxXtLa9ZA" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+          </div>  
+        </div>
+        
+        <div class="right">
+          <p>
+            Infinity Gate is a first-person shooter developed for NC State's CSC 281 course. 
+            Infinity gate is set in a surreal alien world, based on the semester's final project  
+            theme of "Entering Wonderland." , the game places 
+            players in a fantasy-like world after the player character crash-landing on an unknown planet. 
+            With an open-world map divided into dynamic sublevels, the player assists a friendly alien engineer 
+            to build a portal and find their way home. FPS mechanics like sprinting, shooting, and limited 
+            ammo combine with exploration and survival elements to create an exciting action adventure game.
+          </p>
+        </div>
+      </div>
+  
+  
+      <div class="container" style="margin-top: 15px; margin-bottom: 60px;">
+        <div class="left">
+          <img class="slide" src="infinitygate1.png" alt="" onclick="location.href='infinitygate1.png'">
+        </div>
+        <div class="right">
+          <img class="slide" src="infinitygate2.png" alt="" onclick="location.href='infinitygate2.png'">
+        </div>
       </div>
     </div>
-    <!-- <div class="buttons-row" style="margin-top: -15px;">
-      <button class="link-button">Download Game</button>
-      <button class="link-button">GitHub Repository</button>
-    </div> -->
 
-    <div class="container" style="margin-top: 15px; margin-bottom: 60px;">
-      <div class="left">
-        <img class="slide" src="infinitygate1.png" alt="" onclick="location.href='infinitygate1.png'">
-      </div>
-      <div class="right">
-        <img class="slide" src="infinitygate2.png" alt="" onclick="location.href='infinitygate2.png'">
-      </div>
-    </div>
 
-    <div style="margin-bottom: -10px; margin-top: 16px;"></div>
+
+    <div class="project">
+      <div style="margin-bottom: -10px; margin-top: 16px;">
       <h2>Santa's Christmas Quest</h2>
       <div class="fading-line"></div>
-      <p><strong>Engine:</strong> Unreal Engine 4</p>
+        <p><strong>Engine:</strong> Unreal Engine 4</p>
+      </div>
+      <div class="container">
+        <div class="left">
+          <!-- <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/D2C-S2ov6xM" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+          </div>  -->
+          PUT DEMO VIDEO HERE
+        </div>
+        <div class="right">
+          PUT DESCRIPTION HERE
+        </div>
+      </div>
+      <div class="buttons-row" style="margin-top: -15px; margin-bottom: 60px;">
+        <div>
+          <button class='link-button' onclick="location.href='christmas_game'">Download Game</button>
+        </div>
+        <!-- <button class="link-button">GitHub Repository</button> -->
+      </div>
     </div>
-    <div class="container">
-      <div class="left">
-        <!-- <div class="video-container">
-          <iframe 
-              src="https://www.youtube.com/embed/D2C-S2ov6xM" 
-              title="YouTube video player" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-          </iframe>
-        </div>  -->
-        PUT DEMO VIDEO HERE
+    
+
+    <div class="project">
+      <div style="margin-bottom: -10px; margin-top: 16px;">
+        <h2>Test Subject Michael</h2>
+        <div class="fading-line"></div>
+        <p><strong>Engine:</strong> Unreal Engine 4</p>
       </div>
-      <div class="right">
-        PUT DESCRIPTION HERE
+      <div class="container">
+        <div class="left">
+          <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/D2C-S2ov6xM" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+          </div> 
+        </div>
+        
+        <div class="right">
+          <p>
+              Test Subject Michael is a horror adventure game set in 1950's New York City, which also draws on influences 
+              from popular survival horror games like <em>Resident Evil</em> and <em>Silent Hill</em>. This project was developed to refine my skills in
+              environmental design and storytelling through level architecture. The game employs 
+              classic <em>key-lock mechanics</em>, encouraging players to explore and uncover new areas by 
+              finding keys and other story items. Scattered throughout the map are pieces of paper 
+              containing messages that players can read by interacting with them, adding depth and storytelling 
+              elements to the experience. The game also includes <em>scripted timed events</em>, where specific actions trigger pre-planned 
+              sequences, creating a more tense and immersive experience by triggering events in environments that the player may have 
+              expected to remain static and uneventful. The maps were designed myself by hand, using textures and individual 3D models that 
+              I purchased a license for on the Unreal Marketplace.
+          </p>
+
+        </div>
       </div>
-    </div>
-    <div class="buttons-row" style="margin-top: -15px; margin-bottom: 60px;">
-      <div>
-        <button class='link-button' onclick="location.href='christmas_game'">Download Game</button>
+      <div class="buttons-row" style="margin-top: -15px; margin-bottom: 60px;">
+        <button class="link-button" onclick="location.href='https://drive.google.com/file/d/1plcz9aZGf53ItkF-4uZ3uofePF5noWTq/view'">Download Game</button>
+        <!-- <button class="link-button">GitHub Repository</button> -->
       </div>
-      <!-- <button class="link-button">GitHub Repository</button> -->
     </div>
 
-    <div style="margin-bottom: -10px; margin-top: 16px;">
-      <h2>Test Subject Michael</h2>
-      <div class="fading-line"></div>
-      <p><strong>Engine:</strong> Unreal Engine 4</p>
-    </div>
-    <div class="container">
-      <div class="left">
-        <div class="video-container">
-          <iframe 
-              src="https://www.youtube.com/embed/D2C-S2ov6xM" 
-              title="YouTube video player" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-          </iframe>
-        </div> 
-      </div>
-      
-      <div class="right">
-        <p>
-            Test Subject Michael is a horror adventure game set in 1950's New York City, which also draws on influences 
-            from popular survival horror games like <em>Resident Evil</em> and <em>Silent Hill</em>. This project was developed to refine my skills in
-            environmental design and storytelling through level architecture. The game employs 
-            classic <em>key-lock mechanics</em>, encouraging players to explore and uncover new areas by 
-            finding keys and other story items. Scattered throughout the map are pieces of paper 
-            containing messages that players can read by interacting with them, adding depth and storytelling 
-            elements to the experience. The game also includes <em>scripted timed events</em>, where specific actions trigger pre-planned 
-            sequences, creating a more tense and immersive experience by triggering events in environments that the player may have 
-            expected to remain static and uneventful. The maps were designed myself by hand, using textures and individual 3D models that 
-            I purchased a license for on the Unreal Marketplace.
-        </p>
-
-      </div>
-    </div>
-    <div class="buttons-row" style="margin-top: -15px; margin-bottom: 60px;">
-      <button class="link-button" onclick="location.href='https://drive.google.com/file/d/1plcz9aZGf53ItkF-4uZ3uofePF5noWTq/view'">Download Game</button>
-      <!-- <button class="link-button">GitHub Repository</button> -->
-    </div>
-
+    
     <div style="margin-bottom: -26px; margin-top: 100px;"></div>
-    <h2>Virtual Reality Room Recreation (1:1 Scale)</h2>
-      <div class="fading-line"></div>
-      <p><strong>Engine:</strong> Unreal Engine 4</p>
-    </div>
-    <div class="container">
-      <div class="left">
-        <div class="video-container">
-          <iframe 
-              src="https://www.youtube.com/embed/DzeSL5rnrrc" 
-              title="YouTube video player" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-          </iframe>
+    <div class="project">
+      <h2>Virtual Reality Room Recreation (1:1 Scale)</h2>
+        <div class="fading-line"></div>
+        <p><strong>Engine:</strong> Unreal Engine 4</p>
+      
+      <div class="container">
+        <div class="left">
+          <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/DzeSL5rnrrc" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+          </div>
+          
         </div>
         
-      </div>
-      
-      <div class="right">
-        <p>
-            This project involved recreating my room as an accurate 1:1 environment for virtual reality using Unreal Engine. 
-            I utilized a combination of software tools, including 
-            <a class="link-effect" href="https://meshroom.en.softonic.com/" target="_blank">Meshroom</a> 
-            and 
-            <a class="link-effect" href="https://www.blender.org/" target="_blank">Blender</a>, to create high-quality photoscans 
-            of various objects for an authentic recreation. All of the furniture was modeled from scratch in Blender, and 
-            <a class="link-effect" href="https://sketchfab.com/" target="_blank">Sketchfab</a>
-            was used for a few additional Creative Commons (CC0) models.
-        </p>
-        <p>
-            For precise scaling and layout, I began with a photoscan of the entire room, using it as a reference to replicate 
-            every detail accurately from scratch. This project allowed me to enhance my 3D modeling skills and experiment with creating 
-            immersive virtual spaces in Unreal Engine.
-        </p>
+        <div class="right">
+          <p>
+              This project involved recreating my room as an accurate 1:1 environment for virtual reality using Unreal Engine. 
+              I utilized a combination of software tools, including 
+              <a class="link-effect" href="https://meshroom.en.softonic.com/" target="_blank">Meshroom</a> 
+              and 
+              <a class="link-effect" href="https://www.blender.org/" target="_blank">Blender</a>, to create high-quality photoscans 
+              of various objects for an authentic recreation. All of the furniture was modeled from scratch in Blender, and 
+              <a class="link-effect" href="https://sketchfab.com/" target="_blank">Sketchfab</a>
+              was used for a few additional Creative Commons (CC0) models.
+          </p>
+          <p>
+              For precise scaling and layout, I began with a photoscan of the entire room, using it as a reference to replicate 
+              every detail accurately from scratch. This project allowed me to enhance my 3D modeling skills and experiment with creating 
+              immersive virtual spaces in Unreal Engine.
+          </p>
+        </div>
       </div>
     </div>
 
-    <div style="margin-bottom: -10px; margin-top: 46px;">
-      <h2>Zombie First Person Shooter</h2>
-      <div class="fading-line"></div>
-      <p><strong>Engine:</strong> Unreal Engine 4</p>
-    </div>
-    <div class="container">
-      <div class="left">
-        <div class="video-container">
-          <iframe 
-              src="https://www.youtube.com/embed/J-PbMSaPoFM" 
-              title="YouTube video player" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-          </iframe>
+
+    <div class="project">
+      <div style="margin-bottom: -10px; margin-top: 46px;">
+        <h2>Zombie First Person Shooter</h2>
+        <div class="fading-line"></div>
+        <p><strong>Engine:</strong> Unreal Engine 4</p>
+      </div>
+      <div class="container">
+        <div class="left">
+          <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/J-PbMSaPoFM" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+          </div>
+          
         </div>
         
-      </div>
-      
-      <div class="right">
-        <p>
-          This was my first project in Unreal Engine 4. Players will navigate through city streets and an old hotel, 
-          completing a series of objectives that progress the game's basic quest system.
-        </p>
-        <p>
-          This game features dynamic FPS 
-          combat with multiple weapon types that players can pick up and switch between. The 
-          core gameplay includes engaging with zombie enemy AI designed to chase 
-          and attack the player. The player and enemy AI have their own health systems,
-          allowing for the player or enemies to be defeated through combat gameplay. 
-          Collectable ammunition crates and health kits are 
-          scattered throughout the environment to support player survival.
-        </p>
+        <div class="right">
+          <p>
+            This was my first project in Unreal Engine 4. Players will navigate through city streets and an old hotel, 
+            completing a series of objectives that progress the game's basic quest system.
+          </p>
+          <p>
+            This game features dynamic FPS 
+            combat with multiple weapon types that players can pick up and switch between. The 
+            core gameplay includes engaging with zombie enemy AI designed to chase 
+            and attack the player. The player and enemy AI have their own health systems,
+            allowing for the player or enemies to be defeated through combat gameplay. 
+            Collectable ammunition crates and health kits are 
+            scattered throughout the environment to support player survival.
+          </p>
 
+        </div>
       </div>
     </div>
 
     <h1 style="margin-bottom: 3px;">Notable NC State Projects</h1>
     
-    <div style="margin-bottom: -10px; margin-top: 46px;"></div>
-      <h2>WolfConnect Mentorship Portal | NC State Team Project</h2>
-      <div class="fading-line"></div>
-      <p>Capstone Project for Computer Science Bachelor's Degree Program</p>
-    </div>
-    <div class="container">
-      <div class="left">
-        <p>put image here</p>
+    <div class="project">
+      <div style="margin-bottom: -10px; margin-top: 46px;">
+        <h2>WolfConnect Mentorship Portal | NC State Team Project</h2>
+        <div class="fading-line"></div>
+        <p>Capstone Project for Computer Science Bachelor's Degree Program</p>
       </div>
-      <div class="right">
-        <p>coming soon</p>
+      <div class="container">
+        <div class="left">
+          <p>put image here</p>
+        </div>
+        <div class="right">
+          <p>coming soon</p>
+        </div>
       </div>
     </div>
 
 
     
 
-
-    <div style="margin-bottom: -10px; margin-top: 46px;"></div>
-      <h2>P2P Network Using Sockets | NC State Project</h2>
-      <div class="fading-line"></div>
-      <p>Final Project for CSC 401 - Data and Communications Networks</p>
-    </div>
-    <div class="container-single">
-      <p>
-        This project was a Peer-to-Peer (P2P) network application using Python sockets. 
-        It allows peers to share, request, and download RFC (Request for Comments) 
-        documents, which are technical and organizational notes that describe standards 
-        and protocols for the internet and networking systems. The client can add RFCs, 
-        list available RFCs, and download them from other peers, while the server manages 
-        connections and the list of RFCs. I implemented this project with a partner.
-        This project was NC State coursework, so I am not permitted to share any of the implementation.
-      </p>
-      <p>
-        <strong>Technologies Used:</strong> Python, Sockets, Multithreading
-      </p>
-      
-    </div>
-
-    <div style="margin-bottom: -10px; margin-top: 46px;"></div>
-      <h2>Rainfall Prediction with Linear Regression | NC State Project</h2>
-      <div class="fading-line"></div>
-      <p>Final Project for CSC 422 - Automated Learning and Data Analysis</p>
-    </div>
-    <div class="container-single">
-      <p>For my CSC 422 Automated Learning and Data Analysis class, I developed a project 
-        titled <strong>Precipitation Prediction using Multi-Dimensional Linear 
-        Regression</strong>. The goal was to predict rainfall patterns in the Pacific 
-        Northwest using four- and five-dimensional linear regression models. My project 
-        involved analyzing relationships between precipitation, time, elevation, latitude, 
-        and longitude to identify trends and potential correlations.
-      </p>
-      <p>I used the dataset "50 km resolution daily precipitation for the Pacific 
-        Northwest, 1949-94" and integrated it with an elevation dataset that I built myself
-        by writing a short python script which used the Google Maps Elevation API to 
-        get the elevation of every coordinate pair in the precipitation dataset. 
-        Combining the pricipitation dataset with my altitude dataset allowed me to enhance the predictive 
-        model, which fulfilled the project requirement to encorperate something novel into my 
-        project. I hypothesized that factors such as proximity to the coast and altitude 
-        would significantly impact rainfall predictions. Unfortunately, the results indicated 
-        only a marginal improvement after I incorporated altitude, but the project 
-        still gave me valuable hands-on experience in data analysis, linear regression modeling, and 
-        handling large datasets using Python tools such as NumPy, pandas, and scikit-learn.
-        This project was NC State coursework, so I am not permitted to share any of the implementation.
-      </p>
-      <p><strong>Technologies Used:</strong> Python, Jupyter Notebooks, Google Maps API, 
-        NumPy, pandas, scikit-learn</p>
+    <div class="project">
+      <div style="margin-bottom: -10px; margin-top: 46px;">
+        <h2>P2P Network Using Sockets | NC State Project</h2>
+        <div class="fading-line"></div>
+        <p>Final Project for CSC 401 - Data and Communications Networks</p>
+      </div>
+      <div class="container-single">
+        <p>
+          This project was a Peer-to-Peer (P2P) network application using Python sockets. 
+          It allows peers to share, request, and download RFC (Request for Comments) 
+          documents, which are technical and organizational notes that describe standards 
+          and protocols for the internet and networking systems. The client can add RFCs, 
+          list available RFCs, and download them from other peers, while the server manages 
+          connections and the list of RFCs. I implemented this project with a partner.
+          This project was NC State coursework, so I am not permitted to share any of the implementation.
+        </p>
+        <p>
+          <strong>Technologies Used:</strong> Python, Sockets, Multithreading
+        </p>
+        
+      </div>
     </div>
 
-    <div style="margin-bottom: -10px; margin-top: 46px;"></div>
-      <h2>iTrust 2 | NC State Team Project</h2>
-      <div class="fading-line"></div>
-      <p>Final Project for CSC 326 - Software Engineering</p>
-    </div>
-    <div class="container-single">
-      <p>For my CSC 326 Software Engineering course, I contributed to the development 
-        of <strong>iTrust2</strong>, a healthcare application for managing patient data 
-        and user roles. My team focused on adding a new <strong>Patient Advocate</strong> role,
-        which allows users to view and manage patient information to assist with their 
-        healthcare needs. My main contributions included designing 
-        frontend wireframes and flowmaps, as well as implementing REST API endpoints and frontend interfaces using <strong>JavaScript</strong> 
-        and <strong>AngularJS</strong>. I developed user interfaces for managing Patient 
-        Advocate permissions and associating advocates with patients.
-        Working on iTrust2 helped me gain experience with frontend development, 
-        collaborating on a large codebase, and utilizing GitHub for version control 
-        and CI/CD with GitHub Actions. This project was NC State coursework, so I am not permitted to share any of the implementation.</p>
-    </div>
-
-    <div style="margin-bottom: -10px; margin-top: 46px;"></div>
-      <h2>Image Compression Application | NC State Project</h2>
-      <div class="fading-line"></div>
-      <p>Project for CSC 230 - C and Software Tools</p>
-    </div>
-    <div class="container-single">
-      <p>I developed an image compression application for the "C and Software Tools" course at NC State University. 
-        It involved implementing an image compression and decompression algorithm using 
-        <a class="link-effect" href="https://en.wikipedia.org/wiki/Discrete_cosine_transform" target="_blank">
-          Discrete Cosine Transform (DCT)</a>. The algorithm compressed Portable Gray Map (PGM) 
-        images into a custom format and then decompressed them back to their original form 
-        with minimal fidelity loss. The project also implemented a Makefile for build automation, 
-        which ensured that all components are compiled and linked correctly. 
-      </p>
-      <p>The image compression was done by breaking down images into smaller blocks, applying the 
-        DCT to convert spatial pixel values into frequency components, and then encoding these 
-        components to reduce file size. During decompression, the Inverse DCT (IDCT) was used to 
-        reconstruct the image. The implementation also used efficient memory usage and bit-level 
-        file operations to optimize data storage and retrieval. This project was NC State coursework, so I am not permitted to share any of the implementation.</p>
+    <div class="project">
+      <div style="margin-bottom: -10px; margin-top: 46px;">
+        <h2>Rainfall Prediction with Linear Regression | NC State Project</h2>
+        <div class="fading-line"></div>
+        <p>Final Project for CSC 422 - Automated Learning and Data Analysis</p>
+      </div>
+      <div class="container-single">
+        <p>For my CSC 422 Automated Learning and Data Analysis class, I developed a project 
+          titled <strong>Precipitation Prediction using Multi-Dimensional Linear 
+          Regression</strong>. The goal was to predict rainfall patterns in the Pacific 
+          Northwest using four- and five-dimensional linear regression models. My project 
+          involved analyzing relationships between precipitation, time, elevation, latitude, 
+          and longitude to identify trends and potential correlations.
+        </p>
+        <p>I used the dataset "50 km resolution daily precipitation for the Pacific 
+          Northwest, 1949-94" and integrated it with an elevation dataset that I built myself
+          by writing a short python script which used the Google Maps Elevation API to 
+          get the elevation of every coordinate pair in the precipitation dataset. 
+          Combining the pricipitation dataset with my altitude dataset allowed me to enhance the predictive 
+          model, which fulfilled the project requirement to encorperate something novel into my 
+          project. I hypothesized that factors such as proximity to the coast and altitude 
+          would significantly impact rainfall predictions. Unfortunately, the results indicated 
+          only a marginal improvement after I incorporated altitude, but the project 
+          still gave me valuable hands-on experience in data analysis, linear regression modeling, and 
+          handling large datasets using Python tools such as NumPy, pandas, and scikit-learn.
+          This project was NC State coursework, so I am not permitted to share any of the implementation.
+        </p>
+        <p><strong>Technologies Used:</strong> Python, Jupyter Notebooks, Google Maps API, 
+          NumPy, pandas, scikit-learn</p>
+      </div>
     </div>
 
+    <div class="project">
+      <div style="margin-bottom: -10px; margin-top: 46px;">
+        <h2>iTrust 2 | NC State Team Project</h2>
+        <div class="fading-line"></div>
+        <p>Final Project for CSC 326 - Software Engineering</p>
+      </div>
+      <div class="container-single">
+        <p>For my CSC 326 Software Engineering course, I contributed to the development 
+          of <strong>iTrust2</strong>, a healthcare application for managing patient data 
+          and user roles. My team focused on adding a new <strong>Patient Advocate</strong> role,
+          which allows users to view and manage patient information to assist with their 
+          healthcare needs. My main contributions included designing 
+          frontend wireframes and flowmaps, as well as implementing REST API endpoints and frontend interfaces using <strong>JavaScript</strong> 
+          and <strong>AngularJS</strong>. I developed user interfaces for managing Patient 
+          Advocate permissions and associating advocates with patients.
+          Working on iTrust2 helped me gain experience with frontend development, 
+          collaborating on a large codebase, and utilizing GitHub for version control 
+          and CI/CD with GitHub Actions. This project was NC State coursework, so I am not permitted to share any of the implementation.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div style="margin-bottom: -10px; margin-top: 46px;">
+        <h2>Image Compression Application | NC State Project</h2>
+        <div class="fading-line"></div>
+        <p>Project for CSC 230 - C and Software Tools</p>
+      </div>
+      <div class="container-single">
+        <p>I developed an image compression application for the "C and Software Tools" course at NC State University. 
+          It involved implementing an image compression and decompression algorithm using 
+          <a class="link-effect" href="https://en.wikipedia.org/wiki/Discrete_cosine_transform" target="_blank">
+            Discrete Cosine Transform (DCT)</a>. The algorithm compressed Portable Gray Map (PGM) 
+          images into a custom format and then decompressed them back to their original form 
+          with minimal fidelity loss. The project also implemented a Makefile for build automation, 
+          which ensured that all components are compiled and linked correctly. 
+        </p>
+        <p>The image compression was done by breaking down images into smaller blocks, applying the 
+          DCT to convert spatial pixel values into frequency components, and then encoding these 
+          components to reduce file size. During decompression, the Inverse DCT (IDCT) was used to 
+          reconstruct the image. The implementation also used efficient memory usage and bit-level 
+          file operations to optimize data storage and retrieval. This project was NC State coursework, so I am not permitted to share any of the implementation.</p>
+      </div>
+    </div>
+    
     <div style="padding-top: 55px;"></div>
   </body>
 </html>
