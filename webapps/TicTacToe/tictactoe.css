@@ -20,7 +20,7 @@ body {
 /* Grid container for the tic tac toe board */
 .game-board {
   display: grid;
-  grid-template-columns: repeat(3, 150px); /* 3 equal columns of 150px each */
+  grid-template-columns: repeat(3, 100px); 
   grid-gap: 8px; /* Space between grid items */
   justify-content: center;
   align-items: center;
@@ -30,8 +30,8 @@ body {
 }
 
 .grid-button {
-  width: 150px;  /* Set fixed width */
-  height: 150px; /* Set fixed height */
+  width: 100px;  /* Set fixed width */
+  height: 100px; /* Set fixed height */
   border-radius: none;
   border: none;
   background-color: #2d2d2d;
