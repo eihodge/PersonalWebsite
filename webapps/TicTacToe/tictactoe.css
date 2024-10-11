@@ -18,14 +18,14 @@ body {
 }
 
 /* Fade-in animation */
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
   }
-}
+} */
 
 /* Grid container for the tic tac toe board */
 .game-board {
@@ -37,9 +37,9 @@ body {
   background: rgb(91, 91, 91); /* Background color for checkerboard */
   padding: 0px;
   margin: 20px;
-  animation: fadeIn 1s ease-in-out 0.4s;
-  opacity: 0; /* Set initial opacity to 0 */
-  animation-fill-mode: forwards; /* Maintain final state of the animation */
+  /* animation: fadeIn 1s ease-in-out 0.4s;
+  opacity: 0; 
+  animation-fill-mode: forwards;  */
 }
 
 .grid-button {
