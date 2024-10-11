@@ -163,6 +163,26 @@
       width: 100%;
     }
 
+
+
+    table {
+      width: 80%; /* Set the table width to 80% or desired value */
+      max-width: 1200px;
+      border-collapse: collapse;
+      margin: 20px auto; /* Centers the table horizontally */
+      
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #2c2c2c;
+    }
+
     </style>
   </head>
   <body>
@@ -224,6 +244,79 @@
         of when the message was sent. 'timestamp' is used for sorting and displaying to the user.
       </div>
     </div>
+
+
+    <h2>User Endpoints</h2>
+    <table>
+        <tr>
+          <th>Endpoint</th>
+          <th>HTTP Method</th>
+          <th>Parameters</th>
+          
+        </tr>
+        <tr>
+          <td>/users</td>
+          <td>GET</td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td>/create_user</td>
+          <td>POST</td>
+          <td>username, password</td>
+        </tr>
+        <tr>
+          <td>/delete_user/&lt;user_id&gt;</td>
+          <td>DELETE</td>
+          <td>user_id (URL Parameter)</td>
+        </tr>
+        <tr>
+          <td>/user/&lt;username&gt;</td>
+          <td>GET</td>
+          <td>username (URL Parameter)</td>
+        </tr>
+    </table>
+
+    <h2>Conversation Endpoints</h2>
+    <table>
+        <tr>
+          <th>Endpoint</th>
+          <th>HTTP Method</th>
+          <th>Parameters</th>
+          
+        </tr>
+        <tr>
+          <td>/create_conversation</td>
+          <td>POST</td>
+          <td>user1_id, user2_id</td>
+        </tr>
+        <tr>
+          <td>/conversations/&lt;user_id&gt;</td>
+          <td>GET</td>
+          <td>user_id (URL Parameter)</td>
+        </tr>
+    </table>
+
+    <h2>Message Endpoints</h2>
+    <table>
+        <tr>
+          <th>Endpoint</th>
+          <th>HTTP Method</th>
+          <th>Parameters</th>
+          
+        </tr>
+        <tr>
+          <td>/messages/&lt;conversation_id&gt;</td>
+          <td>GET</td>
+          <td>conversation_id (URL Parameter)</td>
+        </tr>
+        <tr>
+          <td>/send_message</td>
+          <td>POST</td>
+          <td>sender_id, receiver_id, content, conversation_id, timestamp</td>
+        </tr>
+    </table>
+
+
 
 
 
