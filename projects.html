@@ -174,17 +174,21 @@
     .section-header {
       position: sticky;
       top: 52px; /* Offset by the height of the navbar */
-      background-color: rgb(43, 43, 43); /* Initially transparent */
+      background-color: rgba(27, 27, 27, 0.868);
+      backdrop-filter: blur(10px);
+
       z-index: 10;
       margin-top: 0px; /* Create space for the navbar */
       padding: 10px 0;
       transition: background 0.3s ease; /* Smooth transition */
-      border-bottom: 2px solid #000;
+      border-bottom: 1.25px solid rgb(36, 36, 36);
     }
 
 .sticky {
   background-color: rgba(0, 38, 209, 0); /* Solid color when sticky */
   border-bottom: none;
+  backdrop-filter: blur(0px);
+
 
 }
 
@@ -218,26 +222,27 @@
 
 
       function applyStickyClass() {
-        const headers = document.querySelectorAll('.section-header');
-        const navHeight = document.querySelector('.navbar').offsetHeight; // Get navbar height
-        
-        headers.forEach(header => {
-          const headerTop = header.getBoundingClientRect().top;
-          
-          // Adjust for navbar height when determining when to apply the sticky class
-          if (headerTop >= navHeight + 16) {
-            header.classList.add('sticky');
-          } else {
-            header.classList.remove('sticky');
-          }
-        });
-      }
+  const headers = document.querySelectorAll('.section-header');
+  const navHeight = document.querySelector('.navbar').offsetHeight; // Get navbar height
+  
+  headers.forEach(header => {
+    const headerTop = header.getBoundingClientRect().top;
+    
+    // Apply the sticky class only when scrolling
+    if (headerTop >= navHeight + 1) {
+      header.classList.add('sticky');
+    } else {
+      header.classList.remove('sticky');
+    }
+  });
+}
 
-      // Run the function on scroll
-      window.addEventListener('scroll', applyStickyClass);
+// Run the function on scroll
+window.addEventListener('scroll', applyStickyClass);
 
-      // Run the function on initial page load
-      document.addEventListener('DOMContentLoaded', applyStickyClass);
+// Run the function as soon as the DOM is ready
+document.addEventListener('DOMContentLoaded', applyStickyClass);
+
     </script>
     
     <nav class="navbar">
@@ -263,7 +268,7 @@
     <section>
     <h1 class="section-header" style="margin-bottom: 3px;">Full-Stack Web Applications</h1>
     
-    <div class="project">
+    <div class="project" style="margin-top: 67px">
       <div style="margin-bottom: -10px; margin-top: 16px;"></div>
         <h2>Messaging Application</h2>
         <div class="fading-line"></div>
@@ -332,14 +337,15 @@
         <button class='link-button' onclick="location.href='webapps/Timer/timer'">Timer</button>
       </div>
       
-      <div>
+      <div style="padding-bottom: 5px;">
         <button class='link-button' onclick="location.href='webapps/Calculator/calculator'">Basic Calculator</button>
         <button class='link-button' onclick="location.href='webapps/AdvancedCalculator/advanced_calculator'">Advanced Calculator</button>
       </div>
     </div>
+    
     </section>
 
-    <div style="padding-top: 30px;"></div>
+    <div style="padding-top: 25px;"></div>
     
     <section>
     <h1 class="section-header" style="margin-bottom: 3px;">Game Dev Projects</h1>
