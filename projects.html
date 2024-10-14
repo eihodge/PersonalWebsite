@@ -160,10 +160,85 @@
       font-size: 34px;
     }
 
+    /* .section-header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(44, 44, 44, 0);
+      z-index: 10;
+      border-bottom: 2px solid #000;
+      padding: 10px 0;
+      padding-top: 64px;
+      z-index: 900;
+    } */
+
+    .section-header {
+      position: sticky;
+      top: 52px; /* Offset by the height of the navbar */
+      background-color: rgb(43, 43, 43); /* Initially transparent */
+      z-index: 10;
+      margin-top: 0px; /* Create space for the navbar */
+      padding: 10px 0;
+      transition: background 0.3s ease; /* Smooth transition */
+      border-bottom: 2px solid #000;
+    }
+
+.sticky {
+  background-color: rgba(0, 38, 209, 0); /* Solid color when sticky */
+  border-bottom: none;
+
+}
+
+.navbar {
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
 
     </style>
   </head>
   <body>
+    <script>
+      
+      // window.addEventListener('scroll', function() {
+      //   const headers = document.querySelectorAll('.section-header');
+      //   const navHeight = document.querySelector('.navbar').offsetHeight; // Get navbar height
+        
+      //   headers.forEach(header => {
+      //     const headerTop = header.getBoundingClientRect().top;
+          
+      //     // Adjust for navbar height when determining when to apply the sticky class
+      //     if (headerTop >= navHeight + 16) {
+      //       header.classList.add('sticky');
+      //     } else {
+      //       header.classList.remove('sticky');
+      //     }
+      //   });
+      // });
+
+
+      function applyStickyClass() {
+        const headers = document.querySelectorAll('.section-header');
+        const navHeight = document.querySelector('.navbar').offsetHeight; // Get navbar height
+        
+        headers.forEach(header => {
+          const headerTop = header.getBoundingClientRect().top;
+          
+          // Adjust for navbar height when determining when to apply the sticky class
+          if (headerTop >= navHeight + 16) {
+            header.classList.add('sticky');
+          } else {
+            header.classList.remove('sticky');
+          }
+        });
+      }
+
+      // Run the function on scroll
+      window.addEventListener('scroll', applyStickyClass);
+
+      // Run the function on initial page load
+      document.addEventListener('DOMContentLoaded', applyStickyClass);
+    </script>
     
     <nav class="navbar">
       <div class="website-title" onclick="location.href='https://ethanhodge.com'">Ethan Hodge</div>
@@ -183,9 +258,10 @@
       </div>
     </nav>
 
-    <div style="padding-top: 55px;"></div>
+    <div style="padding-top: 10px;"></div>
 
-    <h1 style="margin-bottom: 3px;">Full-Stack Web Applications</h1>
+    <section>
+    <h1 class="section-header" style="margin-bottom: 3px;">Full-Stack Web Applications</h1>
     
     <div class="project">
       <div style="margin-bottom: -10px; margin-top: 16px;"></div>
@@ -227,9 +303,12 @@
         </div>
       </div>
     </div>
+    </section>
 
+
+    <section>
     <div class="project">
-      <h1 style="margin-bottom: 3px;">Javascript Web Applications</h1>
+      <h1 class="section-header" style="margin-bottom: 3px;">Javascript Web Applications</h1>
       <h3 style="margin-bottom: 3px;">Optimized for Mobile + Desktop Browsers</h3>
   
       <div>
@@ -258,12 +337,14 @@
         <button class='link-button' onclick="location.href='webapps/AdvancedCalculator/advanced_calculator'">Advanced Calculator</button>
       </div>
     </div>
+    </section>
 
     <div style="padding-top: 30px;"></div>
     
-    
+    <section>
+    <h1 class="section-header" style="margin-bottom: 3px;">Game Dev Projects</h1>
     <div class="project">
-      <h1 style="margin-bottom: 3px;">Game Dev Projects</h1>
+      
       <div style="margin-bottom: -10px; margin-top: 12px;">
         <h2></h2>
         <div style="text-align: center;">
@@ -487,11 +568,12 @@
         </div>
       </div>
     </div>
-
+    </section>
     
-    
+    <section>
+    <h1 class="section-header" style="margin-bottom: 3px;">Notable NC State Projects</h1>
     <div class="project">
-      <h1 style="margin-bottom: 3px;">Notable NC State Projects</h1>
+      
       <div style="margin-bottom: -10px; margin-top: 46px;">
         <h2>WolfConnect Mentorship Portal | NC State Team Project</h2>
         <div class="fading-line"></div>
@@ -608,6 +690,7 @@
           file operations to optimize data storage and retrieval. This project was NC State coursework, so I am not permitted to share any of the implementation.</p>
       </div>
     </div>
+    </section>
 
     <div style="padding-top: 55px;"></div>
   </body>
