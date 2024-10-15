@@ -198,20 +198,15 @@
   </head>
   <body>
     <script>
-      let isScrolling;
-
-      window.addEventListener('scroll', function() {
-        window.clearTimeout(isScrolling);
-        
-        isScrolling = setTimeout(applyStickyClass, 66); // 66ms debounce
-      });
-
       function applyStickyClass() {
         const headers = document.querySelectorAll('.section-header');
         const navHeight = document.querySelector('.navbar').offsetHeight;
         
         headers.forEach(header => {
           const headerTop = header.getBoundingClientRect().top;
+
+          // Force reflow
+          header.offsetHeight;
           
           if (headerTop >= navHeight + 1) {
             header.classList.add('sticky');
@@ -222,11 +217,12 @@
       }
 
 
-// Run the function on scroll
-window.addEventListener('scroll', applyStickyClass);
 
-// Run the function as soon as the DOM is ready
-document.addEventListener('DOMContentLoaded', applyStickyClass);
+      // Run the function on scroll
+      window.addEventListener('scroll', applyStickyClass);
+
+      // Run the function as soon as the DOM is ready
+      document.addEventListener('DOMContentLoaded', applyStickyClass);
 
     </script>
     
@@ -251,7 +247,7 @@ document.addEventListener('DOMContentLoaded', applyStickyClass);
     <div style="padding-top: 10px;"></div>
 
     <section>
-    <h1 class="section-header" style="margin-bottom: 3px;">Fuel-Stack Web Applications</h1>
+    <h1 class="section-header" style="margin-bottom: 3px;">Full-Stack Web Applications</h1>
     
     <div class="project" style="margin-top: 67px">
       <div style="margin-bottom: -10px; margin-top: 16px;"></div>
