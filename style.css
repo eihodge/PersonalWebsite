@@ -137,6 +137,25 @@ body {
   border-radius: 10px;
 }
 
+
+.toggle-button .bar {
+  transition: all 0.3s ease;  /* Smooth transition for animation */
+}
+
+/* When the toggle-button has the 'open' class, transform the bars into an X */
+.toggle-button.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 9px);
+}
+
+.toggle-button.open .bar:nth-child(2) {
+  opacity: 0;  /* Hide the middle bar */
+}
+
+/* bottom left to top right (vertical, horizontal)*/
+.toggle-button.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(4.5px, -6px);
+}
+
 @media (max-width: 800px) {
   .navbar {
       flex-direction: column;

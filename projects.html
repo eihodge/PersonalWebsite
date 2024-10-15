@@ -210,45 +210,27 @@
   </head>
   <body>
     <script>
-      
-      // window.addEventListener('scroll', function() {
-      //   const headers = document.querySelectorAll('.section-header');
-      //   const navHeight = document.querySelector('.navbar').offsetHeight; // Get navbar height
-        
-      //   headers.forEach(header => {
-      //     const headerTop = header.getBoundingClientRect().top;
-          
-      //     // Adjust for navbar height when determining when to apply the sticky class
-      //     if (headerTop >= navHeight + 16) {
-      //       header.classList.add('sticky');
-      //     } else {
-      //       header.classList.remove('sticky');
-      //     }
-      //   });
-      // });
-
-
       function applyStickyClass() {
-  const headers = document.querySelectorAll('.section-header');
-  const navHeight = document.querySelector('.navbar').offsetHeight; // Get navbar height
-  
-  headers.forEach(header => {
-    const headerTop = header.getBoundingClientRect().top;
-    
-    // Apply the sticky class only when scrolling
-    if (headerTop >= navHeight + 1) {
-      header.classList.add('sticky');
-    } else {
-      header.classList.remove('sticky');
-    }
-  });
-}
+        const headers = document.querySelectorAll('.section-header');
+        const navHeight = document.querySelector('.navbar').offsetHeight; // Get navbar height
+        
+        headers.forEach(header => {
+          const headerTop = header.getBoundingClientRect().top;
+          
+          // Apply the sticky class only when scrolling
+          if (headerTop >= navHeight + 1) {
+            header.classList.add('sticky');
+          } else {
+            header.classList.remove('sticky');
+          }
+        });
+      }
 
-// Run the function on scroll
-window.addEventListener('scroll', applyStickyClass);
+      // Run the function on scroll
+      window.addEventListener('scroll', applyStickyClass);
 
-// Run the function as soon as the DOM is ready
-document.addEventListener('DOMContentLoaded', applyStickyClass);
+      // Run the function as soon as the DOM is ready
+      document.addEventListener('DOMContentLoaded', applyStickyClass);
 
     </script>
     
