@@ -164,35 +164,47 @@
       font-weight: 500;
     }
 
+    /* .section-header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(44, 44, 44, 0);
+      z-index: 10;
+      border-bottom: 2px solid #000;
+      padding: 10px 0;
+      padding-top: 64px;
+      z-index: 900;
+    } */
+
     .section-header {
       position: sticky;
-      top: 51px;
+      top: 51px; /* Offset by the height of the navbar */
       background-color: rgba(27, 27, 27, 0.868);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px); /* For Safari */
+
       z-index: 10;
-      margin-top: 0px;
+      margin-top: 0px; /* Create space for the navbar */
       padding: 10px 0;
-      transition: background 0.3s ease, backdrop-filter 0.3s ease; /* Add smooth transitions */
+      transition: background 0.3s ease; /* Smooth transition */
       border-bottom: 1.25px solid rgb(56, 56, 56);
-      will-change: background, backdrop-filter; /* Improve performance */
     }
 
-    .sticky {
-      background-color: rgba(0, 38, 209, 0);
-      border-bottom: none;
-      backdrop-filter: blur(0px);
-      -webkit-backdrop-filter: blur(0px);
-      will-change: background, backdrop-filter; /* Improve performance */
-    }
+.sticky {
+  background-color: rgba(0, 38, 209, 0); /* Solid color when sticky */
+  border-bottom: none;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px); /* For Safari */
 
 
-    .navbar {
-      z-index: 1000;
-      position: fixed;
-      width: 100%;
-      top: 0;
-    }
+
+}
+
+.navbar {
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
 
     </style>
   </head>
