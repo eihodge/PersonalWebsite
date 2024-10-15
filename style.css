@@ -167,13 +167,19 @@ body {
   }
 
   .website-links {
-      display: none;
-      width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    width: 100%;
   }
 
   .website-links ul {
       width: 100%;
       flex-direction: column;
+  }
+  
+  .website-links.active {
+    max-height: 500px;  /* Adjust this value based on your menu's height */
   }
 
   .website-links ul li {
