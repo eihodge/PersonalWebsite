@@ -198,29 +198,39 @@
   </head>
   <body>
     <script>
-      let isScrolling;
-
-      window.addEventListener('scroll', function() {
-        window.clearTimeout(isScrolling);
+      
+      // window.addEventListener('scroll', function() {
+      //   const headers = document.querySelectorAll('.section-header');
+      //   const navHeight = document.querySelector('.navbar').offsetHeight; // Get navbar height
         
-        isScrolling = setTimeout(applyStickyClass, 66); // 66ms debounce
-      });
+      //   headers.forEach(header => {
+      //     const headerTop = header.getBoundingClientRect().top;
+          
+      //     // Adjust for navbar height when determining when to apply the sticky class
+      //     if (headerTop >= navHeight + 16) {
+      //       header.classList.add('sticky');
+      //     } else {
+      //       header.classList.remove('sticky');
+      //     }
+      //   });
+      // });
+
 
       function applyStickyClass() {
-        const headers = document.querySelectorAll('.section-header');
-        const navHeight = document.querySelector('.navbar').offsetHeight;
-        
-        headers.forEach(header => {
-          const headerTop = header.getBoundingClientRect().top;
-          
-          if (headerTop >= navHeight + 1) {
-            header.classList.add('sticky');
-          } else {
-            header.classList.remove('sticky');
-          }
-        });
-      }
-
+  const headers = document.querySelectorAll('.section-header');
+  const navHeight = document.querySelector('.navbar').offsetHeight; // Get navbar height
+  
+  headers.forEach(header => {
+    const headerTop = header.getBoundingClientRect().top;
+    
+    // Apply the sticky class only when scrolling
+    if (headerTop >= navHeight + 1) {
+      header.classList.add('sticky');
+    } else {
+      header.classList.remove('sticky');
+    }
+  });
+}
 
 // Run the function on scroll
 window.addEventListener('scroll', applyStickyClass);
@@ -251,7 +261,7 @@ document.addEventListener('DOMContentLoaded', applyStickyClass);
     <div style="padding-top: 10px;"></div>
 
     <section>
-    <h1 class="section-header" style="margin-bottom: 3px;">Fuel-Stack Web Applications</h1>
+    <h1 class="section-header" style="margin-bottom: 3px;">Full-Stack Web Applications</h1>
     
     <div class="project" style="margin-top: 67px">
       <div style="margin-bottom: -10px; margin-top: 16px;"></div>
