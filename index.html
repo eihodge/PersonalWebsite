@@ -3,14 +3,12 @@
   <head>
     <title>Ethan Hodge</title>
     <script src="navbar.js" defer></script>
-    <!-- <link rel="icon" href="https://ethanhodge.com/resources/images/icon-website.png"> -->
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no" name="viewport">
     <link rel="icon" type="image/png" href="/websiteIcon.png">
-
 
     <style>
       .link-button {
@@ -45,11 +43,11 @@
 
       .holiday-countdowns {
         display: flex;
-        justify-content: center; /* Centers the sections horizontally */
+        justify-content: center;
         align-items: center;
-        flex-wrap: wrap; /* Allows wrapping on smaller screens */
-        max-width: 1200px; /* Set a max width for the container */
-        margin: 0 auto; /* Center the container within the page */
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
         gap: 20px; /* Adds space between sections */
       }
 
@@ -64,14 +62,6 @@
             flex-direction: column; /* Switches to vertical on narrow screens */
         }
       }
-
-
-
-
-
-
-
-
 
       .halloween-div {
         background-color: rgb(255, 102, 0);
@@ -139,6 +129,7 @@
         transition: transform .5s;
         margin-top: -1px;
       }
+      
       .christmas-div:hover {
         transform: scale(1.05);
         cursor: pointer;
@@ -169,61 +160,56 @@
         border: 1px solid #494949;
       }
 
-      .pad {
-        padding-top: 69px;
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
       }
 
-      .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-        }
+      .image {
+        flex: 1;
+        max-width: 100%;
+        padding-bottom: 20px;
+        margin-top: 11px;
+      }
 
+      .content {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -12px;  
+      }
+
+      .content p {
+        text-align: center;
+      }
+
+      .content button {
+        margin-top: 10px;
+      }
+
+      @media(min-width: 600px) {
+        .container {
+          flex-direction: row;
+          align-items: flex-start;
+        }
         .image {
-            flex: 1;
-            max-width: 100%;
-            padding-bottom: 20px;
-            margin-top: 11px;
+          padding-right: 20px;
+          padding-bottom: 0;
+          max-width: 300px;
         }
-
         .content {
-            flex: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: -12px;
-            
+          align-items: flex-start;
         }
-
         .content p {
-            text-align: center;
+          text-align: left;
         }
-
-        .content button {
-            margin-top: 10px;
-        }
-
-        @media(min-width: 600px) {
-          .container {
-              flex-direction: row;
-              align-items: flex-start;
-          }
-          .image {
-              padding-right: 20px;
-              padding-bottom: 0;
-              max-width: 300px;
-          }
-          .content {
-              align-items: flex-start;
-          }
-          .content p {
-              text-align: left;
-          }
-        }
+      }
 
       .game-cover {
         border-radius: 20px;
@@ -233,11 +219,9 @@
       .chef-img {
         border-radius: 0px;
       }
-
     </style>
   </head>
   <body>
-
     <script>
       window.onload = function() {
         loadChristmasDays();
@@ -245,18 +229,25 @@
         loadHalloweenDays();
       };
 
-      function loadChristmasDays() {
-        var today = new Date();
-        var start = new Date(today.getFullYear(), 0, 0);
-        var diff = (today - start) + ((start.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000);
-        var oneDay = 1000 * 60 * 60 * 24;
-        var day = Math.floor(diff / oneDay);
-        var daysUntilChristmas = 359 - day;
+      function calculateDaysUntil(target) {
+        var today = new Date(); // Current date and time, based on the system's clock
+        var yearStart = new Date(today.getFullYear(), 0, 0); // Beginning of the year
+        var millisecondsSinceJan1 = (today - yearStart) + ((yearStart.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000); // calculates the time between today and the start of the year
+        var daysSinceJan1 = Math.floor(millisecondsSinceJan1 / 86400000); // Convert ms to days by dividing by the number of ms in one day
+        return(target - daysSinceJan1); // days from today to the target day
+      }
 
+      function createCountdownElement(text, marginTop, fontSize, paddingBottom) {
         const element = document.createElement('div');
-        element.style.marginTop = "18px";
-        element.style.fontSize = "30px";
-        element.innerText = "There are " + daysUntilChristmas + " days until Christmas";
+        element.style.marginTop = marginTop;
+        element.style.fontSize = fontSize;
+        element.innerText = text;
+        return element;
+      }
+
+      function loadChristmasDays() {
+        var daysUntilChristmas = calculateDaysUntil(359);
+        const element = createCountdownElement(`There are ${daysUntilChristmas} days until Christmas`, "18px", "30px", "0px");
         const christmasDiv = document.getElementById('christmas-div');
         christmasDiv.style.display = 'inline-block';
         christmasDiv.style.maxWidth = "300px";
@@ -265,18 +256,8 @@
       }
 
       function loadThanksgivingDays() {
-        var today = new Date();
-        var start = new Date(today.getFullYear(), 0, 0);
-        var diff = (today - start) + ((start.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000);
-        var oneDay = 1000 * 60 * 60 * 24;
-        var day = Math.floor(diff / oneDay);
-        var daysUntilThanksgiving = 327 - day;
-
-        const element = document.createElement('div');
-        element.style.marginTop = "10px";
-        element.style.paddingBottom = "10px";
-        element.style.fontSize = "30px";
-        element.innerText = "There are " + daysUntilThanksgiving + " days until Thanksgiving";
+        var daysUntilThanksgiving = calculateDaysUntil(327);
+        const element = createCountdownElement(`There are ${daysUntilThanksgiving} days until Thanksgiving`, "10px", "30px", "10px");
         const thanksgivingDiv = document.getElementById('christmas-div');
         thanksgivingDiv.style.display = 'inline-block';
         thanksgivingDiv.style.maxWidth = "300px";
@@ -285,21 +266,12 @@
       }
 
       function loadHalloweenDays() {
-        var today = new Date();
-        var start = new Date(today.getFullYear(), 0, 0);
-        var diff = (today - start) + ((start.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000);
-        var oneDay = 1000 * 60 * 60 * 24;
-        var day = Math.floor(diff / oneDay);
-        var daysUntilChristmas = 304 - day;
-
-        const element = document.createElement('div');
-        element.style.marginTop = "18px";
-        element.style.fontSize = "30px";
-        element.innerText = "There are " + daysUntilChristmas + " days until Halloween";
-        const christmasDiv = document.getElementById('halloween-div');
-        christmasDiv.style.display = 'block';
-        christmasDiv.style.maxWidth = "300px";
-        christmasDiv.style.paddingBottom = "10px";
+        var daysUntilHalloween = calculateDaysUntil(304);
+        const element = createCountdownElement(`There are ${daysUntilHalloween} days until Halloween`, "18px", "30px", "0px");
+        const halloweenDiv = document.getElementById('halloween-div');
+        halloweenDiv.style.display = 'block';
+        halloweenDiv.style.maxWidth = "300px";
+        halloweenDiv.style.paddingBottom = "10px";
         document.getElementById('halloween-div').appendChild(element);
       }
     </script>
@@ -338,24 +310,7 @@
 
     <!-- <div style="padding-top: 4px;"></div> -->
     
-    <div style="padding-top: 20px;"></div>
-    <!-- <div id="window" class="window">
-      <div class="container">
-        <div class="image">
-            <img class="game-cover" src="resources/images/ChristmasGameImages/cover.png" alt="Sample Image" width="100%">
-        </div>
-        <div class="content">
-          <p>Embark on an epic journey to save Christmas in Santa's Christmas Quest, a 3D platformer set in the North Pole. Play as Santa Claus, armed with a giant candy cane, as you battle menacing enemies and solve physics-based puzzles. Navigate treacherous platformer maps to explore the North Pole and Santa's magical toy factory, then deliver presents on Christmas Eve. Developed in Unreal Engine 4.27 and featuring licensed 3D assets from the Unreal Marketplace, Santa's Christmas Quest is a festive adventure you won't want to miss!</p>
-
-          <button class='link-button' onclick="location.href='https://drive.google.com/file/d/1rR1M6w--Eq_wgVWHKAQaY3tuuHjmVUin/view?usp=sharing'">Download Santa's Christmas Quest</button>
-          <p>This project is currently still in development, and the downloadable version is not a good representation of what the completed project will be.</p>
-
-        </div>
-      </div>
-    </div> 
-    <div style="padding-top: 20px;"></div> -->
-
-    <div style="padding-top: 5px;"></div>
+    <div style="padding-top: 25px;"></div>
     
     <section> 
       <div id="window" class="window">
@@ -395,8 +350,6 @@
         </div>
       </section>    
     </div>
-    
-    
     
     <div style="padding-top: 20px;"></div>
   </body>
