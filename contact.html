@@ -10,27 +10,160 @@
     <meta content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no" name="viewport">
     <link rel="icon" type="image/png" href="/websiteIcon.png">
     <style>
-      .link-button {
-        border: none;
-        padding-top: 15px;
-        padding-left: 23px;
-        padding-right: 23px;
-        padding-bottom: 15px;
-        border-radius: 5px;
-        background-color: chocolate;
+      
+      .form-container {
         
-        font-family: Roboto, Arial;
-        font-size: 23px;
+        /* background-color: #2d2d2d; */
+        background-color: #00000000;
+
+        padding-top: 3px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        max-width: 950px;
+        width: 96%;
+        margin:0 auto;
+        /* border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,1); */
+        font-size: 20px;
         font-weight: 300;
-        color: rgb(255, 255, 255);
       }
-      .link-button:hover {
-        cursor: pointer;
-        background-color: rgb(211, 123, 61);
+
+      .form-container form label {
+        display: block;
+        margin-bottom: 10px;
+        background-color: rgba(0, 128, 0, 0);
+        text-align: left;
       }
+
+      .form-container form input,
+      .form-container form textarea {
+        display: block;
+        margin-top: 5px;
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+        background-color: #242424;
+        border-radius: 2px;
+        border: 2px solid #444444;
+        font-family: Roboto;
+        font-size: 20px;
+        color: white;
+        resize: none;
+      }
+
+      .form-container form textarea {
+        height: 125px;
+        line-height: 1.6;
+      }
+
+      .buttonDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: -10px;
+        margin-bottom: 10px;
+      }
+
+      .form-container form button {
+        background-color: #373838;
+        color: white;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 22px;
+        padding-right: 22px;
+        font-size: 20px;
+        /* border: 2px solid rgb(56, 56, 56); */
+        border: none;
+        border-radius: 3px;        
+      }
+
+      .form-container form button:hover {
+        background-color: #414343;
+        /* border: 2px solid rgb(85, 85, 85); */
+      }
+
+      .errorMessageDiv {
+        background-color: #a03232;
+        color: white;
+        font-weight: 300;
+        display: block; /* Ensures the div is on its own line */
+        margin: 5px 0; /* Adds vertical margin and no horizontal centering */
+        border-radius: 5px;
+        text-align: center; /* Centers the text within the div */
+        padding: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        width: fit-content; /* Ensures the div is only as wide as its content */
+      }
+
+
+      /* Bottom Bar */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body, html {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+      }
+
+      .content {
+          flex-grow: 1;
+          padding-top: 60px;
+          padding-bottom: 50px;
+      }
+
+      .bottom-bar {
+          min-height: 140px;
+          background-color: #0000002f;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      .bottom-bar .icon {
+          margin: 0 11px;
+          width: 32px;
+          height: 32px;
+          filter: invert(1);
+          transition: transform 0.3s ease; 
+      }
+
+      .bottom-bar .icon:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+      }
+
     </style>
   </head>
   <body>
+
+    <script>
+      function validateMessageBody(event) {
+        const content = document.getElementsByName('message')[0].value.trim();
+        const email = document.getElementsByName('email')[0].value.trim();
+        
+        const errorDiv = document.getElementById('error-message-body');
+        const errorDivEmail = document.getElementById('error-message-email');
+
+        errorDiv.innerText = '';
+        errorDivEmail.innerText = '';
+
+        if (content === '') {
+          event.preventDefault();
+          errorDiv.innerText = '\u00A0 \u24D8 Message is required. \u00A0';
+        }
+
+        if (email === '') {
+          event.preventDefault();
+          errorDivEmail.innerText = '\u00A0 \u24D8 Email is required. \u00A0';
+        }
+      }
+    </script>
 
     <nav class="navbar">
       <div class="website-title" onclick="location.href='https://ethanhodge.com'">Ethan Hodge</div>
@@ -50,9 +183,47 @@
       </div>
     </nav>
 
-    <div style="padding-top: 55px;"></div>
-    <h1>Contact Me</h1>
-    <p>Email me at ethaningramh@gmail.com</p>
+    <div class="content">
+      <div style="padding-top: 60px;"></div>
+      <div class="form-container">
+        <h1 style="margin-bottom: 30px">Contact Me</h1>
+        <form action="https://formspree.io/f/xbljjqpy" method="POST" onsubmit="validateMessageBody(event)">
+          <input type="hidden" name="_redirect" value="https://ethanhodge.com/thanks.html">
+          <label>
+            <div id="error-message-email" class="errorMessageDiv"></div>
+            <input type="email" name="email" placeholder="Email">
+          </label>
+          <br>
+          <label>
+            <div id="error-message-body" class="errorMessageDiv"></div>
+            <textarea name="message" placeholder="Message"></textarea>
+          </label>
+          <br>
+          <div class="buttonDiv">
+            <button type="submit">SUBMIT</button>
+          </div>
+        </form>
+        
+      </div>
+    </div>
+    
+    
+
+    <div class="bottom-bar">
+      <a href="mailto:ethaningramh@gmail.com">
+        <img src="/resources/images/mail.png" alt="Email Icon" class="icon" style="margin-top: 5px;">
+      </a>
+      <a href="https://www.linkedin.com" target="_blank">
+        <img src="/resources/images/linkedin.png" alt="LinkedIn Icon" class="icon" style="margin-bottom: 1px;">
+      </a>
+      <a href="https://github.com/eihodge" target="_blank">
+        <img src="/resources/images/github.png" alt="GitHub Icon" class="icon">
+      </a>
+      <a href="https://leetcode.com/u/LPt3ovEJNi/" target="_blank">
+        <img src="/resources/images/leetcode.svg" alt="LeetCode Icon" class="icon">
+      </a>
+    </div>
+    
     
   </body>
 </html>
