@@ -285,11 +285,22 @@
 
       function calculateDaysUntil(target) {
         var today = new Date(); // Current date and time, based on the system's clock
-        var yearStart = new Date(today.getFullYear(), 0, 0); // Beginning of the year
-        var millisecondsSinceJan1 = (today - yearStart) + ((yearStart.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000); // calculates the time between today and the start of the year
+        var yearStart = new Date(today.getFullYear(), 0, 1); // Start of the year (adjusted to January 1)
+
+        // Check if the current year is a leap year
+        var isLeapYear = (yearStart.getFullYear() % 4 === 0 && (yearStart.getFullYear() % 100 !== 0 || yearStart.getFullYear() % 400 === 0));
+        
+        var millisecondsSinceJan1 = (today - yearStart) + ((yearStart.getTimezoneOffset() - today.getTimezoneOffset()) * 60 * 1000); // Time between today and the start of the year
         var daysSinceJan1 = Math.floor(millisecondsSinceJan1 / 86400000); // Convert ms to days by dividing by the number of ms in one day
-        return(target - daysSinceJan1); // days from today to the target day
+        
+        // Adjust the target day count if it's a leap year
+        if (isLeapYear && target > 59) { // Days after Feb 28 in a leap year should be incremented by 1
+          target += 1;
+        }
+
+        return target - daysSinceJan1; // Days from today to the target day
       }
+
 
       function createCountdownElement(text, marginTop, fontSize, paddingBottom) {
         const element = document.createElement('div');
@@ -300,7 +311,7 @@
       }
 
       function loadChristmasDays() {
-        var daysUntilChristmas = calculateDaysUntil(359);
+        var daysUntilChristmas = calculateDaysUntil(358);
         const element = createCountdownElement(`There are ${daysUntilChristmas} days until Christmas`, "18px", "30px", "0px");
         const christmasDiv = document.getElementById('christmas-div');
         christmasDiv.style.display = 'inline-block';
@@ -309,8 +320,28 @@
         document.getElementById('christmas-div').appendChild(element);
       }
 
+      function getThanksgivingDate() {
+        var today = new Date();
+        var year = today.getFullYear();
+        var novemberFirst = new Date(year, 10, 1); // November 1 of the current year
+        var dayOfWeek = novemberFirst.getDay();
+
+        // Find the first Thursday of November
+        var offsetToThursday = (4 - dayOfWeek + 7) % 7;
+        var thanksgiving = new Date(year, 10, 1 + offsetToThursday + 21); // Fourth Thursday
+
+        return thanksgiving;
+      }
+
+      function calculateDaysUntilThanksgiving() {
+        var today = new Date();
+        var thanksgiving = getThanksgivingDate();
+        var timeDifference = thanksgiving - today;
+        return Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+      }
+
       function loadThanksgivingDays() {
-        var daysUntilThanksgiving = calculateDaysUntil(327);
+        var daysUntilThanksgiving = calculateDaysUntilThanksgiving();
         const element = createCountdownElement(`There are ${daysUntilThanksgiving} days until Thanksgiving`, "10px", "30px", "10px");
         const thanksgivingDiv = document.getElementById('christmas-div');
         thanksgivingDiv.style.display = 'inline-block';
@@ -320,7 +351,7 @@
       }
 
       function loadHalloweenDays() {
-        var daysUntilHalloween = calculateDaysUntil(304);
+        var daysUntilHalloween = calculateDaysUntil(303);
         const element = createCountdownElement(`There are ${daysUntilHalloween} days until Halloween`, "18px", "30px", "0px");
         const halloweenDiv = document.getElementById('halloween-div');
         halloweenDiv.style.display = 'block';
