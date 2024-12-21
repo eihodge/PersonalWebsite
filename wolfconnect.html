@@ -105,6 +105,35 @@
       text-align: left;
     }
 
+
+
+
+    .left-pic-on-left, .right-pic-on-left {
+      flex: 1; /* Each div takes up equal space horizontally */
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content:center;
+      padding: 17px;
+      box-sizing: border-box;
+      background-clip: padding-box; /* Prevents background color bleeding on resize */
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    .left-pic-on-left {
+      background-color: rgba(173, 216, 230, 0);
+      text-align: left;
+    }
+
+    .right-pic-on-left {
+      background-color: rgba(240, 128, 128, 0);
+      text-align: left;
+    }
+
+
+
+
     /* Responsive layout for smaller screens */
     @media (max-width: 900px) {
       .container {
@@ -113,7 +142,20 @@
 
       .left, .right {
         min-height: auto; /* Allow divs to grow as needed */
-        text-align: center;
+        text-align: left;
+      }
+
+      .left-pic-on-left, .right-pic-on-left {
+        min-height: auto; /* Allow divs to grow as needed */
+        text-align: left;
+      }
+
+      .left-pic-on-left {
+        order: 2; /* Make the left container appear after the right container */
+      }
+
+      .right-pic-on-left {
+        order: 1; /* Make the right container appear before the left container */
       }
 
       
@@ -379,6 +421,12 @@
       display: flex;
       flex-direction: row;
     }
+
+
+
+    .right ul li {
+      margin-bottom: 10px; /* Adjust the value as needed */
+    }
     </style>
   </head>
   <body>
@@ -424,7 +472,7 @@
     
     <!-- INTRODUCTION ************ -->
     <div class="container-single" style="padding-top: 30px;">
-      <h2>Introduction</h2>
+      <h1>Introduction</h1>
       <p style="text-align: left;">
         WolfConnect is a mentorship platform designed to connect NC State students and alumni, fostering 
         academic and professional growth through meaningful connections. This project highlights my skills 
@@ -443,8 +491,12 @@
 
 
     <!-- FEATURES SECTION ************ -->
-    <h2>Features</h2>
+    <h1>Features</h1>
     
+
+
+    
+    <h3>Discussion Forum</h3>
     <div class="container">
       <div class="left">
         Our team successfully implemented the WolfConnect discussion forum to enhance community interaction and knowledge sharing among students and alumni. Users can create initial posts with a title and description, generating threads that others can reply to, fostering meaningful conversations. The forum homepage features a user-friendly feed of all active threads, allowing users to easily browse, search, and engage in topics of interest. This feature creates a dynamic space for professional networking, academic collaboration, and shared experiences within the WolfConnect platform.      </div>
@@ -461,15 +513,24 @@
     </div>
     
 
+
+
+    <!-- fix this -->
+    <h3>Forming Connections</h3>
     <div class="container">
-      <div class="left">
+      <div class="left-pic-on-left">
         <img class="ERD-diagram" src="resources/images/Connections.png">
       </div>
-      <div class="right">
+      <div class="right-pic-on-left">
         WolfConnect helps users build relationships by showing recommended connections on the homepage and letting them search for any user. From there, users can visit profiles and send connection requests. Once the request is accepted, they can message each other and see more details about each other’s profiles. Connected users can also update their connection status to "mentorship" if they would like.
       </div>
     </div>
 
+
+
+
+
+    <h3>Private Messaging</h3>
     <div class="container">
       <div class="left" >
         WolfConnect features a private messaging system designed to facilitate meaningful communication between users. Messaging becomes available only after forming a connection with another user. Once connected, the option to send a message appears on the user’s profile. In addition to accessing a conversation with a user through their profile, users also have access to a dedicated page that displays links to all of their ongoing conversations. On the page for a conversation, messages are displayed in chronological order based on their timestamp. New messages are promptly displayed to the user when they are delivered.    </div>
@@ -479,8 +540,13 @@
       </div>
     </div>
 
+
+
+
+    <!-- fix this -->
+    <h3>Account and Profile Creation</h3>
     <div class="container">
-      <div class="left">
+      <div class="left-pic-on-left">
         <div class="video-container">
           <iframe 
               src="https://www.youtube.com/embed/9IO62_OzkVQ" 
@@ -490,7 +556,7 @@
           </iframe>
         </div>
       </div>
-      <div class="right">
+      <div class="right-pic-on-left">
         WolfConnect allows users to create an account seamlessly with Laravel's email verification feature. 
         Upon registration, the system sends a verification email to the user's provided email address using 
         a dedicated Gmail account configured with an app password in the .env file for secure email delivery.
@@ -498,13 +564,6 @@
         These pages allow users to add key details to their profiles, such as work experiences and educational 
         achievements like bachelor’s degrees. This information is then displayed to other users on the platform, 
         enhancing connectivity and engagement.
-
-
-
-
-
-
-
       </div>
     </div>
     
@@ -517,7 +576,7 @@
 
   
     <!-- HIGH LEVEL DESIGN SECTION ************ -->
-    <h2>High Level Design</h2>
+    <h1 style="margin-bottom: 0px;">High Level Design</h1>
     <div class="container-high-level">
       
       <div class="left-high-level">
@@ -544,12 +603,12 @@
 
     
 
-    <h2>Database Schema</h2>
+    <h1>Database Schema</h1>
     <div class="container">
       <div class="left">
         <img class="ERD-diagram" src="resources/images/SeniorDesignLowLevel.png">
       </div>
-      <div class="right">
+      <div class="right" style="text-align: left;">
           <ul>
             <li>
                 <strong>User Profiles:</strong> 
@@ -588,8 +647,8 @@
 
     <div>
       <div style="margin-bottom: -10px;">
-        <h2 style="display: inline-flex; align-items: center;">Agile Practices
-        </h2>
+        <h1 style="display: inline-flex; align-items: center;">Agile Practices
+        </h1>
       </div>
       <div class="container-single" style="padding-top: 12px; text-align: left;">
         <p>
